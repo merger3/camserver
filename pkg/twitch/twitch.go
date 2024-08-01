@@ -7,18 +7,40 @@ import (
 	"github.com/gempir/go-twitch-irc/v4"
 )
 
-func main() {
-	// or client := twitch.NewAnonymousClient() for an anonymous user (no write capabilities)
-	client := twitch.NewClient("yourtwitchusername", "oauth:123123123")
+type TwitchClient struct {
+	client  *twitch.Client
+	channel string
+}
 
-	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		fmt.Println(message.Message)
+func NewTwitchClient(botUsername, oauthToken, channel string) *TwitchClient {
+	client := twitch.NewClient(botUsername, oauthToken)
+	return &TwitchClient{
+		client:  client,
+		channel: channel,
+	}
+}
+
+func (t *TwitchClient) Connect() error {
+	t.client.Join(t.channel)
+
+	t.client.OnConnect(func() {
+		fmt.Println("Connected to Twitch chat")
 	})
 
-	client.Join("merger3")
+	t.client.OnPrivateMessage(func(message twitch.PrivateMessage) {
+		fmt.Printf("Received message from %s: %s\n", message.User.DisplayName, message.Message)
+	})
 
-	err := client.Connect()
-	if err != nil {
-		panic(err)
-	}
+	go func() {
+		err := t.client.Connect()
+		if err != nil {
+			fmt.Printf("Error connecting to Twitch: %v", err)
+		}
+	}()
+
+	return nil
+}
+
+func (t *TwitchClient) SendMessage(message string) {
+	t.client.Say(t.channel, message)
 }
