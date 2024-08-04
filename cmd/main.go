@@ -29,8 +29,11 @@ func main() {
 		return c.String(http.StatusOK, "Hello, World!")
 	})
 
-	e.POST("/draw", func(c echo.Context) error {
-		return click.DrawTangle(c, client)
+	e.POST("/click", click.ClickTangle)
+	e.POST("/draw", click.DrawTangle)
+
+	e.POST("/send", func(c echo.Context) error {
+		return click.SendCommand(c, client)
 	})
 
 	// e.POST("/draw", click.DrawTangle)
