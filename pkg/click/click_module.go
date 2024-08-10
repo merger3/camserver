@@ -71,10 +71,18 @@ func DrawTangle(ctx echo.Context) error {
 		return err
 	}
 
-	intX := 10
-	intY := 10
+	x, y := rect.getScaledCoordinates(rect.getMidpoint())
+	w, h := rect.getScaledMeasurments((rect.getMeasurements()))
 
-	command := fmt.Sprintf("!ptzclick %d %d %d", intX, intY, 10)
+	intX := int(math.Min(math.Round(x), videoWidth))
+	intY := int(math.Min(math.Round(y), videoHeight))
+
+	intW := int(math.Round(w))
+	intH := int(math.Round(h))
+
+	command := fmt.Sprintf("!ptzdraw %d %d %d %d", intX, intY, intW, intH)
+
+	fmt.Printf("\n%v\n", command)
 
 	return ctx.JSON(http.StatusOK, map[string]string{
 		"x":       strconv.Itoa(intX),
@@ -93,7 +101,7 @@ func SendCommand(ctx echo.Context, chatter *twitch.Client) error {
 	}
 
 	// chatter.Say("alveusgg", cmd.Command)
-	chatter.Say(cmd.Channel, cmd.Command)
+	// chatter.Say(cmd.Channel, cmd.Command)
 
 	return ctx.NoContent(http.StatusOK)
 }
@@ -107,10 +115,14 @@ func SendCommand(ctx echo.Context, chatter *twitch.Client) error {
 // }
 
 func (r Rectangle) getMidpoint() (float64, float64) {
-	scaledX := r.X + (r.Width / 2)
-	scaledY := r.Y + (r.Height / 2)
+	xMid := r.X + (r.Width / 2)
+	yMid := r.Y + (r.Height / 2)
 
-	return scaledX, scaledY
+	return xMid, yMid
+}
+
+func (r Rectangle) getMeasurements() (float64, float64) {
+	return r.Width, r.Height
 }
 
 func (r Rectangle) getScaledCoordinates(xIn, yIn float64) (float64, float64) {
@@ -121,4 +133,14 @@ func (r Rectangle) getScaledCoordinates(xIn, yIn float64) (float64, float64) {
 	y := yIn / scaleY
 
 	return x, y
+}
+
+func (r Rectangle) getScaledMeasurments(wIn, hIn float64) (float64, float64) {
+	scaleX := r.FrameWidth / videoWidth
+	scaleY := r.FrameHeight / videoHeight
+
+	w := wIn / scaleX
+	h := hIn / scaleY
+
+	return w, h
 }
