@@ -1,0 +1,41 @@
+{
+	"cameras": [
+		{
+		"camName": "pasture",
+		"presets": [
+			"home",
+			"barn",
+			"insidebarn",
+			"pen",
+			"brush",
+			"barn2",
+			"grove",
+			"pool",
+			"feeder",
+			"barn2r",
+			"barn2hay",
+			"stompyfood",
+			"water",
+			"poolr",
+			"pooll",
+			"penr",
+			"penm",
+			"penl"
+		]
+		},
+		{
+		"camName": "wolves",
+		"presets": [
+			"den1",
+			"den2",
+			"river",
+			"right",
+			"left",
+			"insidedoor",
+			"farfence",
+			"grass",
+			"pond"
+		]
+		}
+	]
+}

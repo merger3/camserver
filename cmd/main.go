@@ -5,12 +5,17 @@ import (
 	"net/http"
 
 	"github.com/merger3/camserver/pkg/click"
+	conf "github.com/merger3/camserver/pkg/config"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
 )
 
+var ConfigManager conf.ConfigManager
+
 func main() {
+
+	ConfigManager = conf.NewConfigManager()
 
 	client := twitch.NewClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
 
@@ -36,12 +41,7 @@ func main() {
 		return click.SendCommand(c, client)
 	})
 
-	// e.POST("/draw", click.DrawTangle)
-	// e.GET("/hello", func(c echo.Context) error {
-	// 	client.Say("merger3", "123qwe4")
-	// 	return c.String(http.StatusOK, "Hello, World!")
-	// })
-	e.Logger.Fatal(e.Start(":1323"))
+	e.POST("/getConfig", ConfigManager.GetPresets)
 
-	// chat.Client.Say("merger3", "hellos world!")
+	e.Logger.Fatal(e.Start(":1323"))
 }
