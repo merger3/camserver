@@ -1,3 +1,4 @@
 cmd/build/
 cmd/cmd.exe
 build/
+server.exe

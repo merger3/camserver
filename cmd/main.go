@@ -23,7 +23,7 @@ func main() {
 		fmt.Println("Connected to twitch chat")
 	})
 
-	client.Join("merger3")
+	client.Join("alveusgg")
 
 	go client.Connect()
 
@@ -42,6 +42,10 @@ func main() {
 	})
 
 	e.POST("/getConfig", ConfigManager.GetPresets)
+
+	e.POST("/getClickedCam", func(c echo.Context) error {
+		return ConfigManager.GetClickedCamConfig(c, client)
+	})
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

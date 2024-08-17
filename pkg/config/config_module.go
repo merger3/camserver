@@ -4,11 +4,20 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strings"
+	"time"
 
+	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
+)
+
+var (
+	videoWidth  = float64(1920)
+	videoHeight = float64(1080)
 )
 
 type ConfigManager struct {
@@ -33,6 +42,13 @@ type PresetResponse struct {
 	CamPresetsList *CamPresets `json:"camPresets"`
 }
 
+type ClickedCamRequest struct {
+	X           float64 `json:"x"`
+	Y           float64 `json:"y"`
+	FrameWidth  float64 `json:"frameWidth"`
+	FrameHeight float64 `json:"frameHeight"`
+}
+
 func NewConfigManager() ConfigManager {
 	file, err := os.Open(filepath.Join("configs", "presets.json"))
 	if err != nil {
@@ -50,14 +66,7 @@ func NewConfigManager() ConfigManager {
 	return ConfigManager{p}
 }
 
-func (c ConfigManager) GetPresets(ctx echo.Context) error {
-	req := PresetRequest{}
-
-	if err := ctx.Bind(&req); err != nil {
-		fmt.Printf("%v\n", err)
-		return err
-	}
-
+func (c ConfigManager) LoadPresets() Presets {
 	file, err := os.Open(filepath.Join("configs", "presets.json"))
 	if err != nil {
 		log.Fatalf("failed to open file: %s", err)
@@ -71,9 +80,75 @@ func (c ConfigManager) GetPresets(ctx echo.Context) error {
 		log.Fatalf("error unmarshalling JSON: %s", err)
 	}
 
-	// This is slow, but Cameras should never be long enough for it to matter
+	return p
+}
+
+func (c ConfigManager) GetPresets(ctx echo.Context) error {
+	req := PresetRequest{}
+
+	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	p := c.LoadPresets()
+
+	// This is slow, but p.Cameras should never be long enough for it to matter
 	for _, presets := range p.Cameras {
 		if presets.CamName == req.Cam {
+			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
+		}
+	}
+
+	return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
+}
+
+func (c ConfigManager) GetClickedCamConfig(ctx echo.Context, client *twitch.Client) error {
+	req := ClickedCamRequest{}
+
+	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	ch := make(chan string)
+	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
+		if message.User.Name == "alveussanctuary" && len(strings.Fields(message.Message)) == 1 {
+			ch <- message.Message
+		}
+	})
+
+	scaleX := req.FrameWidth / videoWidth
+	scaleY := req.FrameHeight / videoHeight
+
+	x := req.X / scaleX
+	y := req.Y / scaleY
+
+	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d", int(math.Round(x)), int(math.Round(y))))
+
+	var timeout bool
+	var cam string
+	select {
+	case v := <-ch:
+		fmt.Println(v)
+		cam = v
+		timeout = false
+		break
+	case <-time.After(10 * time.Second):
+		client.OnPrivateMessage(func(message twitch.PrivateMessage) {})
+		timeout = true
+		return ctx.NoContent(http.StatusOK)
+	}
+
+	if timeout {
+		return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
+	}
+
+	p := c.LoadPresets()
+
+	fmt.Println(cam)
+	for _, presets := range p.Cameras {
+		if presets.CamName == cam {
 			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
 		}
 	}

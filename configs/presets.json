@@ -24,7 +24,7 @@
 		]
 		},
 		{
-		"camName": "wolves",
+		"camName": "wolf",
 		"presets": [
 			"den1",
 			"den2",
@@ -35,6 +35,14 @@
 			"farfence",
 			"grass",
 			"pond"
+		]
+		},
+		{
+		"camName": "parrot",
+		"presets": [
+			"door",
+			"macaws",
+			"littles"
 		]
 		}
 	]

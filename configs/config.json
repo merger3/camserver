@@ -14,9 +14,9 @@
             ]
         },
         {
-            "name": "wolves",
+            "name": "wolf",
             "cameras": [
-                "wolves",
+                "wolf",
                 "wolfcorner",
                 "wolfinside",
                 "wolfden",
