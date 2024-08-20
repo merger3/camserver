@@ -1,7 +1,7 @@
 {
 	"cameras": [
 		{
-		"camName": "pasture",
+		"name": "pasture",
 		"presets": [
 			"home",
 			"barn",
@@ -24,7 +24,7 @@
 		]
 		},
 		{
-		"camName": "wolf",
+		"name": "wolf",
 		"presets": [
 			"den1",
 			"den2",
@@ -38,7 +38,7 @@
 		]
 		},
 		{
-		"camName": "parrot",
+		"name": "parrot",
 		"presets": [
 			"door",
 			"macaws",

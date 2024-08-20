@@ -1,0 +1,71 @@
+{
+	"common": {
+		"name": "common",
+		"swaps": {
+			"pasture": [],
+			"parrots": [],
+			"foxes": [
+				"fox",
+				"foxcorner",
+				"foxmulti"
+			],
+			"crows": [
+				"crowin",
+				"crowout",
+				"crowmulti",
+				"crowmulti2"
+			],
+			"marms": [
+				"marmout",
+				"marmin",
+				"marmmulti"
+			],
+			"wolves": [
+				"wolf",
+				"wolfcorner",
+				"wolfinside",
+				"wolfden",
+				"wolfden2",
+				"wolfmulti",
+				"wolfmulti2",
+				"wolfdenmulti",
+				"wolfdenmulti2"
+			],
+			"rats": [
+				"rat3",
+				"rat2",
+				"rat1"
+			],
+			"georgie": [
+				"georgie",
+				"georgiewater"
+			],
+			"marty": [],
+			"bb": []
+		}
+	},
+	"cameras": [
+		{
+		"name": "wolf",
+		"swaps": [
+			"den1",
+			"den2",
+			"river",
+			"right",
+			"left",
+			"insidedoor",
+			"farfence",
+			"grass",
+			"pond"
+		]
+		},
+		{
+		"name": "parrot",
+		"swaps": [
+			"door",
+			"macaws",
+			"littles"
+		]
+		}
+	]
+}
