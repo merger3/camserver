@@ -8,15 +8,12 @@ import (
 	"os"
 	"path/filepath"
 
+	// "github.com/merger3/camserver/pkg/core"
+
 	"github.com/labstack/echo"
 )
 
-var (
-	videoWidth  = float64(1920)
-	videoHeight = float64(1080)
-)
-
-type ConfigManager struct {
+type ConfigModule struct {
 	Presets
 }
 
@@ -34,15 +31,14 @@ type SwapResponse struct {
 	CamPresetsList *CamPresets `json:"camPresets"`
 }
 
-type ClickedCamRequest struct {
-	X           float64 `json:"x"`
-	Y           float64 `json:"y"`
-	FrameWidth  float64 `json:"frameWidth"`
-	FrameHeight float64 `json:"frameHeight"`
+func NewConfigModule() *ConfigModule {
+	return &ConfigModule{}
 }
 
-func NewConfigManager() ConfigManager {
-	return ConfigManager{LoadPresets()}
+func (c ConfigModule) RegisterRoutes(*echo.Echo) {}
+
+func (c *ConfigModule) Init(...any) {
+	c.Presets = LoadPresets()
 }
 
 func LoadPresets() Presets {
@@ -62,7 +58,7 @@ func LoadPresets() Presets {
 	return p
 }
 
-func (c ConfigManager) GetPresets(ctx echo.Context) error {
+func (c ConfigModule) GetPresets(ctx echo.Context) error {
 	req := PresetRequest{}
 
 	if err := ctx.Bind(&req); err != nil {
