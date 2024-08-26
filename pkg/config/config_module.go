@@ -2,18 +2,18 @@ package config
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
-	"net/http"
 	"os"
 	"path/filepath"
 
 	// "github.com/merger3/camserver/pkg/core"
 
+	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
 )
 
 type ConfigModule struct {
+	Client *twitch.Client
 	Presets
 }
 
@@ -26,19 +26,18 @@ type CamPresets struct {
 	Presets []string `json:"presets"`
 }
 
-type SwapResponse struct {
-	Found          bool        `json:"found"`
-	CamPresetsList *CamPresets `json:"camPresets"`
-}
-
 func NewConfigModule() *ConfigModule {
 	return &ConfigModule{}
 }
 
-func (c ConfigModule) RegisterRoutes(*echo.Echo) {}
+func (c ConfigModule) RegisterRoutes(server *echo.Echo) {
+	server.POST("/getConfig", c.GetCamPresets)
+	server.POST("/getClickedCam", c.GetClickedCamPresets)
+}
 
-func (c *ConfigModule) Init(...any) {
+func (c *ConfigModule) Init(resources map[string]any) {
 	c.Presets = LoadPresets()
+	c.Client = resources["twitch"].(*twitch.Client)
 }
 
 func LoadPresets() Presets {
@@ -57,66 +56,3 @@ func LoadPresets() Presets {
 
 	return p
 }
-
-func (c ConfigModule) GetPresets(ctx echo.Context) error {
-	req := PresetRequest{}
-
-	if err := ctx.Bind(&req); err != nil {
-		fmt.Printf("%v\n", err)
-		return err
-	}
-
-	// This is slow, but p.Cameras should never be long enough for it to matter
-	for _, presets := range c.Cameras {
-		if presets.CamName == req.Cam {
-			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
-		}
-	}
-
-	return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
-}
-
-// func (c ConfigManager) GetCamSwaps(ctx echo.Context, client *twitch.Client) error {
-// 	req := ClickedCamRequest{}
-
-// 	if err := ctx.Bind(&req); err != nil {
-// 		fmt.Printf("%v\n", err)
-// 		return err
-// 	}
-
-// 	ch := make(chan string)
-// 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-// 		if message.User.Name == "alveussanctuary" && len(strings.Fields(message.Message)) == 1 {
-// 			ch <- message.Message
-// 		}
-// 	})
-
-// 	scaleX := req.FrameWidth / videoWidth
-// 	scaleY := req.FrameHeight / videoHeight
-
-// 	x := req.X / scaleX
-// 	y := req.Y / scaleY
-
-// 	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d", int(math.Round(x)), int(math.Round(y))))
-
-// 	var timeout bool
-// 	var cam string
-// 	select {
-// 	case v := <-ch:
-// 		fmt.Println(v)
-// 		cam = v
-// 		timeout = false
-// 		break
-// 	case <-time.After(10 * time.Second):
-// 		timeout = true
-// 		return ctx.NoContent(http.StatusOK)
-// 	}
-
-// 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {})
-
-// 	if timeout {
-// 		return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
-// 	}
-
-// 	return ctx.JSON(http.StatusOK, PresetResponse{Found: true, Value: cam})
-// }

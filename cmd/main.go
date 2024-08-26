@@ -2,50 +2,70 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/merger3/camserver/pkg/click"
 	"github.com/merger3/camserver/pkg/config"
+	"github.com/merger3/camserver/pkg/core"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
 )
 
-var modules map[string]Module
+var (
+	resources map[string]any
+	modules   map[string]Module
+)
 
 type Module interface {
-	Init(...any)
+	Init(map[string]any)
 	RegisterRoutes(*echo.Echo)
 }
 
-func LoadModules() {
-	modules["config"] = config.NewConfigModule()
-}
-
-func main() {
-
+func LoadResources() {
 	// Set up twitch client
 	client := twitch.NewClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
 	client.OnConnect(func() {
 		fmt.Println("Connected to twitch chat")
 	})
 	client.Join("alveusgg")
+	resources["twitch"] = client
+}
 
-	go client.Connect()
+func LoadModules(e *echo.Echo) {
+	modules["config"] = config.NewConfigModule()
+	modules["click"] = click.NewConfigModule()
+
+	for _, v := range modules {
+		v.Init(resources)
+		v.RegisterRoutes(e)
+	}
+}
+
+func main() {
+	resources = make(map[string]any)
+	modules = make(map[string]Module)
+
+	LoadResources()
+
+	go resources["twitch"].(*twitch.Client).Connect()
 
 	e := echo.New()
 	e.Static("/", "build")
 
-	e.POST("/click", click.ClickTangle)
-	e.POST("/draw", click.DrawTangle)
+	LoadModules(e)
 
-	e.POST("/send", func(c echo.Context) error {
-		return click.SendCommand(c, client)
-	})
+	e.POST("/send", func(ctx echo.Context) error {
+		cmd := core.Command{Channel: "alveusgg"}
 
-	e.POST("/getConfig", ConfigManager.GetPresets)
+		if err := ctx.Bind(&cmd); err != nil {
+			fmt.Printf("%v\n", err)
+			return err
+		}
 
-	e.POST("/getClickedCam", func(c echo.Context) error {
-		return ConfigManager.GetClickedCamConfig(c, client)
+		resources["twitch"].(*twitch.Client).Say(cmd.Channel, cmd.Command)
+
+		return ctx.NoContent(http.StatusOK)
 	})
 
 	e.Logger.Fatal(e.Start(":1323"))

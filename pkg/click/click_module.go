@@ -3,73 +3,61 @@ package click
 import (
 	"fmt"
 	"math"
-	"net/http"
-	"strconv"
-
-	"github.com/merger3/camserver/pkg/core"
+	"strings"
+	"time"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
+	"github.com/merger3/camserver/pkg/core"
 )
 
-func ClickTangle(ctx echo.Context) error {
-	rect := core.Geom{}
+type ClickModule struct {
+	Client *twitch.Client
+}
 
-	if err := ctx.Bind(&rect); err != nil {
-		fmt.Printf("%v\n", err)
-		return err
-	}
+func NewConfigModule() *ClickModule {
+	return &ClickModule{}
+}
+
+func (c ClickModule) RegisterRoutes(server *echo.Echo) {
+	server.POST("/click", c.ClickTangle)
+	server.POST("/draw", c.DrawTangle)
+}
+
+func (c *ClickModule) Init(resources map[string]any) {
+	c.Client = resources["twitch"].(*twitch.Client)
+}
+
+func GetClickedCam(client *twitch.Client, rect core.Geom) string {
+	ch := make(chan string)
+	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
+		if message.User.Name == "alveussanctuary" && len(strings.Fields(message.Message)) == 1 {
+			ch <- message.Message
+		}
+	})
 
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
-	intX := int(math.Min(math.Round(x), core.VideoWidth))
-	intY := int(math.Min(math.Round(y), core.VideoHeight))
+	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d", int(math.Round(x)), int(math.Round(y))))
 
-	command := fmt.Sprintf("!ptzclick %d %d 100", intX, intY)
-
-	return ctx.JSON(http.StatusOK, map[string]string{
-		"x":       strconv.Itoa(intX),
-		"y":       strconv.Itoa(intY),
-		"command": command,
-	})
-}
-
-func DrawTangle(ctx echo.Context) error {
-	rect := core.Geom{}
-
-	if err := ctx.Bind(&rect); err != nil {
-		fmt.Printf("%v\n", err)
-		return err
+	var timeout bool
+	var cam string
+	select {
+	case v := <-ch:
+		fmt.Println(v)
+		cam = v
+		timeout = false
+		break
+	case <-time.After(10 * time.Second):
+		timeout = true
+		return ""
 	}
 
-	x, y := rect.GetScaledCoordinates(rect.GetTopLeft())
-	w, h := rect.GetScaledMeasurments((rect.GetMeasurements()))
+	client.OnPrivateMessage(func(message twitch.PrivateMessage) {})
 
-	intX := int(math.Min(math.Round(x), core.VideoWidth))
-	intY := int(math.Min(math.Round(y), core.VideoHeight))
-
-	intW := int(math.Round(w))
-	intH := int(math.Round(h))
-
-	command := fmt.Sprintf("!ptzdraw %d %d %d %d", intX, intY, intW, intH)
-
-	return ctx.JSON(http.StatusOK, map[string]string{
-		"x":       strconv.Itoa(intX),
-		"y":       strconv.Itoa(intY),
-		"command": command,
-	})
-
-}
-
-func SendCommand(ctx echo.Context, chatter *twitch.Client) error {
-	cmd := core.Command{Channel: "merger3"}
-
-	if err := ctx.Bind(&cmd); err != nil {
-		fmt.Printf("%v\n", err)
-		return err
+	if timeout {
+		return ""
 	}
 
-	chatter.Say("alveusgg", cmd.Command)
-
-	return ctx.NoContent(http.StatusOK)
+	return cam
 }
