@@ -23,6 +23,8 @@ type Module interface {
 }
 
 func LoadResources() {
+	resources = make(map[string]any)
+
 	// Set up twitch client
 	client := twitch.NewClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
 	client.OnConnect(func() {
@@ -33,6 +35,8 @@ func LoadResources() {
 }
 
 func LoadModules(e *echo.Echo) {
+	modules = make(map[string]Module)
+
 	modules["config"] = config.NewConfigModule()
 	modules["click"] = click.NewConfigModule()
 
@@ -43,9 +47,6 @@ func LoadModules(e *echo.Echo) {
 }
 
 func main() {
-	resources = make(map[string]any)
-	modules = make(map[string]Module)
-
 	LoadResources()
 
 	go resources["twitch"].(*twitch.Client).Connect()

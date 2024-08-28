@@ -12,11 +12,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-type ConfigModule struct {
-	Client *twitch.Client
-	Presets
-}
-
 type Presets struct {
 	Cameras []CamPresets `json:"cameras"`
 }
@@ -24,6 +19,11 @@ type Presets struct {
 type CamPresets struct {
 	CamName string   `json:"name"`
 	Presets []string `json:"presets"`
+}
+
+type ConfigModule struct {
+	Client *twitch.Client
+	Presets
 }
 
 func NewConfigModule() *ConfigModule {

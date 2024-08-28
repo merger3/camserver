@@ -1,0 +1,165 @@
+[
+	{
+		"label": "wolves",
+		"subentries": [
+			{
+				"label": "wolf"
+			},
+			{
+				"label": "wolfcorner"
+			},
+			{
+				"label": "wolfinside"
+			},
+			{
+				"label": "wolfden"
+			},
+			{
+				"label": "wolfden2"
+			},
+			{
+				"label": "wolfmultis",
+				"subentries": [
+					{
+						"label": "wolfmulti"
+					},
+					{
+						"label": "wolfmulti2"
+					},
+					{
+						"label": "wolfdenmulti"
+					},
+					{
+						"label": "wolfdenmulti2"
+					}
+				]
+			}
+		]
+	},
+	{
+		"label": "rats",
+		"subentries": [
+			{
+				"label": "rat1"
+			},
+			{
+				"label": "rat2"
+			},
+			{
+				"label": "rat3"
+			}
+		]
+	},
+	{
+		"label": "georgie"
+	},
+	{
+		"label": "georgiewater"
+	},
+	{
+		"label": "insects",
+		"subentries": [
+			{
+				"label": "marty"
+			},
+			{
+				"label": "bb"
+			},
+			{
+				"label": "hank"
+			}
+		]
+	},
+	{
+		"label": "crows",
+		"subentries": [
+			{
+				"label": "crowout"
+			},
+			{
+				"label": "crowin"
+			},
+			{
+				"label": "crowmulti"
+			},
+			{
+				"label": "crowmulti2"
+			}
+		]
+	},
+	{
+		"label": "marmosets",
+		"subentries": [
+			{
+				"label": "marmin"
+			},
+			{
+				"label": "marmout"
+			},
+			{
+				"label": "mammulti"
+			}
+		]
+	},
+	{
+		"label": "foxes",
+		"subentries": [
+			{
+				"label": "fox"
+			},
+			{
+				"label": "foxcorner"
+			},
+			{
+				"label": "foxmulti"
+			}
+		]
+	},
+	{
+		"label": "parrots"
+	},
+	{
+		"label": "pasture"
+	},
+	{
+		"label": "common",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "rats",
+				"import": ["rats"]
+			},
+			{
+				"label": "georgie",
+				"import": ["georgie"]
+			},
+			{
+				"label": "insects",
+				"import": ["insects"]
+			},
+			{
+				"label": "crows",
+				"import": ["crows"]
+			},
+			{
+				"label": "marmosets",
+				"import": ["marmosets"]
+			},
+			{
+				"label": "foxes",
+				"import": ["foxes"]
+			},
+			{
+				"label": "parrots",
+				"import": ["parrots"]
+			},
+			{
+				"label": "pasture",
+				"import": ["pasture"]
+			}
+		]
+	}
+]

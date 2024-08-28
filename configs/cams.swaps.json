@@ -1,0 +1,889 @@
+[
+	{
+		"label": "wolf",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolf"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfcorner",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfcorner"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfinside",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfinside"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfden",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfden"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfden2",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfden2"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfmulti",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfmultis", "wolfmulti"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfmulti2",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfmultis", "wolfmulti2"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfdenmulti",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfmultis", "wolfdenmulti"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "wolfdenmulti2",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": ["wolves"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["wolves", "wolfmultis", "wolfdenmulti2"]
+			},
+			{
+				"action": "flatten",
+				"target": ["wolves"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "wolves"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "rat1",
+		"subentries": [
+			{
+				"label": "rats",
+				"import": ["rats"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["rats", "rats1"]
+			},
+			{
+				"action": "flatten",
+				"target": ["rats"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "rats"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "rat2",
+		"subentries": [
+			{
+				"label": "rats",
+				"import": ["rats"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["rats", "rats2"]
+			},
+			{
+				"action": "flatten",
+				"target": ["rats"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "rats"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "rat3",
+		"subentries": [
+			{
+				"label": "rats",
+				"import": ["rats"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["rats", "rats3"]
+			},
+			{
+				"action": "flatten",
+				"target": ["rats"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "rats"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "georgie",
+		"subentries": [
+			{
+				"label": "georgiewater"
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["common", "georgie"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "georgiewater",
+		"subentries": [
+			{
+				"label": "georgie"
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["common", "georgie"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "marty",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": ["insects"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["insects", "marty"]
+			},
+			{
+				"action": "flatten",
+				"target": ["insects"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "insects"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "bb",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": ["insects"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["insects", "bb"]
+			},
+			{
+				"action": "flatten",
+				"target": ["insects"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "insects"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "hank",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": ["insects"]
+			},
+			{
+				"label": "hankcorner"
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["insects", "hank"]
+			},
+			{
+				"action": "flatten",
+				"target": ["insects"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "insects"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "hankcorner",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": ["insects"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": ["insects"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "insects"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "crowout",
+		"subentries": [
+			{
+				"label": "crows",
+				"import": ["crows"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["crows", "crowout"]
+			},
+			{
+				"action": "flatten",
+				"target": ["crows"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "crows"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "crowin",
+		"subentries": [
+			{
+				"label": "crows",
+				"import": ["crows"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["crows", "crowin"]
+			},
+			{
+				"action": "flatten",
+				"target": ["crows"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "crows"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "crowmulti",
+		"subentries": [
+			{
+				"label": "crows",
+				"import": ["crows"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["crows", "crowmulti"]
+			},
+			{
+				"action": "flatten",
+				"target": ["crows"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "crows"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "crowmulti2",
+		"subentries": [
+			{
+				"label": "crows",
+				"import": ["crows"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["crows", "crowmulti2"]
+			},
+			{
+				"action": "flatten",
+				"target": ["crows"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "crows"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "marmin",
+		"subentries": [
+			{
+				"label": "marmosets",
+				"import": ["marmosets"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["marmosets", "marmin"]
+			},
+			{
+				"action": "flatten",
+				"target": ["marmosets"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "marmosets"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "marmout",
+		"subentries": [
+			{
+				"label": "marmosets",
+				"import": ["marmosets"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["marmosets", "marmout"]
+			},
+			{
+				"action": "flatten",
+				"target": ["marmosets"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "marmosets"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "marmmulti",
+		"subentries": [
+			{
+				"label": "marmosets",
+				"import": ["marmosets"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["marmosets", "marmmulti"]
+			},
+			{
+				"action": "flatten",
+				"target": ["marmosets"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "marmosets"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "fox",
+		"subentries": [
+			{
+				"label": "foxes",
+				"import": ["foxes"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["foxes", "fox"]
+			},
+			{
+				"action": "flatten",
+				"target": ["foxes"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "foxes"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "foxcorner",
+		"subentries": [
+			{
+				"label": "foxes",
+				"import": ["foxes"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["foxes", "foxcorner"]
+			},
+			{
+				"action": "flatten",
+				"target": ["foxes"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "foxes"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "foxmulti",
+		"subentries": [
+			{
+				"label": "foxes",
+				"import": ["foxes"]
+			},
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["foxes", "foxmulti"]
+			},
+			{
+				"action": "flatten",
+				"target": ["foxes"]
+			},
+			{
+				"action": "remove",
+				"target": ["common", "foxes"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "parrots",
+		"subentries": [
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["common", "parrots"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	},
+	{
+		"label": "pasture",
+		"subentries": [
+			{
+				"label": "common",
+				"import": ["common"]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": ["common", "pasture"]
+			},
+			{
+				"action": "flatten",
+				"target": ["common"]
+			}
+		]
+	}
+]
