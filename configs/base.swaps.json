@@ -125,6 +125,20 @@
 		"label": "common",
 		"subentries": [
 			{
+				"label": "1",
+				"subentries": [
+					{
+						"label": "main"
+					},
+					{
+						"label": "separator"
+					}
+				]
+			},
+			{
+				"label": "separator"
+			},
+			{
 				"label": "wolves",
 				"import": ["wolves"]
 			},
@@ -159,6 +173,29 @@
 			{
 				"label": "pasture",
 				"import": ["pasture"]
+			},
+			{
+				"label": "separator"
+			},
+			{
+				"label": "position",
+				"subentries": [
+					{
+						"label": "2"
+					},
+					{
+						"label": "3"
+					},
+					{
+						"label": "4"
+					},
+					{
+						"label": "5"
+					},
+					{
+						"label": "6"
+					}
+				]
 			}
 		]
 	}

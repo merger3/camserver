@@ -7,6 +7,7 @@ import (
 	"github.com/merger3/camserver/pkg/click"
 	"github.com/merger3/camserver/pkg/config"
 	"github.com/merger3/camserver/pkg/core"
+	"github.com/merger3/camserver/pkg/menu"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo"
@@ -38,7 +39,8 @@ func LoadModules(e *echo.Echo) {
 	modules = make(map[string]Module)
 
 	modules["config"] = config.NewConfigModule()
-	modules["click"] = click.NewConfigModule()
+	modules["click"] = click.NewClickModule()
+	modules["menu"] = menu.NewMenuModule()
 
 	for _, v := range modules {
 		v.Init(resources)

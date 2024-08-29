@@ -11,11 +11,13 @@ import (
 	"github.com/merger3/camserver/pkg/core"
 )
 
+var aliases = map[string]string{"parrot": "parrots", "rat": "rat1"}
+
 type ClickModule struct {
 	Client *twitch.Client
 }
 
-func NewConfigModule() *ClickModule {
+func NewClickModule() *ClickModule {
 	return &ClickModule{}
 }
 
@@ -59,5 +61,11 @@ func GetClickedCam(client *twitch.Client, rect core.Geom) string {
 		return ""
 	}
 
-	return cam
+	camAlias, ok := aliases[cam]
+	if !ok {
+		return cam
+	} else {
+		return camAlias
+	}
+
 }
