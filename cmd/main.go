@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/merger3/camserver/pkg/click"
 	"github.com/merger3/camserver/pkg/config"
@@ -66,6 +67,9 @@ func main() {
 			return err
 		}
 
+		if strings.HasPrefix(cmd.Command, "!ptzdraw") {
+			cmd.Command = fmt.Sprintf("%s 4", cmd.Command)
+		}
 		resources["twitch"].(*twitch.Client).Say(cmd.Channel, cmd.Command)
 
 		return ctx.NoContent(http.StatusOK)

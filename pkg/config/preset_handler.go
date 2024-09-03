@@ -45,12 +45,12 @@ func (c ConfigModule) GetClickedCamPresets(ctx echo.Context) error {
 	}
 
 	cam := click.GetClickedCam(c.Client, req)
-	if cam == "" {
+	if !cam.Found {
 		return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
 	}
 
 	for _, presets := range c.Cameras {
-		if presets.CamName == cam {
+		if presets.CamName == cam.Name {
 			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
 		}
 	}

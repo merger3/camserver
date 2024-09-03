@@ -16,6 +16,7 @@ import (
 type SwapMenuResponse struct {
 	Found    bool        `json:"found"`
 	Cam      string      `json:"cam"`
+	Position int         `json:"position"`
 	SwapMenu *CleanEntry `json:"swaps"`
 }
 
@@ -28,15 +29,15 @@ func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {
 	}
 
 	cam := click.GetClickedCam(m.Client, req)
-	// cam := "parrots"
-	if cam == "" {
-		return ctx.JSON(http.StatusOK, SwapMenuResponse{Found: false, Cam: cam, SwapMenu: nil})
+	// cam := click.ClickedCam{Found: true, Name: "pasture", Position: 2}
+	if !cam.Found {
+		return ctx.JSON(http.StatusOK, SwapMenuResponse{})
 	}
 
-	swaps, ok := m.Cams[cam]
+	swaps, ok := m.Cams[cam.Name]
 	if !ok {
-		return ctx.JSON(http.StatusOK, SwapMenuResponse{Found: false, Cam: cam, SwapMenu: nil})
+		return ctx.JSON(http.StatusOK, SwapMenuResponse{})
 	}
 
-	return ctx.JSON(http.StatusOK, SwapMenuResponse{Found: true, Cam: cam, SwapMenu: swaps})
+	return ctx.JSON(http.StatusOK, SwapMenuResponse{Found: true, Cam: cam.Name, Position: cam.Position, SwapMenu: swaps})
 }

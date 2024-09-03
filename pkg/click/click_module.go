@@ -1,9 +1,10 @@
 package click
 
 import (
+	"encoding/json"
 	"fmt"
 	"math"
-	"strings"
+	"regexp"
 	"time"
 
 	"github.com/gempir/go-twitch-irc/v4"
@@ -11,7 +12,7 @@ import (
 	"github.com/merger3/camserver/pkg/core"
 )
 
-var aliases = map[string]string{"parrot": "parrots", "rat": "rat1"}
+var aliases = map[string]string{"parrot": "parrots", "rat": "rat1", "marmoset": "marmout"}
 
 type ClickModule struct {
 	Client *twitch.Client
@@ -30,17 +31,23 @@ func (c *ClickModule) Init(resources map[string]any) {
 	c.Client = resources["twitch"].(*twitch.Client)
 }
 
-func GetClickedCam(client *twitch.Client, rect core.Geom) string {
+type ClickedCam struct {
+	Found    bool   `json:"found"`
+	Name     string `json:"cam"`
+	Position int    `json:"position"`
+}
+
+func GetClickedCam(client *twitch.Client, rect core.Geom) ClickedCam {
 	ch := make(chan string)
 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		if message.User.Name == "alveussanctuary" && len(strings.Fields(message.Message)) == 1 {
+		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == "alveussanctuary" && match {
 			ch <- message.Message
 		}
 	})
 
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
-	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d", int(math.Round(x)), int(math.Round(y))))
+	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
 
 	var timeout bool
 	var cam string
@@ -52,20 +59,29 @@ func GetClickedCam(client *twitch.Client, rect core.Geom) string {
 		break
 	case <-time.After(10 * time.Second):
 		timeout = true
-		return ""
+		return ClickedCam{}
 	}
 
 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {})
 
 	if timeout {
-		return ""
+		return ClickedCam{}
 	}
 
-	camAlias, ok := aliases[cam]
+	resp := ClickedCam{Found: true}
+
+	err := json.Unmarshal([]byte(cam), &resp)
+	if err != nil {
+		fmt.Println("Error unmarshalling JSON:", err)
+		return ClickedCam{}
+	}
+
+	camAlias, ok := aliases[resp.Name]
 	if !ok {
-		return cam
+		return resp
 	} else {
-		return camAlias
+		resp.Name = camAlias
+		return resp
 	}
 
 }
