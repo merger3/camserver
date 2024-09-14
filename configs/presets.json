@@ -1,49 +1,144 @@
 {
 	"cameras": [
 		{
-		"name": "pasture",
-		"presets": [
-			"home",
-			"barn",
-			"insidebarn",
-			"pen",
-			"brush",
-			"barn2",
-			"grove",
-			"pool",
-			"feeder",
-			"barn2r",
-			"barn2hay",
-			"stompyfood",
-			"water",
-			"poolr",
-			"pooll",
-			"penr",
-			"penm",
-			"penl"
-		]
+			"name": "pasture",
+			"presets": [
+				"home",
+				"barn",
+				"insidebarn",
+				"pen",
+				"grove",
+				"purplebase",
+				"brush",
+				"barn2",
+				"pool",
+				"feeder",
+				"barn2r",
+				"barn2hay",
+				"stompyfood",
+				"water",
+				"poolr",
+				"pooll",
+				"penr",
+				"penm",
+				"penl"
+			]
 		},
 		{
-		"name": "wolf",
-		"presets": [
-			"den1",
-			"den2",
-			"river",
-			"right",
-			"left",
-			"insidedoor",
-			"farfence",
-			"grass",
-			"pond"
-		]
+			"name": "wolf",
+			"presets": [
+				"river",
+				"right",
+				"farfence",
+				"grass",
+				"rightfence",
+				"den1",
+				"den1t",
+				"pond",
+				"tip",
+				"den2",
+				"backleftcorner",
+				"left",
+				"leftcorner",
+				"insidedoor",
+				"grass"
+			]
 		},
 		{
-		"name": "parrots",
-		"presets": [
-			"door",
-			"macaws",
-			"littles"
-		]
+			"name": "wolfcorner",
+			"presets": [
+				"left",
+				"den2",
+				"den2m",
+				"leftcorner",
+				"belowplatform",
+				"leftfence"
+			]
+		},
+		{
+			"name": "fox",
+			"presets": [
+				"left",
+				"right",
+				"platform",
+				"treehouse",
+				"shade",
+				"den",
+				"down"
+			]
+		},
+		{
+			"name": "parrots",
+			"presets": [
+				"door",
+				"macaws",
+				"littles"
+			]
+		},
+		{
+			"name": "crowoutdoor",
+			"presets": [
+				"home",
+				"right",
+				"corner",
+				"backcorner",
+				"ground",
+				"groundr",
+				"groundl",
+				"entry",
+				"inside",
+				"water",
+				"tree"
+			]
+		},
+		{
+			"name": "crowin",
+			"presets": [
+				"home",
+				"down",
+				"entry",
+				"top",
+				"backcorner",
+				"back",
+				"rightperch",
+				"window"
+			]
+		},
+		{
+			"name": "marmout",
+			"presets": [
+				"home",
+				"left",
+				"platformleft",
+				"right",
+				"rightscreen",
+				"rope",
+				"ground",
+				"ir",
+				"hose"
+			]
+		},
+		{
+			"name": "marmosetindoor",
+			"presets": [
+				"home",
+				"right",
+				"bowll",
+				"bowllc",
+				"left",
+				"floor",
+				"bridgel",
+				"down",
+				"bridger"
+			]
+		},
+		{
+			"name": "foxcorner",
+			"presets": [
+				"home",
+				"insidedoor",
+				"training"
+			]
 		}
 	]
 }

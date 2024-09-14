@@ -135,7 +135,7 @@
 		]
 	},
 	{
-		"label": "wolfinside",
+		"label": "wolfindoor",
 		"subentries": [
 			{
 				"label": "wolves",
@@ -1303,7 +1303,7 @@
 		]
 	},
 	{
-		"label": "marmin",
+		"label": "marmosetindoor",
 		"subentries": [
 			{
 				"label": "marmosets",

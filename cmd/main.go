@@ -60,7 +60,7 @@ func main() {
 	LoadModules(e)
 
 	e.POST("/send", func(ctx echo.Context) error {
-		cmd := core.Command{Channel: "alveusgg"}
+		cmd := core.Command{Channel: "merger3"}
 
 		if err := ctx.Bind(&cmd); err != nil {
 			fmt.Printf("%v\n", err)
@@ -68,7 +68,7 @@ func main() {
 		}
 
 		if strings.HasPrefix(cmd.Command, "!ptzdraw") {
-			cmd.Command = fmt.Sprintf("%s 4", cmd.Command)
+			cmd.Command = fmt.Sprintf("%s 5", cmd.Command)
 		}
 		resources["twitch"].(*twitch.Client).Say(cmd.Channel, cmd.Command)
 

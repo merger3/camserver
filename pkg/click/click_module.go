@@ -12,7 +12,7 @@ import (
 	"github.com/merger3/camserver/pkg/core"
 )
 
-var aliases = map[string]string{"parrot": "parrots", "rat": "rat1", "marmoset": "marmout"}
+var aliases = map[string]string{"parrot": "parrots", "rat": "rat1", "marmoset": "marmout", "crow": "crowin"}
 
 type ClickModule struct {
 	Client *twitch.Client
@@ -47,7 +47,7 @@ func GetClickedCam(client *twitch.Client, rect core.Geom) ClickedCam {
 
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
-	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
+	client.Say("merger3", fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
 
 	var timeout bool
 	var cam string
