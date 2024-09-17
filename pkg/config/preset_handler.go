@@ -45,7 +45,6 @@ func (c ConfigModule) GetClickedCamPresets(ctx echo.Context) error {
 	}
 
 	cam := click.GetClickedCam(c.Client, req)
-	// cam := click.ClickedCam{Found: true, Name: "pasture", Position: 2}
 	if !cam.Found {
 		return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
 	}

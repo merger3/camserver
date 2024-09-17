@@ -36,6 +36,7 @@
 				"den1t",
 				"pond",
 				"tip",
+				"shaft",
 				"den2",
 				"backleftcorner",
 				"left",
@@ -48,10 +49,16 @@
 			"name": "wolfcorner",
 			"presets": [
 				"left",
+				"grass",
 				"den2",
+				"den2shade",
 				"den2m",
 				"leftcorner",
 				"belowplatform",
+				"belowplatforml",
+				"belowplatformr",
+				"rightfence",
+				"den2l",
 				"leftfence"
 			]
 		},
@@ -138,6 +145,17 @@
 				"home",
 				"insidedoor",
 				"training"
+			]
+		},
+		{
+			"name": "noodle",
+			"presets": [
+				"home",
+				"water",
+				"left",
+				"farbranches",
+				"down",
+				"closebranch"
 			]
 		}
 	]

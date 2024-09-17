@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"math"
+	"net/http"
 	"regexp"
 	"time"
 
@@ -25,6 +26,7 @@ func NewClickModule() *ClickModule {
 func (c ClickModule) RegisterRoutes(server *echo.Echo) {
 	server.POST("/click", c.ClickTangle)
 	server.POST("/draw", c.DrawTangle)
+	server.POST("/getcam", c.GetCamFromCoordinates)
 }
 
 func (c *ClickModule) Init(resources map[string]any) {
@@ -38,6 +40,7 @@ type ClickedCam struct {
 }
 
 func GetClickedCam(client *twitch.Client, rect core.Geom) ClickedCam {
+	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
 	ch := make(chan string)
 	client.OnPrivateMessage(func(message twitch.PrivateMessage) {
 		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == "alveussanctuary" && match {
@@ -47,7 +50,7 @@ func GetClickedCam(client *twitch.Client, rect core.Geom) ClickedCam {
 
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
-	client.Say("merger3", fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
+	client.Say("alveusgg", fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
 
 	var timeout bool
 	var cam string
@@ -84,4 +87,17 @@ func GetClickedCam(client *twitch.Client, rect core.Geom) ClickedCam {
 		return resp
 	}
 
+}
+
+func (c ClickModule) GetCamFromCoordinates(ctx echo.Context) error {
+	req := core.Geom{}
+
+	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	cam := GetClickedCam(c.Client, req)
+
+	return ctx.JSON(http.StatusOK, cam)
 }

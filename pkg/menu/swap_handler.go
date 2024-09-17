@@ -29,7 +29,6 @@ func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {
 	}
 
 	cam := click.GetClickedCam(m.Client, req)
-	// cam := click.ClickedCam{Found: true, Name: "pasture", Position: 2}
 	if !cam.Found {
 		return ctx.JSON(http.StatusOK, SwapMenuResponse{})
 	}

@@ -60,7 +60,7 @@ func main() {
 	LoadModules(e)
 
 	e.POST("/send", func(ctx echo.Context) error {
-		cmd := core.Command{Channel: "merger3"}
+		cmd := core.Command{Channel: "alveusgg"}
 
 		if err := ctx.Bind(&cmd); err != nil {
 			fmt.Printf("%v\n", err)
