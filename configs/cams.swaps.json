@@ -439,6 +439,15 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"rat3"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "remove",
 				"target": [
 					"common",
