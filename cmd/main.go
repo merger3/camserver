@@ -97,7 +97,7 @@ func main() {
 		}
 
 		// Create a new HTTP request
-		req, err := http.NewRequest("GET", url, nil)
+		req, err := http.NewRequest("POST", url, nil)
 		if err != nil {
 			log.Println("Failed to create request:", err)
 			return c.String(http.StatusInternalServerError, "Failed to create request")
