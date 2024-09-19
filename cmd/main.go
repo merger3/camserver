@@ -86,5 +86,8 @@ func main() {
 		return false, nil
 	}))
 
-	e.Logger.Fatal(e.Start(":1323"))
+	if err := e.StartTLS(":8443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
+		e.Logger.Fatal(err)
+	}
+	// e.Logger.Fatal(e.Start(":1323"))
 }
