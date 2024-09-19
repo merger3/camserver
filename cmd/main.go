@@ -96,13 +96,27 @@ func main() {
 			return c.String(http.StatusBadRequest, "Invalid URL. Make sure it starts with http://")
 		}
 
-		// Fetch the content from the external HTTP source
-		resp, err := http.Get(url)
+		// Create a new HTTP request
+		req, err := http.NewRequest("GET", url, nil)
+		if err != nil {
+			log.Println("Failed to create request:", err)
+			return c.String(http.StatusInternalServerError, "Failed to create request")
+		}
+
+		// Add headers if needed (some servers require User-Agent, etc.)
+		req.Header.Set("User-Agent", "Mozilla/5.0")
+
+		// Make the request
+		client := &http.Client{}
+		resp, err := client.Do(req)
 		if err != nil {
 			log.Println("Error fetching URL:", err)
 			return c.String(http.StatusInternalServerError, "Failed to fetch the content")
 		}
 		defer resp.Body.Close()
+
+		// Log the response status for debugging
+		log.Println("Response status from target server:", resp.Status)
 
 		// Stream the fetched content to the client
 		c.Response().Header().Set("Content-Type", resp.Header.Get("Content-Type"))
