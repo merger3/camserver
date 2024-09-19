@@ -3,8 +3,6 @@ package main
 import (
 	"crypto/subtle"
 	"fmt"
-	"io"
-	"log"
 	"net/http"
 	"strings"
 
@@ -88,53 +86,8 @@ func main() {
 		return false, nil
 	}))
 
-	e.GET("/proxy", func(c echo.Context) error {
-		url := c.QueryParam("url")
-		url = "http://merger:Merger!23@74.208.238.87:8889/ptz-alv"
-		// Check if the URL starts with "http://"
-		if url == "" || !startsWithHTTP(url) {
-			return c.String(http.StatusBadRequest, "Invalid URL. Make sure it starts with http://")
-		}
-
-		// Create a new HTTP request
-		req, err := http.NewRequest("GET", url, nil)
-		if err != nil {
-			log.Println("Failed to create request:", err)
-			return c.String(http.StatusInternalServerError, "Failed to create request")
-		}
-
-		// Add headers if needed (some servers require User-Agent, etc.)
-		req.Header.Set("User-Agent", "Mozilla/5.0")
-
-		// Make the request
-		client := &http.Client{}
-		resp, err := client.Do(req)
-		if err != nil {
-			log.Println("Error fetching URL:", err)
-			return c.String(http.StatusInternalServerError, "Failed to fetch the content")
-		}
-		defer resp.Body.Close()
-
-		// Log the response status for debugging
-		log.Println("Response status from target server:", resp.Status)
-
-		// Stream the fetched content to the client
-		c.Response().Header().Set("Content-Type", resp.Header.Get("Content-Type"))
-		c.Response().WriteHeader(resp.StatusCode)
-		_, err = io.Copy(c.Response().Writer, resp.Body)
-		if err != nil {
-			return c.String(http.StatusInternalServerError, "Error streaming content")
-		}
-		return nil
-	})
-
 	if err := e.StartTLS(":8443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
 		e.Logger.Fatal(err)
 	}
 	// e.Logger.Fatal(e.Start(":8443"))
-}
-
-// Utility function to check if the URL starts with http://
-func startsWithHTTP(url string) bool {
-	return len(url) > 7 && url[:7] == "http://"
 }
