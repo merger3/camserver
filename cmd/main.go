@@ -90,7 +90,7 @@ func main() {
 
 	e.GET("/proxy", func(c echo.Context) error {
 		url := c.QueryParam("url")
-
+		url = "http://merger:Merger!23@74.208.238.87:8889/ptz-alv"
 		// Check if the URL starts with "http://"
 		if url == "" || !startsWithHTTP(url) {
 			return c.String(http.StatusBadRequest, "Invalid URL. Make sure it starts with http://")
