@@ -13,7 +13,7 @@ import (
 	"slices"
 
 	"github.com/gempir/go-twitch-irc/v4"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 type MenuModule struct {

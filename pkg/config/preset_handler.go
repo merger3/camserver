@@ -7,7 +7,7 @@ import (
 	"github.com/merger3/camserver/pkg/click"
 	"github.com/merger3/camserver/pkg/core"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 type PresetRequest struct {

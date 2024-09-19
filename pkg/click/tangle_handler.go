@@ -9,7 +9,7 @@ import (
 	"github.com/merger3/camserver/pkg/core"
 
 	// "github.com/gempir/go-twitch-irc/v4"
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 func (c ClickModule) ClickTangle(ctx echo.Context) error {
