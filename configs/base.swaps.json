@@ -47,6 +47,9 @@
 			},
 			{
 				"label": "rat3"
+			},
+			{
+				"label": "ratmulti"
 			}
 		]
 	},
@@ -61,6 +64,9 @@
 			},
 			{
 				"label": "patchy"
+			},
+			{
+				"label": "toast"
 			}
 		]
 	},
@@ -75,6 +81,9 @@
 			},
 			{
 				"label": "bb"
+			},
+			{
+				"label": "roaches"
 			},
 			{
 				"label": "hank"

@@ -571,6 +571,51 @@
 		]
 	},
 	{
+		"label": "ratmulti",
+		"subentries": [
+			{
+				"label": "rats",
+				"import": [
+					"rats"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"rats",
+					"ratmulti"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"rats"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"rats"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
 		"label": "georgie",
 		"subentries": [
 			{
@@ -747,6 +792,51 @@
 		]
 	},
 	{
+		"label": "toast",
+		"subentries": [
+			{
+				"label": "reptiles",
+				"import": [
+					"reptiles"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"reptiles",
+					"toast"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"reptiles"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"reptiles"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
 		"label": "marty",
 		"subentries": [
 			{
@@ -813,6 +903,51 @@
 				"target": [
 					"insects",
 					"bb"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"insects"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"insects"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "roaches",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": [
+					"insects"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"insects",
+					"roaches"
 				]
 			},
 			{

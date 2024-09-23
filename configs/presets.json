@@ -32,17 +32,17 @@
 				"right",
 				"farfence",
 				"grass",
+				"left",
 				"rightfence",
+				"insidedoor",
+				"backleftcorner",
+				"leftcorner",
+				"pond",
+				"shaft",
+				"tip",
 				"den1",
 				"den1t",
-				"pond",
-				"tip",
-				"shaft",
 				"den2",
-				"backleftcorner",
-				"left",
-				"leftcorner",
-				"insidedoor",
 				"grass"
 			]
 		},
@@ -69,6 +69,7 @@
 				"left",
 				"right",
 				"platform",
+				"center",
 				"treehouse",
 				"shade",
 				"den",
@@ -80,7 +81,9 @@
 			"presets": [
 				"door",
 				"macaws",
-				"littles"
+				"littles",
+				"littles2",
+				"littlesw"
 			]
 		},
 		{
