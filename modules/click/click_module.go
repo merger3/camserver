@@ -10,7 +10,7 @@ import (
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"
-	"github.com/merger3/camserver/pkg/core"
+	"github.com/merger3/camserver/modules/core"
 )
 
 var aliases = map[string]string{"parrot": "parrots", "rat": "rat1", "marmoset": "marmout", "crow": "crowin"}

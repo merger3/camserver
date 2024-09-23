@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	// "github.com/merger3/camserver/pkg/core"
+	// "github.com/merger3/camserver/modules/core"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"

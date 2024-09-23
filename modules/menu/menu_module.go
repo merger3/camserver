@@ -2,7 +2,7 @@ package menu
 
 import (
 
-	// "github.com/merger3/camserver/pkg/core"
+	// "github.com/merger3/camserver/modules/core"
 
 	"encoding/json"
 	"errors"

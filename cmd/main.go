@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/merger3/camserver/pkg/click"
-	"github.com/merger3/camserver/pkg/config"
-	"github.com/merger3/camserver/pkg/core"
-	"github.com/merger3/camserver/pkg/menu"
+	"github.com/merger3/camserver/modules/click"
+	"github.com/merger3/camserver/modules/config"
+	"github.com/merger3/camserver/modules/core"
+	"github.com/merger3/camserver/modules/menu"
 
 	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"

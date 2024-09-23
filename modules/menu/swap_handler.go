@@ -2,13 +2,13 @@ package menu
 
 import (
 
-	// "github.com/merger3/camserver/pkg/core"
+	// "github.com/merger3/camserver/modules/core"
 
 	"fmt"
 	"net/http"
 
-	"github.com/merger3/camserver/pkg/click"
-	"github.com/merger3/camserver/pkg/core"
+	"github.com/merger3/camserver/modules/click"
+	"github.com/merger3/camserver/modules/core"
 
 	"github.com/labstack/echo/v4"
 )
