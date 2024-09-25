@@ -70,6 +70,7 @@ func (tm *TwitchManager) AddClient(username, oauth string) {
 	user := &User{Username: username, Client: twitch.NewClient(username, oauth)}
 	user.Client.OnConnect(func() {
 		fmt.Printf("Connected %s to Twitch chat\n", username)
+		tm.Send(Command{User: username, Command: "!scenecams"})
 	})
 
 	user.Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
@@ -84,6 +85,8 @@ func (tm *TwitchManager) AddClient(username, oauth string) {
 	user.Client.Join(tm.Channel)
 
 	tm.Clients[username] = user
+
+	// Connect user here?
 }
 
 func (tm TwitchManager) ConnectClients() {
@@ -111,6 +114,8 @@ func (tm TwitchManager) Send(cmd Command) {
 }
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
+	// At the start of here and wherever else applicable, check if the cache was synced recently and if not force sync
+	// Regular syncing to try to guarentee as up to date cache as possible
 	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {

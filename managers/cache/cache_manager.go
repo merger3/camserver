@@ -6,13 +6,15 @@ import (
 	"slices"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/merger3/camserver/managers/alias"
 )
 
 type CacheManager struct {
-	Cams    []string
-	Aliases alias.AliasManager
+	Cams       []string
+	Aliases    alias.AliasManager
+	LastSynced int64
 }
 
 func NewCacheManager() *CacheManager {
@@ -31,6 +33,7 @@ func (cm *CacheManager) ParseScene(scenecams string) {
 	}
 
 	cm.Cams = camsArray
+	cm.LastSynced = time.Now().Unix()
 	fmt.Println(cm.Cams)
 }
 
