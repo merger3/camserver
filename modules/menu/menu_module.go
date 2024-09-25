@@ -12,12 +12,12 @@ import (
 	"path/filepath"
 	"slices"
 
-	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"
+	"github.com/merger3/camserver/managers/twitch"
 )
 
 type MenuModule struct {
-	Client  *twitch.Client
+	Twitch  *twitch.TwitchManager
 	Sources map[string]*Entry
 	Cams    map[string]*CleanEntry
 }
@@ -33,7 +33,7 @@ func (m MenuModule) RegisterRoutes(server *echo.Echo) {
 func (m *MenuModule) Init(resources map[string]any) {
 	m.Sources = make(map[string]*Entry)
 	m.Cams = make(map[string]*CleanEntry)
-	m.Client = resources["twitch"].(*twitch.Client)
+	m.Twitch = resources["twitch"].(*twitch.TwitchManager)
 
 	m.LoadSource("base")
 	PopulateEntries(m.Sources["base"], m.Sources["base"])

@@ -7,8 +7,9 @@ import (
 	"path/filepath"
 
 	// "github.com/merger3/camserver/modules/core"
+	"github.com/merger3/camserver/managers/alias"
+	"github.com/merger3/camserver/managers/twitch"
 
-	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"
 )
 
@@ -22,7 +23,8 @@ type CamPresets struct {
 }
 
 type ConfigModule struct {
-	Client *twitch.Client
+	Twitch  *twitch.TwitchManager
+	Aliases alias.AliasManager
 	Presets
 }
 
@@ -37,7 +39,8 @@ func (c ConfigModule) RegisterRoutes(server *echo.Echo) {
 
 func (c *ConfigModule) Init(resources map[string]any) {
 	c.Presets = LoadPresets()
-	c.Client = resources["twitch"].(*twitch.Client)
+	c.Twitch = resources["twitch"].(*twitch.TwitchManager)
+	c.Aliases = resources["aliases"].(alias.AliasManager)
 }
 
 func LoadPresets() Presets {

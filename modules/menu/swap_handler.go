@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/merger3/camserver/modules/click"
 	"github.com/merger3/camserver/modules/core"
 
 	"github.com/labstack/echo/v4"
@@ -28,7 +27,7 @@ func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {
 		return err
 	}
 
-	cam := click.GetClickedCam(m.Client, req)
+	cam := m.Twitch.GetClickedCam(req)
 	if !cam.Found {
 		return ctx.JSON(http.StatusOK, SwapMenuResponse{})
 	}

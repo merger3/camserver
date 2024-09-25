@@ -1,18 +1,13 @@
 package core
 
-import (
-	"net/http"
-
-	"github.com/gempir/go-twitch-irc/v4"
-)
-
 type Command struct {
+	User    string
 	Channel string
 	Command string `query:"command"`
 }
 
-func SendCommand(chatter *twitch.Client, cmd Command) int {
-	chatter.Say(cmd.Channel, cmd.Command)
-
-	return http.StatusOK
+type ClickedCam struct {
+	Found    bool   `json:"found"`
+	Name     string `json:"cam"`
+	Position int    `json:"position"`
 }

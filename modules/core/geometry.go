@@ -7,6 +7,7 @@ type Geom struct {
 	Height      float64 `json:"height"`
 	FrameWidth  float64 `json:"frameWidth"`
 	FrameHeight float64 `json:"frameHeight"`
+	User        string  `json:"username"`
 }
 
 func (r Geom) IsPoint() bool {

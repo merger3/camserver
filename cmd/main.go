@@ -4,14 +4,15 @@ import (
 	"crypto/subtle"
 	"fmt"
 	"net/http"
-	"strings"
 
+	"github.com/merger3/camserver/managers/alias"
+	"github.com/merger3/camserver/managers/cache"
+	"github.com/merger3/camserver/managers/twitch"
 	"github.com/merger3/camserver/modules/click"
 	"github.com/merger3/camserver/modules/config"
 	"github.com/merger3/camserver/modules/core"
 	"github.com/merger3/camserver/modules/menu"
 
-	"github.com/gempir/go-twitch-irc/v4"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -29,13 +30,13 @@ type Module interface {
 func LoadResources() {
 	resources = make(map[string]any)
 
-	// Set up twitch client
-	client := twitch.NewClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
-	client.OnConnect(func() {
-		fmt.Println("Connected to twitch chat")
-	})
-	client.Join("alveusgg")
-	resources["twitch"] = client
+	resources["aliases"] = *alias.NewAliasManager()
+	resources["cache"] = cache.NewCacheManager()
+
+	tm := twitch.NewTwitchManager("merger3", "merger3", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
+	tm.AddClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
+	tm.ConnectClients()
+	resources["twitch"] = tm
 }
 
 func LoadModules(e *echo.Echo) {
@@ -54,25 +55,20 @@ func LoadModules(e *echo.Echo) {
 func main() {
 	LoadResources()
 
-	go resources["twitch"].(*twitch.Client).Connect()
-
 	e := echo.New()
 	e.Static("/", "build")
 
 	LoadModules(e)
 
 	e.POST("/send", func(ctx echo.Context) error {
-		cmd := core.Command{Channel: "alveusgg"}
+		cmd := core.Command{User: "merger3"}
 
 		if err := ctx.Bind(&cmd); err != nil {
 			fmt.Printf("%v\n", err)
 			return err
 		}
 
-		if strings.HasPrefix(cmd.Command, "!ptzdraw") {
-			cmd.Command = fmt.Sprintf("%s 5", cmd.Command)
-		}
-		resources["twitch"].(*twitch.Client).Say(cmd.Channel, cmd.Command)
+		resources["twitch"].(*twitch.TwitchManager).Send(cmd)
 
 		return ctx.NoContent(http.StatusOK)
 	})
@@ -86,8 +82,8 @@ func main() {
 		return false, nil
 	}))
 
-	if err := e.StartTLS(":8443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
-		e.Logger.Fatal(err)
-	}
-	// e.Logger.Fatal(e.Start(":8443"))
+	// if err := e.StartTLS(":8443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
+	// 	e.Logger.Fatal(err)
+	// }
+	e.Logger.Fatal(e.Start(":1323"))
 }

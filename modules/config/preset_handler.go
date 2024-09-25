@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/merger3/camserver/modules/click"
 	"github.com/merger3/camserver/modules/core"
 
 	"github.com/labstack/echo/v4"
@@ -28,7 +27,7 @@ func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
 	}
 
 	for _, presets := range c.Cameras {
-		if presets.CamName == req.Cam {
+		if c.Aliases.ToBase(presets.CamName) == req.Cam {
 			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
 		}
 	}
@@ -44,7 +43,7 @@ func (c ConfigModule) GetClickedCamPresets(ctx echo.Context) error {
 		return err
 	}
 
-	cam := click.GetClickedCam(c.Client, req)
+	cam := c.Twitch.GetClickedCam(req)
 	if !cam.Found {
 		return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
 	}
