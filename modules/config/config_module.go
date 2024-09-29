@@ -8,6 +8,7 @@ import (
 
 	// "github.com/merger3/camserver/modules/core"
 	"github.com/merger3/camserver/managers/alias"
+	"github.com/merger3/camserver/managers/cache"
 	"github.com/merger3/camserver/managers/twitch"
 
 	"github.com/labstack/echo/v4"
@@ -25,6 +26,7 @@ type CamPresets struct {
 type ConfigModule struct {
 	Twitch  *twitch.TwitchManager
 	Aliases alias.AliasManager
+	Cache   cache.CacheManager
 	Presets
 }
 
@@ -35,12 +37,15 @@ func NewConfigModule() *ConfigModule {
 func (c ConfigModule) RegisterRoutes(server *echo.Echo) {
 	server.POST("/getConfig", c.GetCamPresets)
 	server.POST("/getClickedCam", c.GetClickedCamPresets)
+	// This should be GET instead of POST
+	server.POST("/CheckCache", c.CheckCache)
 }
 
 func (c *ConfigModule) Init(resources map[string]any) {
 	c.Presets = LoadPresets()
 	c.Twitch = resources["twitch"].(*twitch.TwitchManager)
 	c.Aliases = resources["aliases"].(alias.AliasManager)
+	c.Cache = resources["cache"].(cache.CacheManager)
 }
 
 func LoadPresets() Presets {

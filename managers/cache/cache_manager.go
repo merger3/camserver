@@ -14,7 +14,8 @@ import (
 type CacheManager struct {
 	Cams       []string
 	Aliases    alias.AliasManager
-	LastSynced int64
+	LastSynced time.Time
+	IsSynced   bool
 }
 
 func NewCacheManager() *CacheManager {
@@ -33,7 +34,8 @@ func (cm *CacheManager) ParseScene(scenecams string) {
 	}
 
 	cm.Cams = camsArray
-	cm.LastSynced = time.Now().Unix()
+	cm.IsSynced = true
+	cm.LastSynced = time.Now()
 	fmt.Println(cm.Cams)
 }
 
@@ -103,5 +105,17 @@ func (cm CacheManager) swapByNameAndIndex(first int, second string) {
 		tmp := cm.Cams[first]
 		cm.Cams[first] = cm.Cams[iSecond]
 		cm.Cams[iSecond] = tmp
+	}
+}
+
+func (cm *CacheManager) Invalidate() {
+	cm.IsSynced = false
+}
+
+func (cm CacheManager) FetchFromCache(position int) string {
+	if position < 1 || position > 6 {
+		return ""
+	} else {
+		return cm.Cams[position-1]
 	}
 }

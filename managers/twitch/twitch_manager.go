@@ -3,7 +3,10 @@ package twitch
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"log"
 	"math"
+	"net/http"
 	"regexp"
 	"strings"
 	"time"
@@ -14,6 +17,14 @@ import (
 
 	"github.com/gempir/go-twitch-irc/v4"
 )
+
+type ValidationResponse struct {
+	ClientID   string   `json:"client_id"`
+	Login      string   `json:"login"`
+	Scopes     []string `json:"scopes"`
+	UserID     string   `json:"user_id"`
+	Expiration int64    `json:"expires_in"`
+}
 
 type Listener func(message twitch.PrivateMessage, user string)
 
@@ -40,6 +51,7 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 
 func (tm *TwitchManager) CreateListeners() {
 	tm.Listeners["scenecams"] = func(message twitch.PrivateMessage, user string) {
+		fmt.Println("Testing for scenecams")
 		if match, _ := regexp.MatchString(`^1: \w+, 2: \w+, 3: \w+, 4: \w+, 5: \w+, 6: \w+$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			fmt.Println("Scenecams Match")
 			tm.Cache.ParseScene(message.Message)
@@ -58,35 +70,44 @@ func (tm *TwitchManager) CreateListeners() {
 
 	tm.Listeners["resync"] = func(message twitch.PrivateMessage, user string) {
 		if tm.Cache != nil && (message.Message == "!nightcams" || message.Message == "!livecams") {
-			fmt.Println("Resyncing")
-			time.Sleep(1000)
-			tm.Send(Command{User: user, Command: "!scenecams"})
+			fmt.Println("Invalidating cache")
+			tm.Cache.Invalidate()
+		}
+	}
+
+	tm.Listeners["misswap"] = func(message twitch.PrivateMessage, user string) {
+		if tm.Cache != nil && message.User.Name == tm.Sentinel && (message.Message == "Invalid Access" || message.Message == "Invalid Command") {
+			fmt.Println("Invalidating cache")
+			tm.Cache.Invalidate()
 		}
 	}
 
 }
 
+func (u *User) CallUsersListeners(message twitch.PrivateMessage) {
+	for _, listener := range u.ActiveListeners {
+		fmt.Println("Calling Listner")
+		listener(message, u.Username)
+	}
+}
+
 func (tm *TwitchManager) AddClient(username, oauth string) {
-	user := &User{Username: username, Client: twitch.NewClient(username, oauth)}
+	user := &User{Username: username, Client: twitch.NewClient(username, fmt.Sprintf("oauth:%s", oauth))}
 	user.Client.OnConnect(func() {
 		fmt.Printf("Connected %s to Twitch chat\n", username)
-		tm.Send(Command{User: username, Command: "!scenecams"})
 	})
 
 	user.Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		for _, listener := range user.ActiveListeners {
-			fmt.Println("Calling Listner")
-			listener(message, user.Username)
-		}
+		user.CallUsersListeners(message)
 	})
 
-	user.ActiveListeners = []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"]}
+	user.ActiveListeners = []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]}
 
 	user.Client.Join(tm.Channel)
 
 	tm.Clients[username] = user
 
-	// Connect user here?
+	go tm.Clients[username].Client.Connect()
 }
 
 func (tm TwitchManager) ConnectClients() {
@@ -110,23 +131,25 @@ func (tm TwitchManager) Send(cmd Command) {
 		cmd.Channel = tm.Channel
 	}
 
+	fmt.Printf("\n\n%+v\n\n", cmd)
 	tm.Clients[cmd.User].Client.Say(cmd.Channel, cmd.Command)
 }
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
-	// At the start of here and wherever else applicable, check if the cache was synced recently and if not force sync
-	// Regular syncing to try to guarentee as up to date cache as possible
 	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
+
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == "alveussanctuary" && match {
+		tm.Clients[rect.User].CallUsersListeners(message)
+
+		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == tm.Sentinel && match {
 			ch <- message.Message
 		}
 	})
 
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
-	tm.Clients[rect.User].Client.Say(tm.Channel, fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y))))
+	tm.Send(Command{User: rect.User, Command: fmt.Sprintf("!ptzgetcam %d %d json", int(math.Round(x)), int(math.Round(y)))})
 
 	var timeout bool
 	var cam string
@@ -141,7 +164,9 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 		return ClickedCam{}
 	}
 
-	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {})
+	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
+		tm.Clients[rect.User].CallUsersListeners(message)
+	})
 
 	if timeout {
 		return ClickedCam{}
@@ -157,4 +182,30 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 
 	resp.Name = tm.Aliases.ToCommon(resp.Name)
 	return resp
+}
+
+func (tm TwitchManager) GetUserFromToken(token string) string {
+	fmt.Printf("Token: %s\n", token)
+	req, err := http.NewRequest(http.MethodGet, "https://id.twitch.tv/oauth2/validate", nil)
+	req.Header.Add("Authorization", fmt.Sprintf("OAuth %s", token))
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Println("Error on response.\n[ERROR] -", err)
+	}
+
+	validation := ValidationResponse{}
+	var b []byte
+	if b, err = io.ReadAll(resp.Body); err != nil {
+		return "a;lsdjf"
+	}
+	//fmt.Printf(string(b))
+	//data, _ := io.ReadAll(resp.Body)
+
+	json.Unmarshal(b, &validation)
+
+	fmt.Printf("%+v\n", validation)
+
+	return validation.Login
 }

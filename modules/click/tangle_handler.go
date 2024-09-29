@@ -20,6 +20,11 @@ func (c ClickModule) ClickTangle(ctx echo.Context) error {
 		return err
 	}
 
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &rect); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
 	x, y := rect.GetScaledCoordinates(rect.GetMidpoint())
 
 	intX := int(math.Min(math.Round(x), core.VideoWidth))
@@ -38,6 +43,11 @@ func (c ClickModule) DrawTangle(ctx echo.Context) error {
 	rect := core.Geom{}
 
 	if err := ctx.Bind(&rect); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &rect); err != nil {
 		fmt.Printf("%v\n", err)
 		return err
 	}

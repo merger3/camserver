@@ -10,6 +10,7 @@ import (
 )
 
 type PresetRequest struct {
+	core.AuthHeaders
 	Cam string `json:"camera"`
 }
 
@@ -39,6 +40,11 @@ func (c ConfigModule) GetClickedCamPresets(ctx echo.Context) error {
 	req := core.Geom{}
 
 	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &req); err != nil {
 		fmt.Printf("%v\n", err)
 		return err
 	}

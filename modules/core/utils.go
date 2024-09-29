@@ -1,8 +1,13 @@
 package core
 
+type AuthHeaders struct {
+	User  string `header:"X-User-Name"`
+	Token string `header:"X-Twitch-Token"`
+}
+
 type Command struct {
-	User    string
 	Channel string
+	User    string `header:"X-User-Name"`
 	Command string `query:"command"`
 }
 

@@ -27,6 +27,11 @@ func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {
 		return err
 	}
 
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
 	cam := m.Twitch.GetClickedCam(req)
 	if !cam.Found {
 		return ctx.JSON(http.StatusOK, SwapMenuResponse{})

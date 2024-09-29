@@ -37,6 +37,13 @@ func (c ClickModule) GetCamFromCoordinates(ctx echo.Context) error {
 		return err
 	}
 
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	fmt.Printf("Rect: %+v\n", req)
+
 	cam := c.Twitch.GetClickedCam(req)
 
 	return ctx.JSON(http.StatusOK, cam)

@@ -1,13 +1,13 @@
 package core
 
 type Geom struct {
+	AuthHeaders
 	X           float64 `json:"x"`
 	Y           float64 `json:"y"`
 	Width       float64 `json:"width"`
 	Height      float64 `json:"height"`
 	FrameWidth  float64 `json:"frameWidth"`
 	FrameHeight float64 `json:"frameHeight"`
-	User        string  `json:"username"`
 }
 
 func (r Geom) IsPoint() bool {
