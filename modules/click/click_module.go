@@ -5,14 +5,14 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/merger3/camserver/managers/cache"
 	"github.com/merger3/camserver/managers/twitch"
 	"github.com/merger3/camserver/modules/core"
 )
 
-var aliases = map[string]string{"parrot": "parrots", "rat": "rat1", "marmoset": "marmout", "crow": "crowin"}
-
 type ClickModule struct {
 	Twitch *twitch.TwitchManager
+	Cache  *cache.CacheManager
 }
 
 func NewClickModule() *ClickModule {
@@ -22,14 +22,16 @@ func NewClickModule() *ClickModule {
 func (c ClickModule) RegisterRoutes(server *echo.Echo) {
 	server.POST("/click", c.ClickTangle)
 	server.POST("/draw", c.DrawTangle)
-	server.POST("/getcam", c.GetCamFromCoordinates)
+	server.POST("/camera", c.GetCam)
 }
 
 func (c *ClickModule) Init(resources map[string]any) {
 	c.Twitch = resources["twitch"].(*twitch.TwitchManager)
+	c.Cache = resources["cache"].(*cache.CacheManager)
 }
 
-func (c ClickModule) GetCamFromCoordinates(ctx echo.Context) error {
+func (c ClickModule) GetCam(ctx echo.Context) error {
+	fmt.Printf("/camera called\n")
 	req := core.Geom{}
 
 	if err := ctx.Bind(&req); err != nil {
@@ -42,9 +44,23 @@ func (c ClickModule) GetCamFromCoordinates(ctx echo.Context) error {
 		return err
 	}
 
-	fmt.Printf("Rect: %+v\n", req)
+	var cam core.ClickedCam
+	// Check cache first if the cache is valid
+	if c.Cache.IsSynced {
+		fmt.Printf("Position: %+v\n", req)
+		cam = c.Cache.FetchFromCache(req.Position)
 
-	cam := c.Twitch.GetClickedCam(req)
+		fmt.Printf("Cache results: %v\n", cam)
+	}
+
+	// Try coordinates
+	if !cam.Found {
+		cam = c.Twitch.GetClickedCam(req)
+	}
+	// Give up
+	if !cam.Found {
+		return ctx.JSON(http.StatusNotFound, cam)
+	}
 
 	return ctx.JSON(http.StatusOK, cam)
 }

@@ -26,7 +26,40 @@ type ValidationResponse struct {
 	Expiration int64    `json:"expires_in"`
 }
 
-type Listener func(message twitch.PrivateMessage, user string)
+type Message struct {
+	User twitch.User
+
+	Raw     string
+	Type    twitch.MessageType
+	RawType string
+	Message string
+	Channel string
+}
+
+func NewMessageFromPrivateMessage(pm twitch.PrivateMessage) Message {
+	return Message{
+		User:    pm.User,
+		Raw:     pm.Raw,
+		Type:    pm.Type,
+		RawType: pm.RawType,
+		Message: pm.Message,
+		Channel: pm.Channel,
+	}
+}
+
+func NewMessageFromUserStateMessage(pm twitch.UserStateMessage) Message {
+	fmt.Printf("Message: %+v\n", pm)
+	return Message{
+		User:    pm.User,
+		Raw:     pm.Raw,
+		Type:    pm.Type,
+		RawType: pm.RawType,
+		Message: pm.Message,
+		Channel: pm.Channel,
+	}
+}
+
+type Listener func(message Message, user string)
 
 type User struct {
 	Username        string
@@ -38,19 +71,22 @@ type TwitchManager struct {
 	Clients   map[string]*User
 	Cache     *cache.CacheManager
 	Aliases   alias.AliasManager
+	OAuth     OAuthTokenManager
 	Channel   string
 	Sentinel  string
 	Listeners map[string]Listener
 }
 
 func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, aliases alias.AliasManager) *TwitchManager {
-	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, Channel: channel, Sentinel: sentinel, Aliases: aliases, Listeners: make(map[string]Listener)}
+	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, Aliases: aliases, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
+
+	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
 	return &tm
 }
 
 func (tm *TwitchManager) CreateListeners() {
-	tm.Listeners["scenecams"] = func(message twitch.PrivateMessage, user string) {
+	tm.Listeners["scenecams"] = func(message Message, user string) {
 		fmt.Println("Testing for scenecams")
 		if match, _ := regexp.MatchString(`^1: \w+, 2: \w+, 3: \w+, 4: \w+, 5: \w+, 6: \w+$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			fmt.Println("Scenecams Match")
@@ -58,7 +94,8 @@ func (tm *TwitchManager) CreateListeners() {
 		}
 	}
 
-	tm.Listeners["swap"] = func(message twitch.PrivateMessage, user string) {
+	tm.Listeners["swap"] = func(message Message, user string) {
+		fmt.Println("Checking for swap")
 		if match, _ := regexp.MatchString(`^\!swap \w+ \w+$`, message.Message); tm.Cache != nil && match {
 			fmt.Println("Swap Match")
 			fmt.Printf("%v\n", tm.Cache.Cams)
@@ -68,14 +105,14 @@ func (tm *TwitchManager) CreateListeners() {
 		}
 	}
 
-	tm.Listeners["resync"] = func(message twitch.PrivateMessage, user string) {
+	tm.Listeners["resync"] = func(message Message, user string) {
 		if tm.Cache != nil && (message.Message == "!nightcams" || message.Message == "!livecams") {
 			fmt.Println("Invalidating cache")
 			tm.Cache.Invalidate()
 		}
 	}
 
-	tm.Listeners["misswap"] = func(message twitch.PrivateMessage, user string) {
+	tm.Listeners["misswap"] = func(message Message, user string) {
 		if tm.Cache != nil && message.User.Name == tm.Sentinel && (message.Message == "Invalid Access" || message.Message == "Invalid Command") {
 			fmt.Println("Invalidating cache")
 			tm.Cache.Invalidate()
@@ -84,24 +121,25 @@ func (tm *TwitchManager) CreateListeners() {
 
 }
 
-func (u *User) CallUsersListeners(message twitch.PrivateMessage) {
+func (u *User) CallUsersListeners(message Message) {
+	fmt.Printf("Message: %+v\n", message.Message)
 	for _, listener := range u.ActiveListeners {
 		fmt.Println("Calling Listner")
 		listener(message, u.Username)
 	}
 }
 
-func (tm *TwitchManager) AddClient(username, oauth string) {
+func (tm *TwitchManager) AddClient(username, oauth string, listeners []Listener) {
 	user := &User{Username: username, Client: twitch.NewClient(username, fmt.Sprintf("oauth:%s", oauth))}
 	user.Client.OnConnect(func() {
 		fmt.Printf("Connected %s to Twitch chat\n", username)
 	})
 
 	user.Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		user.CallUsersListeners(message)
+		user.CallUsersListeners(NewMessageFromPrivateMessage(message))
 	})
 
-	user.ActiveListeners = []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]}
+	user.ActiveListeners = listeners
 
 	user.Client.Join(tm.Channel)
 
@@ -140,7 +178,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		tm.Clients[rect.User].CallUsersListeners(message)
+		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
 
 		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == tm.Sentinel && match {
 			ch <- message.Message
@@ -165,7 +203,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 	}
 
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		tm.Clients[rect.User].CallUsersListeners(message)
+		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
 	})
 
 	if timeout {
@@ -186,7 +224,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 
 func (tm TwitchManager) GetUserFromToken(token string) string {
 	fmt.Printf("Token: %s\n", token)
-	req, err := http.NewRequest(http.MethodGet, "https://id.twitch.tv/oauth2/validate", nil)
+	req, _ := http.NewRequest(http.MethodGet, "https://id.twitch.tv/oauth2/validate", nil)
 	req.Header.Add("Authorization", fmt.Sprintf("OAuth %s", token))
 
 	client := &http.Client{}
@@ -198,14 +236,14 @@ func (tm TwitchManager) GetUserFromToken(token string) string {
 	validation := ValidationResponse{}
 	var b []byte
 	if b, err = io.ReadAll(resp.Body); err != nil {
-		return "a;lsdjf"
+		return err.Error()
 	}
 	//fmt.Printf(string(b))
 	//data, _ := io.ReadAll(resp.Body)
 
 	json.Unmarshal(b, &validation)
 
-	fmt.Printf("%+v\n", validation)
+	// fmt.Printf("%+v\n", validation)
 
 	return validation.Login
 }

@@ -3,3 +3,4 @@ cmd/cmd.exe
 build/
 server.exe
 server
+configs/auth.json

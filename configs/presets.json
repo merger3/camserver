@@ -77,7 +77,7 @@
 			]
 		},
 		{
-			"name": "parrots",
+			"name": "parrot",
 			"presets": [
 				"door",
 				"macaws",
@@ -103,7 +103,7 @@
 			]
 		},
 		{
-			"name": "crowin",
+			"name": "crow",
 			"presets": [
 				"home",
 				"down",

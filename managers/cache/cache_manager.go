@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/merger3/camserver/managers/alias"
+	"github.com/merger3/camserver/modules/core"
 )
 
 type CacheManager struct {
@@ -112,10 +113,11 @@ func (cm *CacheManager) Invalidate() {
 	cm.IsSynced = false
 }
 
-func (cm CacheManager) FetchFromCache(position int) string {
-	if position < 1 || position > 6 {
-		return ""
+func (cm CacheManager) FetchFromCache(position int) core.ClickedCam {
+	if position < 1 || position > len(cm.Cams) {
+		return core.ClickedCam{}
 	} else {
-		return cm.Cams[position-1]
+		fmt.Printf("Cache Cams: %v\n", cm.Cams)
+		return core.ClickedCam{Found: true, Name: cm.Cams[position-1], Position: position}
 	}
 }

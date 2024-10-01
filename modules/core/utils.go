@@ -16,3 +16,8 @@ type ClickedCam struct {
 	Name     string `json:"cam"`
 	Position int    `json:"position"`
 }
+
+type CamRequest struct {
+	AuthHeaders
+	Cam string `json:"camera"`
+}

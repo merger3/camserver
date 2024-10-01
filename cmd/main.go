@@ -34,9 +34,7 @@ func LoadResources() {
 
 	resources["aliases"] = *alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager()
-
-	tm := twitch.NewTwitchManager("merger3", "merger3", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
-	resources["twitch"] = tm
+	resources["twitch"] = twitch.NewTwitchManager("merger3", "merger3", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
 	// tm.AddClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
 	// tm.ConnectClients()
 }
@@ -107,11 +105,11 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 			token := c.Request().Header.Get("X-Twitch-Token")
 
 			user := tm.GetUserFromToken(token)
-			fmt.Printf("User: %s\n", user)
+			// fmt.Printf("User: %s\n", user)
 			c.Request().Header.Add(core.UsernameHeader, user)
-			fmt.Printf("Twitch Header: %s\n", c.Request().Header.Get(core.UsernameHeader))
+			// fmt.Printf("Twitch Header: %s\n", c.Request().Header.Get(core.UsernameHeader))
 			if _, ok := tm.Clients[user]; !ok {
-				tm.AddClient(user, token)
+				tm.AddClient(user, token, []twitch.Listener{})
 			}
 
 			return next(c)
@@ -137,3 +135,10 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 		}
 	}
 }
+
+// curl -X POST https://id.twitch.tv/oauth2/token \
+// -H "Content-Type: application/x-www-form-urlencoded" \
+// -d "client_id=34xq2hvnre4w10cpj57dhk3735121q" \
+// -d "client_secret=1neinp8ezvik7zprzoxcwfmy2jnw9u" \
+// -d "grant_type=client_credentials"
+// {"access_token":"zcmjf9hff5fh7u3be2rv39502gnpoz","expires_in":4821330,"token_type":"bearer"}
