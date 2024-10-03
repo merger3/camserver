@@ -99,6 +99,9 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 			token := c.Request().Header.Get("X-Twitch-Token")
 
 			user := tm.GetUserFromToken(token)
+			if !tm.CheckUsername(user) {
+				return next(c)
+			}
 			// fmt.Printf("User: %s\n", user)
 			c.Request().Header.Add(core.UsernameHeader, user)
 			// fmt.Printf("Twitch Header: %s\n", c.Request().Header.Get(core.UsernameHeader))
@@ -119,7 +122,7 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 					fmt.Println("Invalidating cache from middleware because of timeout")
 					cache.Invalidate()
 				}
-				if !cache.IsSynced {
+				if !cache.IsSynced && client.CheckUsername(client.GetUserFromToken(c.Request().Header.Get("X-Twitch-Token"))) {
 					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
 					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
 
