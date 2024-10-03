@@ -71,6 +71,7 @@ var common = map[string]string{
 	"fox":            "foxes",
 	"marmoset":       "marmout",
 	"marmosetindoor": "marmin",
+	"parrot":         "parrots",
 }
 
 var swapLabels = map[string]string{
