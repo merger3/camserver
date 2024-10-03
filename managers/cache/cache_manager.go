@@ -55,7 +55,6 @@ func (cm CacheManager) ProcessSwap(first, second string) {
 	case !isNumber(first) && !isNumber(second):
 		first = cm.Aliases.ToBase(cm.Aliases.CleanName(first))
 		second = cm.Aliases.ToBase(cm.Aliases.CleanName(second))
-		fmt.Printf("First: %s, Second: %s\n", first, second)
 		cm.swapByName(first, second)
 	}
 }
