@@ -34,7 +34,7 @@ func LoadResources() {
 
 	resources["aliases"] = *alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager()
-	resources["twitch"] = twitch.NewTwitchManager("alveusgg", "AlveusSanctuary", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
+	resources["twitch"] = twitch.NewTwitchManager("alveusgg", "alveussanctuary", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
 }
 
 func LoadModules(e *echo.Echo) {
@@ -118,11 +118,13 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 		return func(c echo.Context) error {
 			if c.Request().Header.Get("X-Twitch-Token") != "" {
 				if time.Since(cache.LastSynced).Hours() >= 1 {
-					fmt.Println("Invalidating cache from middleware")
+					fmt.Println("Invalidating cache from middleware because of timeout")
 					cache.Invalidate()
 				}
 				if !cache.IsSynced {
 					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
+
 				}
 			}
 
