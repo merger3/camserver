@@ -13,6 +13,7 @@ import (
 	"slices"
 
 	"github.com/labstack/echo/v4"
+	"github.com/merger3/camserver/managers/alias"
 	"github.com/merger3/camserver/managers/twitch"
 )
 
@@ -20,6 +21,7 @@ type MenuModule struct {
 	Twitch  *twitch.TwitchManager
 	Sources map[string]*Entry
 	Cams    map[string]*CleanEntry
+	Aliases alias.AliasManager
 }
 
 func NewMenuModule() *MenuModule {
@@ -34,6 +36,7 @@ func (m *MenuModule) Init(resources map[string]any) {
 	m.Sources = make(map[string]*Entry)
 	m.Cams = make(map[string]*CleanEntry)
 	m.Twitch = resources["twitch"].(*twitch.TwitchManager)
+	m.Aliases = resources["aliases"].(alias.AliasManager)
 
 	m.LoadSource("base")
 	PopulateEntries(m.Sources["base"], m.Sources["base"])

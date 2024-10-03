@@ -34,6 +34,7 @@ func NewConfigModule() *ConfigModule {
 
 func (c ConfigModule) RegisterRoutes(server *echo.Echo) {
 	server.POST("/camera/presets", c.GetCamPresets)
+	server.POST("/authorize", c.GetAuthorized)
 }
 
 func (c *ConfigModule) Init(resources map[string]any) {

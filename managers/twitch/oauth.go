@@ -11,6 +11,8 @@ import (
 	"path/filepath"
 )
 
+// Refresh token on an interval too
+
 type OAuthTokenManager struct {
 	ClientID     string `json:"client_id"`
 	ClientSecret string `json:"client_secret"`

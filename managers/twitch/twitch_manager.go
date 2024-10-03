@@ -13,6 +13,8 @@ import (
 
 	"github.com/merger3/camserver/managers/alias"
 	"github.com/merger3/camserver/managers/cache"
+
+	//lint:file-ignore ST1001 I want to use dot imports
 	. "github.com/merger3/camserver/modules/core"
 
 	"github.com/gempir/go-twitch-irc/v4"
@@ -48,7 +50,6 @@ func NewMessageFromPrivateMessage(pm twitch.PrivateMessage) Message {
 }
 
 func NewMessageFromUserStateMessage(pm twitch.UserStateMessage) Message {
-	fmt.Printf("Message: %+v\n", pm)
 	return Message{
 		User:    pm.User,
 		Raw:     pm.Raw,
@@ -87,18 +88,13 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 
 func (tm *TwitchManager) CreateListeners() {
 	tm.Listeners["scenecams"] = func(message Message, user string) {
-		fmt.Println("Testing for scenecams")
 		if match, _ := regexp.MatchString(`^1: \w+, 2: \w+, 3: \w+, 4: \w+, 5: \w+, 6: \w+$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
-			fmt.Println("Scenecams Match")
 			tm.Cache.ParseScene(message.Message)
 		}
 	}
 
 	tm.Listeners["swap"] = func(message Message, user string) {
-		fmt.Println("Checking for swap")
 		if match, _ := regexp.MatchString(`^\!swap \w+ \w+$`, message.Message); tm.Cache != nil && match {
-			fmt.Println("Swap Match")
-			fmt.Printf("%v\n", tm.Cache.Cams)
 			args := strings.Split(message.Message, " ")[1:]
 			tm.Cache.ProcessSwap(args[0], args[1])
 			fmt.Printf("%v\n", tm.Cache.Cams)
@@ -122,9 +118,7 @@ func (tm *TwitchManager) CreateListeners() {
 }
 
 func (u *User) CallUsersListeners(message Message) {
-	fmt.Printf("Message: %+v\n", message.Message)
 	for _, listener := range u.ActiveListeners {
-		fmt.Println("Calling Listner")
 		listener(message, u.Username)
 	}
 }
@@ -169,7 +163,6 @@ func (tm TwitchManager) Send(cmd Command) {
 		cmd.Channel = tm.Channel
 	}
 
-	fmt.Printf("\n\n%+v\n\n", cmd)
 	tm.Clients[cmd.User].Client.Say(cmd.Channel, cmd.Command)
 }
 
@@ -218,12 +211,11 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 		return ClickedCam{}
 	}
 
-	resp.Name = tm.Aliases.ToCommon(resp.Name)
+	// resp.Name = tm.Aliases.ToCommon(resp.Name)
 	return resp
 }
 
 func (tm TwitchManager) GetUserFromToken(token string) string {
-	fmt.Printf("Token: %s\n", token)
 	req, _ := http.NewRequest(http.MethodGet, "https://id.twitch.tv/oauth2/validate", nil)
 	req.Header.Add("Authorization", fmt.Sprintf("OAuth %s", token))
 
@@ -238,12 +230,8 @@ func (tm TwitchManager) GetUserFromToken(token string) string {
 	if b, err = io.ReadAll(resp.Body); err != nil {
 		return err.Error()
 	}
-	//fmt.Printf(string(b))
-	//data, _ := io.ReadAll(resp.Body)
 
 	json.Unmarshal(b, &validation)
-
-	// fmt.Printf("%+v\n", validation)
 
 	return validation.Login
 }

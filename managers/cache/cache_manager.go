@@ -117,7 +117,6 @@ func (cm CacheManager) FetchFromCache(position int) core.ClickedCam {
 	if position < 1 || position > len(cm.Cams) {
 		return core.ClickedCam{}
 	} else {
-		fmt.Printf("Cache Cams: %v\n", cm.Cams)
 		return core.ClickedCam{Found: true, Name: cm.Cams[position-1], Position: position}
 	}
 }

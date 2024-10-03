@@ -31,7 +31,6 @@ func (c *ClickModule) Init(resources map[string]any) {
 }
 
 func (c ClickModule) GetCam(ctx echo.Context) error {
-	fmt.Printf("/camera called\n")
 	req := core.Geom{}
 
 	if err := ctx.Bind(&req); err != nil {
@@ -47,10 +46,11 @@ func (c ClickModule) GetCam(ctx echo.Context) error {
 	var cam core.ClickedCam
 	// Check cache first if the cache is valid
 	if c.Cache.IsSynced {
-		fmt.Printf("Position: %+v\n", req)
 		cam = c.Cache.FetchFromCache(req.Position)
 
-		fmt.Printf("Cache results: %v\n", cam)
+		if cam.Found {
+			cam.HitCache = true
+		}
 	}
 
 	// Try coordinates

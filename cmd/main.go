@@ -35,8 +35,6 @@ func LoadResources() {
 	resources["aliases"] = *alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager()
 	resources["twitch"] = twitch.NewTwitchManager("merger3", "merger3", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
-	// tm.AddClient("merger3", "oauth:51esxuzacga63qijrpwczxq95m8ejc")
-	// tm.ConnectClients()
 }
 
 func LoadModules(e *echo.Echo) {
@@ -75,8 +73,6 @@ func main() {
 			return err
 		}
 
-		fmt.Printf("cmd: %+v\n", cmd)
-
 		resources["twitch"].(*twitch.TwitchManager).Send(cmd)
 
 		return ctx.NoContent(http.StatusOK)
@@ -93,10 +89,10 @@ func main() {
 	e.Use(ProcessUser(resources["twitch"].(*twitch.TwitchManager)))
 	e.Use(CheckCache(resources["cache"].(*cache.CacheManager), resources["twitch"].(*twitch.TwitchManager)))
 
-	// if err := e.StartTLS(":8443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
-	// 	e.Logger.Fatal(err)
-	// }
-	e.Logger.Fatal(e.Start(":1323"))
+	if err := e.StartTLS(":443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
+		e.Logger.Fatal(err)
+	}
+	// e.Logger.Fatal(e.Start(":1323"))
 }
 
 func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
@@ -122,7 +118,6 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 		return func(c echo.Context) error {
 			if c.Request().Header.Get("X-Twitch-Token") != "" {
 				if time.Since(cache.LastSynced).Hours() >= 1 {
-					fmt.Printf("Time since: %v", time.Since(cache.LastSynced).Hours())
 					fmt.Println("Invalidating cache from middleware")
 					cache.Invalidate()
 				}
