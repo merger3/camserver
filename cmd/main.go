@@ -1,7 +1,6 @@
 package main
 
 import (
-	"crypto/subtle"
 	"fmt"
 	"net/http"
 	"time"
@@ -16,7 +15,6 @@ import (
 	"github.com/merger3/camserver/managers/twitch"
 
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 var (
@@ -78,13 +76,13 @@ func main() {
 		return ctx.NoContent(http.StatusOK)
 	})
 
-	e.Use(middleware.BasicAuth(func(username string, password string, c echo.Context) (bool, error) {
-		// Be careful to use constant time comparison to prevent timing attacks
-		if subtle.ConstantTimeCompare([]byte(username), []byte("merger")) == 1 && subtle.ConstantTimeCompare([]byte(password), []byte("Merger!23")) == 1 {
-			return true, nil
-		}
-		return false, nil
-	}))
+	// e.Use(middleware.BasicAuth(func(username string, password string, c echo.Context) (bool, error) {
+	// 	// Be careful to use constant time comparison to prevent timing attacks
+	// 	if subtle.ConstantTimeCompare([]byte(username), []byte("merger")) == 1 && subtle.ConstantTimeCompare([]byte(password), []byte("Merger!23")) == 1 {
+	// 		return true, nil
+	// 	}
+	// 	return false, nil
+	// }))
 
 	e.Use(ProcessUser(resources["twitch"].(*twitch.TwitchManager)))
 	e.Use(CheckCache(resources["cache"].(*cache.CacheManager), resources["twitch"].(*twitch.TwitchManager)))
