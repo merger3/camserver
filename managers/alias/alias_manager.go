@@ -35,7 +35,7 @@ func (a AliasManager) CleanName(input string) string {
 }
 
 func (a AliasManager) ToCommon(input string) string {
-	common, ok := a.CommonNames[input]
+	common, ok := common[input]
 	if !ok {
 		return input
 	} else {
@@ -44,7 +44,7 @@ func (a AliasManager) ToCommon(input string) string {
 }
 
 func (a AliasManager) ToBase(input string) string {
-	base, ok := a.Aliases[input]
+	base, ok := aliases[input]
 	if !ok {
 		return input
 	} else {
@@ -53,7 +53,7 @@ func (a AliasManager) ToBase(input string) string {
 }
 
 func (a AliasManager) ToSwapLabel(input string) string {
-	swap, ok := a.SwapLabels[input]
+	swap, ok := swapLabels[input]
 	if !ok {
 		return input
 	} else {
