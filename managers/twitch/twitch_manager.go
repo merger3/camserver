@@ -66,6 +66,7 @@ type User struct {
 	Username        string
 	Client          *twitch.Client
 	ActiveListeners []Listener
+	LastMessage     string
 }
 
 type TwitchManager struct {
@@ -163,7 +164,12 @@ func (tm TwitchManager) Send(cmd Command) {
 		cmd.Channel = tm.Channel
 	}
 
-	tm.Clients[cmd.User].Client.Say(cmd.Channel, cmd.Command)
+	user := tm.Clients[cmd.User]
+	if cmd.Command == user.LastMessage {
+		cmd.Command = fmt.Sprintf("%s .", cmd.Command)
+	}
+	user.Client.Say(cmd.Channel, cmd.Command)
+	user.LastMessage = cmd.Command
 }
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
