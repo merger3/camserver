@@ -76,6 +76,7 @@ var common = map[string]string{
 var swapLabels = map[string]string{
 	"marmoset": "marmout",
 	"parrot":   "parrots",
+	"rat":      "rat1",
 }
 
 var aliases = map[string]string{
