@@ -22,6 +22,7 @@ func (c ConfigModule) GetAuthorized(ctx echo.Context) error {
 	}
 
 	authMap := createAuthMap()
+	fmt.Println(req.User)
 	fmt.Println(authMap[req.User])
 	return ctx.JSON(http.StatusOK, AuthResponse{Authorized: authMap[req.User]})
 }
