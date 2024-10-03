@@ -80,7 +80,7 @@ func main() {
 
 	e.Use(middleware.BasicAuth(func(username string, password string, c echo.Context) (bool, error) {
 		// Be careful to use constant time comparison to prevent timing attacks
-		if subtle.ConstantTimeCompare([]byte(username), []byte("merger3")) == 1 && subtle.ConstantTimeCompare([]byte(password), []byte("Merger!23")) == 1 {
+		if subtle.ConstantTimeCompare([]byte(username), []byte("merger")) == 1 && subtle.ConstantTimeCompare([]byte(password), []byte("Merger!23")) == 1 {
 			return true, nil
 		}
 		return false, nil
