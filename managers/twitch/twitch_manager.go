@@ -85,6 +85,8 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
 	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
+	tm.Clients["merger4"].Client.Join("alveussanctuary")
+
 	return &tm
 }
 
@@ -96,7 +98,7 @@ func (tm *TwitchManager) CreateListeners() {
 	}
 
 	tm.Listeners["swap"] = func(message Message, user string) {
-		if match, _ := regexp.MatchString(`^\!swap \w+ \w+$`, message.Message); tm.Cache != nil && match {
+		if match, _ := regexp.MatchString(`^\!swap \w+ \w+$`, message.Message); tm.Cache != nil && match && tm.CheckUsername(message.User.Name) {
 			args := strings.Split(message.Message, " ")[1:]
 			tm.Cache.ProcessSwap(args[0], args[1])
 			fmt.Printf("%v\n", tm.Cache.Cams)
@@ -263,13 +265,14 @@ func createAuthMap() map[string]bool {
 	commandOperator := []string{"96allskills", "stolenarmy_", "berlac", "dansza", "loganrx_", "merger3", "nitelitedf",
 		"purplemartinconservation", "wazix11", "lazygoosepxls", "alxiszzz", "shutupleonard",
 		"taizun", "lumberaxe1", "glennvde", "wolfone_", "dohregard", "lakel1", "darkrow_",
-		"minipurrl", "gnomechildboi", "danman149", "hunnybeehelen", "strangecyan"}
+		"minipurrl", "gnomechildboi", "danman149", "hunnybeehelen", "strangecyan",
+		"casualruffian", "viphippo", "bagel_deficient"}
 	commandVips := []string{"tfries_", "sivvii_", "ghandii_", "axialmars", "jazz_peru", "stealfydoge",
 		"xano218", "experimentalcyborg", "klav___", "monkarooo", "nixxform", "madcharliekelly",
 		"josh_raiden", "jateu", "storesE6", "rebecca_h9", "matthewde", "user_11_11", "huniebeexd",
 		"kurtyykins", "breacherman", "bryceisrightjr", "sumaxu", "mariemellie", "ewok_626",
-		"quokka64", "casualruffian", "likethecheesebri", "viphippo", "bagel_deficient", "otsargh",
-		"just_some_donkus", "fiveacross", "itszalndrin", "nicoleeverleigh", "fishymeep", "ponchobee"}
+		"quokka64", "otsargh", "likethecheesebri", "just_some_donkus", "fiveacross", "itszalndrin",
+		"nicoleeverleigh", "fishymeep", "ponchobee"}
 
 	// Create the map and add all users from the lists
 	userMap := make(map[string]bool)

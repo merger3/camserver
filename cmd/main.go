@@ -118,7 +118,7 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
 			if c.Request().Header.Get("X-Twitch-Token") != "" {
-				if time.Since(cache.LastSynced).Hours() >= 1 {
+				if time.Since(cache.LastSynced).Hours() >= 6 {
 					fmt.Println("Invalidating cache from middleware because of timeout")
 					cache.Invalidate()
 				}
