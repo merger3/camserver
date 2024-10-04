@@ -9,11 +9,10 @@ import (
 type AliasManager struct {
 	Aliases     map[string]string
 	CommonNames map[string]string
-	SwapLabels  map[string]string
 }
 
 func NewAliasManager() *AliasManager {
-	return &AliasManager{Aliases: aliases, CommonNames: common, SwapLabels: swapLabels}
+	return &AliasManager{Aliases: aliases, CommonNames: common}
 }
 
 func (a AliasManager) CleanName(input string) string {
@@ -52,15 +51,6 @@ func (a AliasManager) ToBase(input string) string {
 	}
 }
 
-func (a AliasManager) ToSwapLabel(input string) string {
-	swap, ok := swapLabels[input]
-	if !ok {
-		return input
-	} else {
-		return swap
-	}
-}
-
 var common = map[string]string{
 	"rat":            "rat1",
 	"roach":          "roaches",
@@ -72,12 +62,6 @@ var common = map[string]string{
 	"marmoset":       "marmout",
 	"marmosetindoor": "marmin",
 	"parrot":         "parrots",
-}
-
-var swapLabels = map[string]string{
-	"marmoset": "marmout",
-	"parrot":   "parrots",
-	"rat":      "rat1",
 }
 
 var aliases = map[string]string{
