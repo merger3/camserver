@@ -441,7 +441,7 @@
 			{
 				"action": "move",
 				"target": [
-					"rat3"
+					"rat2"
 				],
 				"props": {
 					"position": "top"
