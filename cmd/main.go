@@ -90,7 +90,7 @@ func main() {
 	// if err := e.StartTLS(":443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
 	// 	e.Logger.Fatal(err)
 	// }
-	// e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start("127.0.0.1:8080"))
 }
 
 func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
