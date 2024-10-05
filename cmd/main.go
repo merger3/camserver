@@ -52,8 +52,8 @@ func main() {
 	LoadResources()
 
 	e := echo.New()
-	e.Static("/", "build")
-	e.File("/login", "build/login.html")
+	// e.Static("/", "build")
+	// e.File("/login", "build/login.html")
 	LoadModules(e)
 
 	//str := `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=s4ouxddi9skb11jriwyzl0ronh1m92&redirect_uri=http://localhost:1323/&scope=user%3Awrite%3Achat`
@@ -87,9 +87,9 @@ func main() {
 	e.Use(ProcessUser(resources["twitch"].(*twitch.TwitchManager)))
 	e.Use(CheckCache(resources["cache"].(*cache.CacheManager), resources["twitch"].(*twitch.TwitchManager)))
 
-	if err := e.StartTLS(":443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
-		e.Logger.Fatal(err)
-	}
+	// if err := e.StartTLS(":443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
+	// 	e.Logger.Fatal(err)
+	// }
 	// e.Logger.Fatal(e.Start(":1323"))
 }
 
@@ -100,7 +100,9 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 
 			user := tm.GetUserFromToken(token)
 			if !tm.CheckUsername(user) {
-				return next(c)
+				return c.JSON(http.StatusUnauthorized, map[string]string{
+					"message": "Not authorized",
+				})
 			}
 			// fmt.Printf("User: %s\n", user)
 			c.Request().Header.Add(core.UsernameHeader, user)
