@@ -53,7 +53,7 @@ func (c ClickModule) GetCam(ctx echo.Context) error {
 		}
 	}
 
-	// Try coordinates
+	// Try coordinates and ptzgetcam
 	if !cam.Found {
 		cam = c.Twitch.GetClickedCam(req)
 	}

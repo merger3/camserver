@@ -177,7 +177,8 @@ func (tm TwitchManager) Send(cmd Command) {
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
-
+	// Pause before trying anything
+	time.Sleep(1500 * time.Millisecond)
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
 		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
