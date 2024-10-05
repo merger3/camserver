@@ -58,7 +58,7 @@ func main() {
 
 	//str := `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=s4ouxddi9skb11jriwyzl0ronh1m92&redirect_uri=http://localhost:1323/&scope=user%3Awrite%3Achat`
 
-	e.POST("/send", func(ctx echo.Context) error {
+	e.POST("/api/send", func(ctx echo.Context) error {
 		cmd := core.Command{}
 
 		if err := ctx.Bind(&cmd); err != nil {

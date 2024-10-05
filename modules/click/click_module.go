@@ -20,9 +20,9 @@ func NewClickModule() *ClickModule {
 }
 
 func (c ClickModule) RegisterRoutes(server *echo.Echo) {
-	server.POST("/click", c.ClickTangle)
-	server.POST("/draw", c.DrawTangle)
-	server.POST("/camera", c.GetCam)
+	server.POST("/api/click", c.ClickTangle)
+	server.POST("/api/draw", c.DrawTangle)
+	server.POST("/api/camera", c.GetCam)
 }
 
 func (c *ClickModule) Init(resources map[string]any) {
