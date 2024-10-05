@@ -85,7 +85,7 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
 	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
-	tm.Clients["merger4"].Client.Join("alveussanctuary")
+	// tm.Clients["merger4"].Client.Join("alveussanctuary")
 
 	return &tm
 }
