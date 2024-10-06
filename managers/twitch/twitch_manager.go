@@ -98,7 +98,7 @@ func (tm *TwitchManager) CreateListeners() {
 	}
 
 	tm.Listeners["swap"] = func(message Message, user string) {
-		if match, _ := regexp.MatchString(`^\!swap \w+ \w+$`, message.Message); tm.Cache != nil && match && tm.CheckUsername(message.User.Name) {
+		if match, _ := regexp.MatchString(`^\!swap \w+ \w+ ?`, message.Message); tm.Cache != nil && match && tm.CheckUsername(message.User.Name) {
 			args := strings.Split(message.Message, " ")[1:]
 			tm.Cache.ProcessSwap(args[0], args[1])
 			fmt.Printf("%v\n", tm.Cache.Cams)
