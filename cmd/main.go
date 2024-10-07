@@ -32,7 +32,7 @@ func LoadResources() {
 
 	resources["aliases"] = *alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager()
-	resources["twitch"] = twitch.NewTwitchManager("merger3", "merger3", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
+	resources["twitch"] = twitch.NewTwitchManager("merger3	", "alveussanctuary", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
 }
 
 func LoadModules(e *echo.Echo) {
