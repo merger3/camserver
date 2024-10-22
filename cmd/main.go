@@ -43,10 +43,10 @@ func LoadResources() {
 	}
 	defer file.Close()
 
-	var p SetupVars
+	var setup SetupVars
 
 	decoder := json.NewDecoder(file)
-	if err = decoder.Decode(&p); err != nil {
+	if err = decoder.Decode(&setup); err != nil {
 		log.Fatalf("error unmarshalling JSON: %s", err)
 	}
 
@@ -54,7 +54,7 @@ func LoadResources() {
 
 	resources["aliases"] = *alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager()
-	resources["twitch"] = twitch.NewTwitchManager("alveusgg", "alveussanctuary", resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
+	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
 }
 
 func LoadModules(e *echo.Echo) {
