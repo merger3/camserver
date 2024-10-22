@@ -5,3 +5,4 @@ server.exe
 server
 configs/auth.json
 configs/alveus.conf
+configs/setup.json

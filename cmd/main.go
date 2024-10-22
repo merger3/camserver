@@ -1,8 +1,12 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 	"time"
 
 	"github.com/merger3/camserver/modules/click"
@@ -22,12 +26,30 @@ var (
 	modules   map[string]Module
 )
 
+type SetupVars struct {
+	Channel  string `json:"channel"`
+	Sentinel string `json:"sentinel"`
+}
+
 type Module interface {
 	Init(map[string]any)
 	RegisterRoutes(*echo.Echo)
 }
 
 func LoadResources() {
+	file, err := os.Open(filepath.Join("configs", "setup.json"))
+	if err != nil {
+		log.Fatalf("failed to open file: %s", err)
+	}
+	defer file.Close()
+
+	var p SetupVars
+
+	decoder := json.NewDecoder(file)
+	if err = decoder.Decode(&p); err != nil {
+		log.Fatalf("error unmarshalling JSON: %s", err)
+	}
+
 	resources = make(map[string]any)
 
 	resources["aliases"] = *alias.NewAliasManager()

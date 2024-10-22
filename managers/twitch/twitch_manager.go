@@ -163,6 +163,10 @@ func (tm TwitchManager) ConnectClient(user string) {
 }
 
 func (tm TwitchManager) Send(cmd Command) {
+	if cmd.User == "merger4" {
+		return
+	}
+
 	if cmd.Channel == "" {
 		cmd.Channel = tm.Channel
 	}
@@ -262,7 +266,7 @@ func createAuthMap() map[string]bool {
 	commandSuperUsers := []string{"ellaandalex", "dionysus1911", "dannydv", "maxzillajr", "illjx", "kayla_alveus",
 		"alex_b_patrick", "lindsay_alveus", "strickknine", "tarantulizer", "spiderdaynightlive",
 		"srutiloops", "evantomology", "amanda2815"}
-	commandMods := []string{"pjeweb", "loganrx_", "MattIPv4", "Mik_MWP", "96allskills"}
+	commandMods := []string{"pjeweb", "loganrx_", "mattipv4", "mik_mwp", "96allskills"}
 	commandOperator := []string{"96allskills", "stolenarmy_", "berlac", "dansza", "loganrx_", "merger3", "nitelitedf",
 		"purplemartinconservation", "wazix11", "lazygoosepxls", "alxiszzz", "shutupleonard",
 		"taizun", "lumberaxe1", "glennvde", "wolfone_", "dohregard", "lakel1", "darkrow_",
@@ -273,7 +277,7 @@ func createAuthMap() map[string]bool {
 		"josh_raiden", "jateu", "storesE6", "rebecca_h9", "matthewde", "user_11_11", "huniebeexd",
 		"kurtyykins", "breacherman", "bryceisrightjr", "sumaxu", "mariemellie", "ewok_626",
 		"quokka64", "otsargh", "likethecheesebri", "just_some_donkus", "fiveacross", "itszalndrin",
-		"nicoleeverleigh", "fishymeep", "ponchobee"}
+		"nicoleeverleigh", "fishymeep", "ponchobee", "nov1cegg"}
 
 	// Create the map and add all users from the lists
 	userMap := make(map[string]bool)
