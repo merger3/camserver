@@ -74,11 +74,7 @@ func main() {
 	LoadResources()
 
 	e := echo.New()
-	// e.Static("/", "build")
-	// e.File("/login", "build/login.html")
 	LoadModules(e)
-
-	//str := `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=s4ouxddi9skb11jriwyzl0ronh1m92&redirect_uri=http://localhost:1323/&scope=user%3Awrite%3Achat`
 
 	e.POST("/api/send", func(ctx echo.Context) error {
 		cmd := core.Command{}
@@ -98,41 +94,67 @@ func main() {
 		return ctx.NoContent(http.StatusOK)
 	})
 
-	// e.Use(middleware.BasicAuth(func(username string, password string, c echo.Context) (bool, error) {
-	// 	// Be careful to use constant time comparison to prevent timing attacks
-	// 	if subtle.ConstantTimeCompare([]byte(username), []byte("merger")) == 1 && subtle.ConstantTimeCompare([]byte(password), []byte("Merger!23")) == 1 {
-	// 		return true, nil
-	// 	}
-	// 	return false, nil
-	// }))
-
 	e.Use(ProcessUser(resources["twitch"].(*twitch.TwitchManager)))
 	e.Use(CheckCache(resources["cache"].(*cache.CacheManager), resources["twitch"].(*twitch.TwitchManager)))
 
-	// if err := e.StartTLS(":443", "cert.pem", "cert.key"); err != http.ErrServerClosed {
-	// 	e.Logger.Fatal(err)
-	// }
 	e.Logger.Fatal(e.Start("127.0.0.1:8080"))
+}
+
+func getTokenFromCookieOrHeader(c echo.Context) (string, error) {
+	tokenCookie, err := c.Cookie("token")
+	if err == nil {
+		return tokenCookie.Value, nil
+	}
+
+	token := c.Request().Header.Get("X-Twitch-Token")
+	if token == "" {
+		return "", fmt.Errorf("required X-Twitch-Token header missing")
+	}
+
+	return token, nil
+}
+
+func setTokenCookie(c echo.Context, token string) {
+	cookie := new(http.Cookie)
+	cookie.Name = "token"
+	cookie.Value = token
+	c.SetCookie(cookie)
+}
+
+func authorizeUser(tm *twitch.TwitchManager, username, token string) error {
+	if user, ok := tm.Clients[username]; !ok {
+		tm.AddClient(username, token, []twitch.Listener{})
+	} else if user.Token != token {
+		user.Client.Disconnect()
+		tm.AddClient(username, token, []twitch.Listener{})
+	}
+	return nil
 }
 
 func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			token := c.Request().Header.Get("X-Twitch-Token")
-
-			user := tm.GetUserFromToken(token)
-			if !tm.CheckUsername(user) {
-				return c.JSON(http.StatusUnauthorized, map[string]string{
-					"message": "Not authorized",
-				})
-			}
-			// fmt.Printf("User: %s\n", user)
-			c.Request().Header.Add(core.UsernameHeader, user)
-			// fmt.Printf("Twitch Header: %s\n", c.Request().Header.Get(core.UsernameHeader))
-			if _, ok := tm.Clients[user]; !ok {
-				tm.AddClient(user, token, []twitch.Listener{})
+			token, err := getTokenFromCookieOrHeader(c)
+			if err != nil {
+				return c.JSON(http.StatusUnauthorized, map[string]string{"message": err.Error()})
 			}
 
+			username := tm.GetUserFromToken(token)
+			if username == "" {
+				return c.JSON(http.StatusUnauthorized, map[string]string{"message": "Invalid Twitch token sent"})
+			}
+
+			if !tm.CheckUsername(username) {
+				return c.JSON(http.StatusUnauthorized, map[string]string{"message": "Not authorized"})
+			}
+
+			setTokenCookie(c, token)
+
+			if err := authorizeUser(tm, username, token); err != nil {
+				return err
+			}
+
+			c.Request().Header.Add(core.UsernameHeader, username)
 			return next(c)
 		}
 	}
@@ -146,21 +168,13 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 					fmt.Println("Invalidating cache from middleware because of timeout")
 					cache.Invalidate()
 				}
-				if !cache.IsSynced && client.CheckUsername(client.GetUserFromToken(c.Request().Header.Get("X-Twitch-Token"))) {
-					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
-					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
+				if !cache.IsSynced {
+					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
 
 				}
 			}
-
 			return next(c)
 		}
 	}
 }
-
-// curl -X POST https://id.twitch.tv/oauth2/token \
-// -H "Content-Type: application/x-www-form-urlencoded" \
-// -d "client_id=34xq2hvnre4w10cpj57dhk3735121q" \
-// -d "client_secret=1neinp8ezvik7zprzoxcwfmy2jnw9u" \
-// -d "grant_type=client_credentials"
-// {"access_token":"zcmjf9hff5fh7u3be2rv39502gnpoz","expires_in":4821330,"token_type":"bearer"}

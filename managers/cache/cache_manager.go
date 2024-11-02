@@ -33,7 +33,6 @@ func (cm *CacheManager) ParseScene(scenecams string) {
 	for i := 0; i < len(camsArray); i++ {
 		camsArray[i] = camsArray[i][2:]
 	}
-
 	cm.Cams = camsArray
 	cm.IsSynced = true
 	cm.LastSynced = time.Now()

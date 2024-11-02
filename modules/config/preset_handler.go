@@ -15,6 +15,7 @@ type PresetResponse struct {
 }
 
 func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
+	fmt.Printf("Got command\n")
 	req := core.CamRequest{}
 
 	if err := ctx.Bind(&req); err != nil {

@@ -46,17 +46,20 @@ func (c ClickModule) GetCam(ctx echo.Context) error {
 	var cam core.ClickedCam
 	// Check cache first if the cache is valid
 	if c.Cache.IsSynced {
+		fmt.Printf("%v\n", req)
 		cam = c.Cache.FetchFromCache(req.Position)
 
 		if cam.Found {
 			cam.HitCache = true
 		}
+		fmt.Printf("%v\n", cam)
 	}
 
 	// Try coordinates and ptzgetcam
-	if !cam.Found {
-		cam = c.Twitch.GetClickedCam(req)
-	}
+	// if !cam.Found {
+	// 	cam = c.Twitch.GetClickedCam(req)
+	// }
+
 	// Give up
 	if !cam.Found {
 		return ctx.JSON(http.StatusNotFound, cam)

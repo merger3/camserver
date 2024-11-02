@@ -64,6 +64,7 @@ type Listener func(message Message, user string)
 
 type User struct {
 	Username        string
+	Token           string
 	Client          *twitch.Client
 	ActiveListeners []Listener
 	LastMessage     string
@@ -128,7 +129,7 @@ func (u *User) CallUsersListeners(message Message) {
 }
 
 func (tm *TwitchManager) AddClient(username, oauth string, listeners []Listener) {
-	user := &User{Username: username, Client: twitch.NewClient(username, fmt.Sprintf("oauth:%s", oauth))}
+	user := &User{Username: username, Token: oauth, Client: twitch.NewClient(username, fmt.Sprintf("oauth:%s", oauth))}
 	user.Client.OnConnect(func() {
 		fmt.Printf("Connected %s to Twitch chat\n", username)
 	})
@@ -237,12 +238,17 @@ func (tm TwitchManager) GetUserFromToken(token string) string {
 	resp, err := client.Do(req)
 	if err != nil {
 		log.Println("Error on response.\n[ERROR] -", err)
+		return ""
+	}
+
+	if resp.StatusCode == 401 {
+		return ""
 	}
 
 	validation := ValidationResponse{}
 	var b []byte
 	if b, err = io.ReadAll(resp.Body); err != nil {
-		return err.Error()
+		return ""
 	}
 
 	json.Unmarshal(b, &validation)

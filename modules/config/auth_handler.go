@@ -21,7 +21,5 @@ func (c ConfigModule) GetAuthorized(ctx echo.Context) error {
 		return err
 	}
 
-	fmt.Println(req.User)
-	fmt.Println(c.Twitch.AuthMap[req.User])
 	return ctx.JSON(http.StatusOK, AuthResponse{Authorized: c.Twitch.AuthMap[req.User]})
 }
