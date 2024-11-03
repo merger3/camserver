@@ -100,33 +100,55 @@ func main() {
 	e.Logger.Fatal(e.Start("127.0.0.1:8080"))
 }
 
-func getTokenFromCookieOrHeader(c echo.Context) (string, error) {
-	tokenCookie, err := c.Cookie("token")
-	if err == nil {
-		return tokenCookie.Value, nil
-	}
-
-	token := c.Request().Header.Get("X-Twitch-Token")
-	if token == "" {
-		return "", fmt.Errorf("required X-Twitch-Token header missing")
-	}
-
-	return token, nil
-}
-
-func setTokenCookie(c echo.Context, token string) {
+func setCookie(c echo.Context, token string) {
 	cookie := new(http.Cookie)
 	cookie.Name = "token"
 	cookie.Value = token
 	c.SetCookie(cookie)
 }
 
-func authorizeUser(tm *twitch.TwitchManager, username, token string) error {
-	if user, ok := tm.Clients[username]; !ok {
-		tm.AddClient(username, token, []twitch.Listener{})
-	} else if user.Token != token {
-		user.Client.Disconnect()
-		tm.AddClient(username, token, []twitch.Listener{})
+func checkHeader(tm *twitch.TwitchManager, c echo.Context) (string, error) {
+	var token string
+	var username string
+
+	token = c.Request().Header.Get("X-Twitch-Token")
+	if token == "" {
+		return "", c.JSON(http.StatusUnauthorized, map[string]string{
+			"message": "Required X-Twitch-Token header missing",
+		})
+	} else {
+		username = tm.GetUserFromToken(token)
+		if username == "" {
+			return "", c.JSON(http.StatusUnauthorized, map[string]string{
+				"message": "Invalid Twitch token sent",
+			})
+		} else {
+			if err := checkPerms(tm, c, username, token, true); err != nil {
+				return "", err
+			}
+		}
+	}
+	return username, nil
+}
+
+func checkPerms(tm *twitch.TwitchManager, c echo.Context, username, token string, shouldSetCookie bool) error {
+	if !tm.CheckUsername(username) {
+		return c.JSON(http.StatusUnauthorized, map[string]string{
+			"message": "Not authorized",
+		})
+	} else {
+		if shouldSetCookie {
+			setCookie(c, token)
+		}
+
+		if user, ok := tm.Clients[username]; !ok {
+			tm.AddClient(username, token, []twitch.Listener{})
+		} else {
+			if user.Token != token {
+				user.Client.Disconnect()
+				tm.AddClient(username, token, []twitch.Listener{})
+			}
+		}
 	}
 	return nil
 }
@@ -134,27 +156,31 @@ func authorizeUser(tm *twitch.TwitchManager, username, token string) error {
 func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			token, err := getTokenFromCookieOrHeader(c)
+			var token string
+			var username string
+
+			tokenCookie, err := c.Cookie("token")
 			if err != nil {
-				return c.JSON(http.StatusUnauthorized, map[string]string{"message": err.Error()})
-			}
-
-			username := tm.GetUserFromToken(token)
-			if username == "" {
-				return c.JSON(http.StatusUnauthorized, map[string]string{"message": "Invalid Twitch token sent"})
-			}
-
-			if !tm.CheckUsername(username) {
-				return c.JSON(http.StatusUnauthorized, map[string]string{"message": "Not authorized"})
-			}
-
-			setTokenCookie(c, token)
-
-			if err := authorizeUser(tm, username, token); err != nil {
-				return err
+				if username, err = checkHeader(tm, c); err != nil {
+					return err
+				}
+			} else {
+				token = tokenCookie.Value
+				username = tm.GetUserFromToken(token)
+				if username == "" {
+					if username, err = checkHeader(tm, c); err != nil {
+						return err
+					}
+				} else {
+					if err = checkPerms(tm, c, username, token, false); err != nil {
+						return err
+					}
+				}
 			}
 
 			c.Request().Header.Add(core.UsernameHeader, username)
+			// fmt.Printf("Twitch Header: %s\n", c.Request().Header.Get(core.UsernameHeader))
+
 			return next(c)
 		}
 	}
@@ -163,17 +189,17 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			if c.Request().Header.Get("X-Twitch-Token") != "" {
-				if time.Since(cache.LastSynced).Hours() >= 6 {
-					fmt.Println("Invalidating cache from middleware because of timeout")
-					cache.Invalidate()
-				}
-				if !cache.IsSynced {
-					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
-					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
-
-				}
+			if time.Since(cache.LastSynced).Hours() >= 6 {
+				fmt.Println("Invalidating cache from middleware because of timeout")
+				cache.Invalidate()
 			}
+
+			if !cache.IsSynced && time.Since(cache.LastAttemptedSync).Seconds() >= 6 {
+				client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+				cache.LastAttemptedSync = time.Now()
+				// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
+			}
+
 			return next(c)
 		}
 	}

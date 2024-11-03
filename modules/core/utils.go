@@ -13,7 +13,7 @@ type Command struct {
 
 type ClickedCam struct {
 	Found    bool   `json:"found"`
-	Name     string `json:"name"`
+	Name     string `json:"cam"`
 	Position int    `json:"position"`
 	HitCache bool   `json:"cacheHit"`
 }

@@ -441,7 +441,7 @@
 			{
 				"action": "move",
 				"target": [
-					"rat2"
+					"rat3"
 				],
 				"props": {
 					"position": "top"
@@ -605,6 +605,168 @@
 				"target": [
 					"common",
 					"rats"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "chin",
+		"subentries": [
+			{
+				"label": "chins",
+				"import": [
+					"chins"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"chins",
+					"chin"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chins"
+				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"chin3"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"chins"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "chin2",
+		"subentries": [
+			{
+				"label": "chins",
+				"import": [
+					"chins"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"chins",
+					"chin2"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chins"
+				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"chin"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"chins"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "chin3",
+		"subentries": [
+			{
+				"label": "chins",
+				"import": [
+					"chins"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"chins",
+					"chin3"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chins"
+				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"chin2"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"chins"
 				]
 			},
 			{
@@ -1058,7 +1220,7 @@
 		]
 	},
 	{
-		"label": "crowoutdoor",
+		"label": "crowout",
 		"subentries": [
 			{
 				"label": "crows",
@@ -1238,7 +1400,7 @@
 		]
 	},
 	{
-		"label": "marmosetindoor",
+		"label": "marmin",
 		"subentries": [
 			{
 				"label": "marmosets",

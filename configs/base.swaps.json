@@ -54,6 +54,20 @@
 		]
 	},
 	{
+		"label": "chins",
+		"subentries": [
+			{
+				"label": "chin"
+			},
+			{
+				"label": "chin2"
+			},
+			{
+				"label": "chin3"
+			}
+		]
+	},
+	{
 		"label": "reptiles",
 		"subentries": [
 			{
@@ -177,6 +191,10 @@
 			{
 				"label": "rats",
 				"import": ["rats"]
+			},
+			{
+				"label": "chins",
+				"import": ["chins"]
 			},
 			{
 				"label": "reptiles",

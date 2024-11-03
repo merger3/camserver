@@ -8,6 +8,7 @@ import (
 	"math"
 	"net/http"
 	"regexp"
+	"slices"
 	"strings"
 	"time"
 
@@ -68,6 +69,55 @@ type User struct {
 	Client          *twitch.Client
 	ActiveListeners []Listener
 	LastMessage     string
+	MessageQueue    []Command
+	QueueRunning    bool
+}
+
+func (u *User) CallUsersListeners(message Message) {
+	for _, listener := range u.ActiveListeners {
+		listener(message, u.Username)
+	}
+}
+
+func (u *User) QueueMessage(message Command) {
+	u.MessageQueue = append(u.MessageQueue, message)
+	ticker := time.NewTicker(1 * time.Second)
+
+	if !u.QueueRunning {
+		u.QueueRunning = true
+		go u.RunQueue(ticker)
+	}
+}
+
+func (u *User) RunQueue(ticker *time.Ticker) {
+	processLastMessage := func() {
+		lastIndex := len(u.MessageQueue) - 1
+		if lastIndex < 0 {
+			return
+		}
+
+		if !strings.HasPrefix(u.MessageQueue[lastIndex].Command, "!ptzgetcam") {
+			lastIndex = 0
+		}
+
+		if u.MessageQueue[lastIndex].Command == u.LastMessage {
+			u.MessageQueue[lastIndex].Command = fmt.Sprintf("%s .", u.MessageQueue[lastIndex].Command)
+		}
+		u.LastMessage = u.MessageQueue[lastIndex].Command
+		u.Client.Say(u.MessageQueue[lastIndex].Channel, u.MessageQueue[lastIndex].Command)
+		u.MessageQueue = slices.Delete(u.MessageQueue, lastIndex, lastIndex+1)
+	}
+
+	processLastMessage()
+
+	for range ticker.C {
+		if len(u.MessageQueue) == 0 {
+			ticker.Stop()
+			u.QueueRunning = false
+			return
+		}
+		processLastMessage()
+	}
 }
 
 type TwitchManager struct {
@@ -122,12 +172,6 @@ func (tm *TwitchManager) CreateListeners() {
 
 }
 
-func (u *User) CallUsersListeners(message Message) {
-	for _, listener := range u.ActiveListeners {
-		listener(message, u.Username)
-	}
-}
-
 func (tm *TwitchManager) AddClient(username, oauth string, listeners []Listener) {
 	user := &User{Username: username, Token: oauth, Client: twitch.NewClient(username, fmt.Sprintf("oauth:%s", oauth))}
 	user.Client.OnConnect(func() {
@@ -172,22 +216,19 @@ func (tm TwitchManager) Send(cmd Command) {
 		cmd.Channel = tm.Channel
 	}
 
-	user := tm.Clients[cmd.User]
-	if cmd.Command == user.LastMessage {
-		cmd.Command = fmt.Sprintf("%s .", cmd.Command)
+	user, ok := tm.Clients[cmd.User]
+	if !ok {
+		return
 	}
-	user.Client.Say(cmd.Channel, cmd.Command)
-	user.LastMessage = cmd.Command
+
+	user.QueueMessage(cmd)
 }
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
-	// Pause before trying anything
-	time.Sleep(1500 * time.Millisecond)
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
 		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
-
 		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == tm.Sentinel && match {
 			ch <- message.Message
 		}
@@ -205,7 +246,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 		cam = v
 		timeout = false
 		break
-	case <-time.After(10 * time.Second):
+	case <-time.After(4 * time.Second):
 		timeout = true
 		return ClickedCam{}
 	}

@@ -15,7 +15,6 @@ type PresetResponse struct {
 }
 
 func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
-	fmt.Printf("Got command\n")
 	req := core.CamRequest{}
 
 	if err := ctx.Bind(&req); err != nil {
@@ -29,7 +28,7 @@ func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
 	}
 
 	for _, presets := range c.Cameras {
-		if c.Aliases.ToBase(presets.CamName) == req.Cam {
+		if c.Aliases.ToBase(presets.CamName) == c.Aliases.ToBase(req.Cam) {
 			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
 		}
 	}

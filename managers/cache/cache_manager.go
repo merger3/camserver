@@ -13,10 +13,11 @@ import (
 )
 
 type CacheManager struct {
-	Cams       []string
-	Aliases    alias.AliasManager
-	LastSynced time.Time
-	IsSynced   bool
+	Cams              []string
+	Aliases           alias.AliasManager
+	LastSynced        time.Time
+	LastAttemptedSync time.Time
+	IsSynced          bool
 }
 
 func NewCacheManager() *CacheManager {
