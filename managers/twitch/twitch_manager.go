@@ -324,7 +324,7 @@ func createAuthMap() map[string]bool {
 		"josh_raiden", "jateu", "storesE6", "rebecca_h9", "matthewde", "user_11_11", "huniebeexd",
 		"kurtyykins", "breacherman", "bryceisrightjr", "sumaxu", "mariemellie", "ewok_626",
 		"quokka64", "otsargh", "likethecheesebri", "just_some_donkus", "fiveacross", "itszalndrin",
-		"nicoleeverleigh", "fishymeep", "ponchobee", "nov1cegg"}
+		"nicoleeverleigh", "fishymeep", "ponchobee", "nov1cegg, ohnonicoleio"}
 
 	// Create the map and add all users from the lists
 	userMap := make(map[string]bool)

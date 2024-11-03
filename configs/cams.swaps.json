@@ -455,6 +455,19 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"common"
@@ -507,6 +520,19 @@
 					"common",
 					"rats"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
 			},
 			{
 				"action": "flatten",
@@ -563,6 +589,19 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"common"
@@ -606,6 +645,19 @@
 					"common",
 					"rats"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
 			},
 			{
 				"action": "flatten",
@@ -662,6 +714,19 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"common"
@@ -716,6 +781,19 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"common"
@@ -768,6 +846,19 @@
 					"common",
 					"chins"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
 			},
 			{
 				"action": "flatten",
