@@ -215,19 +215,6 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 					position = len(targetParent.SubEntries)
 				}
 				targetParent.SubEntries = slices.Insert(targetParent.SubEntries, position, tmpTarget)
-			case []interface{}:
-				itemStrings, err := convertToStringSlice(mod.Props["position"])
-				if err != nil {
-					panic(err)
-				}
-				swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
-				if swapEntryIndex == -1 {
-					continue
-				}
-				swapEntry := swapEntryParent.SubEntries[swapEntryIndex]
-				tmpTarget := *target
-				targetParent.SubEntries[targetIndex] = swapEntry
-				swapEntryParent.SubEntries[swapEntryIndex] = tmpTarget
 			case string:
 				var position int
 				switch mod.Props["position"].(string) {
@@ -246,6 +233,19 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 					position = len(targetParent.SubEntries)
 				}
 				targetParent.SubEntries = slices.Insert(targetParent.SubEntries, position, tmpTarget)
+			case []interface{}:
+				itemStrings, err := convertToStringSlice(mod.Props["position"])
+				if err != nil {
+					panic(err)
+				}
+				swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
+				if swapEntryIndex == -1 {
+					continue
+				}
+				swapEntry := swapEntryParent.SubEntries[swapEntryIndex]
+				tmpTarget := *target
+				targetParent.SubEntries[targetIndex] = swapEntry
+				swapEntryParent.SubEntries[swapEntryIndex] = tmpTarget
 			}
 		case Rename:
 			target.Label = mod.Props["name"].(string)
