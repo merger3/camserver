@@ -62,6 +62,7 @@ const (
 	Move    ModAction = "move"
 	Rename  ModAction = "rename"
 	Flatten ModAction = "flatten"
+	Swap    ModAction = "swap"
 )
 
 type Entry struct {
@@ -240,13 +241,72 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 				}
 				swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
 				if swapEntryIndex == -1 {
+					fmt.Println("continuing...")
 					continue
 				}
-				swapEntry := swapEntryParent.SubEntries[swapEntryIndex]
-				tmpTarget := *target
-				targetParent.SubEntries[targetIndex] = swapEntry
-				swapEntryParent.SubEntries[swapEntryIndex] = tmpTarget
+				swapEntry := &swapEntryParent.SubEntries[swapEntryIndex]
+
+				location := len(swapEntry.SubEntries)
+				switch mod.Props["location"].(type) {
+				case float64:
+					location = int(mod.Props["location"].(float64))
+					if location < 0 {
+						location = 0
+					} else if location > len(targetParent.SubEntries) {
+						location = len(targetParent.SubEntries)
+					}
+				case string:
+					switch mod.Props["location"].(string) {
+					case "top", "start", "begin", "beginning":
+						location = 0
+					case "bottom", "end", "ending":
+						location = len(swapEntry.SubEntries)
+					case "middle", "center":
+						location = len(swapEntry.SubEntries) / 2
+					}
+				case map[string]interface{}:
+					anchor, ok := mod.Props["location"].(map[string]any)["anchor"].(string)
+					if !ok {
+						fmt.Println("Failed to get anchor")
+						break
+					}
+					relation, ok := mod.Props["location"].(map[string]any)["relation"].(string)
+					if !ok {
+						fmt.Println("Failed to get relation")
+						break
+					}
+					anchorEntryIndex, _ := findTarget(swapEntry, anchor)
+					if anchorEntryIndex == -1 {
+						fmt.Println("Unable to find location")
+						break
+					}
+
+					switch relation {
+					case "above":
+						location = anchorEntryIndex
+					case "below":
+						location = anchorEntryIndex + 1
+					}
+
+				}
+
+				swapEntry.SubEntries = slices.Insert(swapEntry.SubEntries, location, *target)
+				targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex+1)
 			}
+
+		case Swap:
+			itemStrings, err := convertToStringSlice(mod.Props["position"])
+			if err != nil {
+				panic(err)
+			}
+			swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
+			if swapEntryIndex == -1 {
+				continue
+			}
+			swapEntry := swapEntryParent.SubEntries[swapEntryIndex]
+			tmpTarget := *target
+			targetParent.SubEntries[targetIndex] = swapEntry
+			swapEntryParent.SubEntries[swapEntryIndex] = tmpTarget
 		case Rename:
 			target.Label = mod.Props["name"].(string)
 		case Flatten:

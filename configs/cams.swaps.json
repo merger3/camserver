@@ -433,6 +433,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins",
+					"chinmulti"
+				],
+				"props": {
+					"position": [ 
+						"rats"
+					],
+					"location": {
+						"anchor": "ratmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"rats"
@@ -455,7 +472,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"chins"
@@ -500,6 +517,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins",
+					"chinmulti"
+				],
+				"props": {
+					"position": [ 
+						"rats"
+					],
+					"location": {
+						"anchor": "ratmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"rats"
@@ -522,7 +556,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"chins"
@@ -567,6 +601,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins",
+					"chinmulti"
+				],
+				"props": {
+					"position": [ 
+						"rats"
+					],
+					"location": {
+						"anchor": "ratmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"rats"
@@ -589,7 +640,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"chins"
@@ -636,6 +687,20 @@
 			{
 				"action": "move",
 				"target": [
+					"common",
+					"chins",
+					"chinmulti"
+				],
+				"props": {
+					"position": [ 
+						"rats"
+					],
+					"location": "bottom"
+				}
+			},
+			{
+				"action": "swap",
+				"target": [
 					"rats",
 					"rat1"
 				],
@@ -660,7 +725,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"chins"
@@ -705,6 +770,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats",
+					"ratmulti"
+				],
+				"props": {
+					"position": [ 
+						"chins"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"chins"
@@ -727,7 +809,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"rats"
@@ -772,6 +854,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats",
+					"ratmulti"
+				],
+				"props": {
+					"position": [ 
+						"chins"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"chins"
@@ -794,7 +893,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"rats"
@@ -839,6 +938,23 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats",
+					"ratmulti"
+				],
+				"props": {
+					"position": [ 
+						"chins"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"chins"
@@ -861,7 +977,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"rats"
@@ -908,6 +1024,20 @@
 			{
 				"action": "move",
 				"target": [
+					"common",
+					"rats",
+					"ratmulti"
+				],
+				"props": {
+					"position": [ 
+						"chins"
+					],
+					"location": "bottom"
+				}
+			},
+			{
+				"action": "swap",
+				"target": [
 					"chins",
 					"chin"
 				],
@@ -932,7 +1062,7 @@
 				]
 			},
 			{
-				"action": "move",
+				"action": "swap",
 				"target": [
 					"common",
 					"rats"
