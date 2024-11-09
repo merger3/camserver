@@ -235,6 +235,7 @@ var aliases = map[string]string{
 
 	// chin
 	"chin":       "chin",
+	"chin1":      "chin",
 	"chin2":      "chin2",
 	"chin3":      "chin3",
 	"chinchilla": "chin",
