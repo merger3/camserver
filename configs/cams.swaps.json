@@ -2037,5 +2037,37 @@
 				]
 			}
 		]
+	},
+	{
+		"label": "garden",
+		"subentries": [
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"garden"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"separator"
+				]
+			}
+		]
 	}
 ]

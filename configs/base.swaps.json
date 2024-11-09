@@ -220,6 +220,9 @@
 				"import": ["foxes"]
 			},
 			{
+				"label": "garden"
+			},
+			{
 				"label": "parrots",
 				"import": ["parrots"]
 			},
