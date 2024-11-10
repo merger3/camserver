@@ -81,7 +81,7 @@ func (u *User) CallUsersListeners(message Message) {
 
 func (u *User) QueueMessage(message Command) {
 	u.MessageQueue = append(u.MessageQueue, message)
-	ticker := time.NewTicker(1 * time.Second)
+	ticker := time.NewTicker(1100 * time.Millisecond)
 
 	if !u.QueueRunning {
 		u.QueueRunning = true
@@ -308,7 +308,7 @@ func (tm TwitchManager) CheckUsername(username string) bool {
 
 func createAuthMap() map[string]bool {
 
-	// Define user lists
+	// This should be offloaded to a config file
 	commandAdmins := []string{"spacevoyage", "maya", "theconnorobrien", "alveussanctuary"}
 	commandSuperUsers := []string{"ellaandalex", "dionysus1911", "dannydv", "maxzillajr", "illjx", "kayla_alveus",
 		"alex_b_patrick", "lindsay_alveus", "strickknine", "tarantulizer", "spiderdaynightlive",

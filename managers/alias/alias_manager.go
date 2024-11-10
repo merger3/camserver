@@ -66,6 +66,7 @@ var common = map[string]string{
 
 var aliases = map[string]string{
 	// pollinator garden
+	"garden":     "garden",
 	"pollinator": "garden",
 
 	// pc
