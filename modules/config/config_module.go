@@ -19,7 +19,14 @@ type Presets struct {
 
 type CamPresets struct {
 	CamName string   `json:"name"`
-	Presets []string `json:"presets"`
+	Presets []Preset `json:"presets"`
+}
+
+type Preset struct {
+	Name       string   `json:"name"`
+	Hotkeys    string   `json:"hotkeys"`
+	Subentries []Preset `json:"subentries"`
+	Sublayer   []Preset `json:"sublayer"`
 }
 
 type ConfigModule struct {
