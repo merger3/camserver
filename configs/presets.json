@@ -668,44 +668,6 @@
 					"hotkeys": ""
 				},
 				{
-					"name": "leftshelf",
-					"subentries": [
-						{
-							"name": "topshelfl",
-							"hotkeys": ""
-						},
-						{
-							"name": "topshelfr",
-							"hotkeys": ""
-						},
-						{
-							"name": "domes",
-							"subentries": [
-								{
-									"name": "domel",
-									"hotkeys": ""
-								},
-								{
-									"name": "domes",
-									"hotkeys": ""
-								},
-								{
-									"name": "domer",
-									"hotkeys": ""
-								}
-							]
-						},
-						{
-							"name": "bottomshelfl",
-							"hotkeys": ""
-						},
-						{
-							"name": "bottomshelfr",
-							"hotkeys": ""
-						}
-					]
-				},
-				{
 					"name": "rope",
 					"hotkeys": ""
 				},
@@ -742,6 +704,44 @@
 						},
 						{
 							"name": "flapr",
+							"hotkeys": ""
+						}
+					]
+				},
+				{
+					"name": "leftshelf",
+					"subentries": [
+						{
+							"name": "topshelfl",
+							"hotkeys": ""
+						},
+						{
+							"name": "topshelfr",
+							"hotkeys": ""
+						},
+						{
+							"name": "domes",
+							"subentries": [
+								{
+									"name": "domel",
+									"hotkeys": ""
+								},
+								{
+									"name": "domes",
+									"hotkeys": ""
+								},
+								{
+									"name": "domer",
+									"hotkeys": ""
+								}
+							]
+						},
+						{
+							"name": "bottomshelfl",
+							"hotkeys": ""
+						},
+						{
+							"name": "bottomshelfr",
 							"hotkeys": ""
 						}
 					]

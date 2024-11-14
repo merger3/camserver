@@ -30,6 +30,7 @@ func NewMenuModule() *MenuModule {
 
 func (m MenuModule) RegisterRoutes(server *echo.Echo) {
 	server.POST("/api/camera/swaps", m.GetSwapMenu)
+	server.POST("/api/alias", m.GetAlias)
 }
 
 func (m *MenuModule) Init(resources map[string]any) {

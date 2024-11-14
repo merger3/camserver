@@ -31,7 +31,7 @@ func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {
 		return err
 	}
 
-	req.Cam = m.Aliases.ToCommon(req.Cam)
+	req.Cam = m.Aliases.ToCommon(m.Aliases.ToBase(m.Aliases.CleanName(req.Cam)))
 	swaps, ok := m.Cams[req.Cam]
 	if !ok {
 		return ctx.JSON(http.StatusOK, SwapMenuResponse{Found: true, Cam: req.Cam, SwapMenu: m.Cams["pasture"]})
