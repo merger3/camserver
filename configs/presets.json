@@ -55,24 +55,6 @@
 					"hotkeys": "t"
 				},
 				{
-					"name": "test",
-					"hotkeys": "k",
-					"sublayer": [
-						{
-							"name": "poolr",
-							"hotkeys": "q ^q"
-						},
-						{
-							"name": "pool",
-							"hotkeys": "a ^a"
-						},
-						{
-							"name": "pooll",
-							"hotkeys": "z ^z"
-						}
-					]
-				},
-				{
 					"name": "pool",
 					"subentries": [
 						{
@@ -81,7 +63,21 @@
 						},
 						{
 							"name": "pool",
-							"hotkeys": "^f +f"
+							"hotkeys": "^f +f",
+							"sublayer": [
+								{
+									"name": "poolr",
+									"hotkeys": "q ^q"
+								},
+								{
+									"name": "pool",
+									"hotkeys": "a ^a"
+								},
+								{
+									"name": "pooll",
+									"hotkeys": "z ^z"
+								}
+							]
 						},
 						{
 							"name": "pooll",
