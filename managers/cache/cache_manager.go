@@ -31,10 +31,13 @@ func isNumber(s string) bool {
 
 func (cm *CacheManager) ParseScene(scenecams string) {
 	camsArray := strings.Split(strings.ReplaceAll(scenecams, " ", ""), ",")
+	newArray := make([]string, 0)
 	for i := 0; i < len(camsArray); i++ {
-		camsArray[i] = camsArray[i][2:]
+		if len(camsArray[i]) > 2 {
+			newArray = append(newArray, camsArray[i][2:])
+		}
 	}
-	cm.Cams = camsArray
+	cm.Cams = newArray
 	cm.IsSynced = true
 	cm.LastSynced = time.Now()
 	fmt.Println(cm.Cams)
