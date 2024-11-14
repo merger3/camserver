@@ -14,6 +14,14 @@ type PresetResponse struct {
 	CamPresetsList *CamPresets `json:"camPresets"`
 }
 
+func (c ConfigModule) CheckCacheSync(ctx echo.Context) error {
+	if c.Cache.IsSynced {
+		return ctx.String(http.StatusOK, "Synced")
+	} else {
+		return ctx.String(http.StatusAccepted, "Not Synced")
+	}
+}
+
 func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
 	req := core.CamRequest{}
 
