@@ -16,9 +16,15 @@ type PresetResponse struct {
 
 func (c ConfigModule) CheckCacheSync(ctx echo.Context) error {
 	if c.Cache.IsSynced {
-		return ctx.String(http.StatusOK, "Synced")
+		return ctx.JSON(http.StatusOK, map[string]any{
+			"synced": true,
+			"length": len(c.Cache.Cams),
+		})
 	} else {
-		return ctx.String(http.StatusAccepted, "Not Synced")
+		return ctx.JSON(http.StatusAccepted, map[string]any{
+			"synced": true,
+			"length": len(c.Cache.Cams),
+		})
 	}
 }
 
