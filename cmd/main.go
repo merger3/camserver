@@ -144,7 +144,7 @@ func checkPerms(tm *twitch.TwitchManager, c echo.Context, username, token string
 		if user, ok := tm.Clients[username]; !ok {
 			tm.AddClient(username, token, []twitch.Listener{})
 		} else {
-			if user.Token != token {
+			if user.Token != token && tm.GetUserFromToken(user.Token) == "" {
 				user.Client.Disconnect()
 				tm.AddClient(username, token, []twitch.Listener{})
 			}
