@@ -1193,6 +1193,16 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"reptiles",
+					"patchy"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"reptiles"
@@ -1236,6 +1246,16 @@
 					"reptiles",
 					"patchy"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"reptiles",
+					"toast"
+				],
+				"props": {
+					"position": "top"
+				}
 			},
 			{
 				"action": "flatten",
@@ -1283,6 +1303,16 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"reptiles",
+					"noodle"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"reptiles"
@@ -1328,6 +1358,16 @@
 				]
 			},
 			{
+				"action": "move",
+				"target": [
+					"insects",
+					"bb"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
 					"insects"
@@ -1371,6 +1411,16 @@
 					"insects",
 					"bb"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"insects",
+					"marty"
+				],
+				"props": {
+					"position": "top"
+				}
 			},
 			{
 				"action": "flatten",
