@@ -114,19 +114,19 @@ var aliases = map[string]string{
 	"choochoo3":                     "hankmulti",
 
 	// isopod
-	"isopod":      "isopod",
-	"marty":       "isopod",
-	"martyisopod": "isopod",
+	"isopod":      "marty",
+	"marty":       "marty",
+	"martyisopod": "marty",
 
 	// orangeisopod
-	"orangeisopod":  "orangeisopod",
-	"bb":            "orangeisopod",
-	"bbisopod":      "orangeisopod",
-	"sisopod":       "orangeisopod",
-	"isopodorange":  "orangeisopod",
-	"oisopod":       "orangeisopod",
-	"spanishisopod": "orangeisopod",
-	"isopod2":       "orangeisopod",
+	"orangeisopod":  "bb",
+	"bb":            "bb",
+	"bbisopod":      "bb",
+	"sisopod":       "bb",
+	"isopodorange":  "bb",
+	"oisopod":       "bb",
+	"spanishisopod": "bb",
+	"isopod2":       "bb",
 
 	// georgie
 	"georgie": "georgie",
