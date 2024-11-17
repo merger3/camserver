@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -194,8 +195,9 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 				cache.Invalidate()
 			}
 
-			if !cache.IsSynced && time.Since(cache.LastAttemptedSync).Seconds() >= 6 {
+			if !cache.IsSynced && time.Since(cache.LastAttemptedSync).Seconds() >= math.Max(6, 6*math.Pow(3, cache.SyncAttempts)) && cache.SyncAttempts <= 6 {
 				client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+				cache.SyncAttempts += 1
 				cache.LastAttemptedSync = time.Now()
 				// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
 			}

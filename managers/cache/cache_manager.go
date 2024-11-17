@@ -17,6 +17,7 @@ type CacheManager struct {
 	Aliases           alias.AliasManager
 	LastSynced        time.Time
 	LastAttemptedSync time.Time
+	SyncAttempts      float64
 	IsSynced          bool
 }
 

@@ -144,6 +144,7 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 func (tm *TwitchManager) CreateListeners() {
 	tm.Listeners["scenecams"] = func(message Message, user string) {
 		if match, _ := regexp.MatchString(`^(\d: \w+,? ?)+$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+			tm.Cache.SyncAttempts = 0
 			tm.Cache.ParseScene(message.Message)
 		}
 	}
