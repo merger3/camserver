@@ -9,7 +9,7 @@
 				"label": "wolfcorner"
 			},
 			{
-				"label": "wolfinside"
+				"label": "wolfindoor"
 			},
 			{
 				"label": "wolfden"
@@ -84,6 +84,9 @@
 			},
 			{
 				"label": "toast"
+			},
+			{
+				"label": "pushpop"
 			}
 		]
 	},
@@ -142,7 +145,7 @@
 		"label": "foxes",
 		"subentries": [
 			{
-				"label": "fox"
+				"label": "foxes"
 			},
 			{
 				"label": "foxcorner"
@@ -218,9 +221,6 @@
 			{
 				"label": "foxes",
 				"import": ["foxes"]
-			},
-			{
-				"label": "garden"
 			},
 			{
 				"label": "parrots",

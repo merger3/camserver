@@ -3,43 +3,17 @@
 		"label": "wolf",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolf"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -48,43 +22,17 @@
 		"label": "wolfcorner",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfcorner"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -93,43 +41,17 @@
 		"label": "wolfindoor",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfinside"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -138,43 +60,17 @@
 		"label": "wolfden",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfden"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -183,43 +79,17 @@
 		"label": "wolfden2",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfden2"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -228,44 +98,17 @@
 		"label": "wolfmulti",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfmultis",
-					"wolfmulti"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -274,44 +117,17 @@
 		"label": "wolfmulti2",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfmultis",
-					"wolfmulti2"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -320,44 +136,17 @@
 		"label": "wolfdenmulti",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfmultis",
-					"wolfdenmulti"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
@@ -366,89 +155,35 @@
 		"label": "wolfdenmulti2",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
-					"wolves"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"wolves_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"wolves",
-					"wolfmultis",
-					"wolfdenmulti2"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"wolves"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"wolves"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"wolves_import"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "rat1",
 		"subentries": [
 			{
 				"label": "rats",
 				"import": [
-					"rats"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"rats_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"rats",
-					"rat1"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"chins",
-					"chinmulti"
-				],
-				"props": {
-					"position": [ 
-						"rats"
-					],
-					"location": {
-						"anchor": "ratmulti",
-						"relation": "below"
-					}
-				}
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -463,32 +198,6 @@
 				"props": {
 					"position": "top"
 				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"rats"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"chins"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -498,41 +207,11 @@
 			{
 				"label": "rats",
 				"import": [
-					"rats"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"rats_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"rats",
-					"rat2"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"chins",
-					"chinmulti"
-				],
-				"props": {
-					"position": [ 
-						"rats"
-					],
-					"location": {
-						"anchor": "ratmulti",
-						"relation": "below"
-					}
-				}
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -547,32 +226,6 @@
 				"props": {
 					"position": "top"
 				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"rats"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"chins"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -582,41 +235,11 @@
 			{
 				"label": "rats",
 				"import": [
-					"rats"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"rats_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"rats",
-					"rat3"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"chins",
-					"chinmulti"
-				],
-				"props": {
-					"position": [ 
-						"rats"
-					],
-					"location": {
-						"anchor": "ratmulti",
-						"relation": "below"
-					}
-				}
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -631,32 +254,6 @@
 				"props": {
 					"position": "top"
 				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"rats"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"chins"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -666,38 +263,11 @@
 			{
 				"label": "rats",
 				"import": [
-					"rats"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"rats_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"rats",
-					"ratmulti"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"chins",
-					"chinmulti"
-				],
-				"props": {
-					"position": [ 
-						"rats"
-					],
-					"location": "bottom"
-				}
-			},
 			{
 				"action": "swap",
 				"target": [
@@ -716,76 +286,23 @@
 				"target": [
 					"rats"
 				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"rats"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"chins"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "chin",
 		"subentries": [
 			{
 				"label": "chins",
 				"import": [
-					"chins"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"chins_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"chins",
-					"chin"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"rats",
-					"ratmulti"
-				],
-				"props": {
-					"position": [ 
-						"chins"
-					],
-					"location": {
-						"anchor": "chinmulti",
-						"relation": "below"
-					}
-				}
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -800,32 +317,6 @@
 				"props": {
 					"position": "top"
 				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"chins"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"rats"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -835,41 +326,11 @@
 			{
 				"label": "chins",
 				"import": [
-					"chins"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"chins_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"chins",
-					"chin2"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"rats",
-					"ratmulti"
-				],
-				"props": {
-					"position": [ 
-						"chins"
-					],
-					"location": {
-						"anchor": "chinmulti",
-						"relation": "below"
-					}
-				}
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -884,32 +345,6 @@
 				"props": {
 					"position": "top"
 				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"chins"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"rats"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -919,80 +354,15 @@
 			{
 				"label": "chins",
 				"import": [
-					"chins"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"chins_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"chins",
-					"chin3"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"rats",
-					"ratmulti"
-				],
-				"props": {
-					"position": [ 
-						"chins"
-					],
-					"location": {
-						"anchor": "chinmulti",
-						"relation": "below"
-					}
-				}
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"chins"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"chin2"
-				],
-				"props": {
-					"position": "top"
-				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"chins"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"rats"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1003,38 +373,11 @@
 			{
 				"label": "chins",
 				"import": [
-					"chins"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"chins_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"chins",
-					"chinmulti"
-				]
-			},
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"rats",
-					"ratmulti"
-				],
-				"props": {
-					"position": [ 
-						"chins"
-					],
-					"location": "bottom"
-				}
-			},
 			{
 				"action": "swap",
 				"target": [
@@ -1053,32 +396,6 @@
 				"target": [
 					"chins"
 				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"chins"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"rats"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -1088,44 +405,18 @@
 			{
 				"label": "reptiles",
 				"import": [
-					"reptiles"
+					"reptiles_base"
 				]
 			},
 			{
 				"label": "georgiewater"
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
-				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"reptiles",
-					"georgie"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"reptiles"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"reptiles"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1136,13 +427,7 @@
 			{
 				"label": "reptiles",
 				"import": [
-					"reptiles"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"reptiles_base"
 				]
 			}
 		],
@@ -1151,19 +436,6 @@
 				"action": "flatten",
 				"target": [
 					"reptiles"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"reptiles"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1174,24 +446,11 @@
 			{
 				"label": "reptiles",
 				"import": [
-					"reptiles"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"reptiles_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"reptiles",
-					"noodle"
-				]
-			},
 			{
 				"action": "move",
 				"target": [
@@ -1206,19 +465,6 @@
 				"action": "flatten",
 				"target": [
 					"reptiles"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"reptiles"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1229,24 +475,11 @@
 			{
 				"label": "reptiles",
 				"import": [
-					"reptiles"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"reptiles_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"reptiles",
-					"patchy"
-				]
-			},
 			{
 				"action": "move",
 				"target": [
@@ -1262,19 +495,6 @@
 				"target": [
 					"reptiles"
 				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"reptiles"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -1284,24 +504,11 @@
 			{
 				"label": "reptiles",
 				"import": [
-					"reptiles"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"reptiles_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"reptiles",
-					"toast"
-				]
-			},
 			{
 				"action": "move",
 				"target": [
@@ -1317,46 +524,52 @@
 				"target": [
 					"reptiles"
 				]
-			},
+			}
+		]
+	},
+	{
+		"label": "pushpop",
+		"subentries": [
 			{
-				"action": "remove",
-				"target": [
-					"common",
-					"reptiles"
+				"label": "reptiles",
+				"import": [
+					"reptiles_base"
 				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"reptiles",
+					"noodle"
+				],
+				"props": {
+					"position": "top"
+				}
 			},
 			{
 				"action": "flatten",
 				"target": [
-					"common"
+					"reptiles"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "marty",
 		"subentries": [
 			{
 				"label": "insects",
 				"import": [
-					"insects"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"insects_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"insects",
-					"marty"
-				]
-			},
 			{
 				"action": "move",
 				"target": [
@@ -1371,19 +584,6 @@
 				"action": "flatten",
 				"target": [
 					"insects"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"insects"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1394,24 +594,11 @@
 			{
 				"label": "insects",
 				"import": [
-					"insects"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"insects_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"insects",
-					"bb"
-				]
-			},
 			{
 				"action": "move",
 				"target": [
@@ -1427,19 +614,6 @@
 				"target": [
 					"insects"
 				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"insects"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
 			}
 		]
 	},
@@ -1449,24 +623,11 @@
 			{
 				"label": "insects",
 				"import": [
-					"insects"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"insects_base"
 				]
 			}
 		],
 		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"insects",
-					"roaches"
-				]
-			},
 			{
 				"action": "flatten",
 				"target": [
@@ -1478,12 +639,6 @@
 				"target": [
 					"common",
 					"insects"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1494,44 +649,18 @@
 			{
 				"label": "insects",
 				"import": [
-					"insects"
+					"insects_base"
 				]
 			},
 			{
 				"label": "hankcorner"
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
-				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"insects",
-					"hank"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"insects"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"insects"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1542,13 +671,7 @@
 			{
 				"label": "insects",
 				"import": [
-					"insects"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"insects_base"
 				]
 			}
 		],
@@ -1557,64 +680,28 @@
 				"action": "flatten",
 				"target": [
 					"insects"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"insects"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "crowout",
 		"subentries": [
 			{
-				"label": "crows",
+				"label": "crows_import",
 				"import": [
-					"crows"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"crows_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"crows",
-					"crowout"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"crows"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"crows"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"crows_import"
 				]
 			}
 		]
@@ -1623,43 +710,17 @@
 		"label": "crowin",
 		"subentries": [
 			{
-				"label": "crows",
+				"label": "crows_import",
 				"import": [
-					"crows"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"crows_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"crows",
-					"crowin"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"crows"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"crows"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"crows_import"
 				]
 			}
 		]
@@ -1668,43 +729,17 @@
 		"label": "crowmulti",
 		"subentries": [
 			{
-				"label": "crows",
+				"label": "crows_import",
 				"import": [
-					"crows"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"crows_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"crows",
-					"crowmulti"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"crows"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"crows"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"crows_import"
 				]
 			}
 		]
@@ -1713,88 +748,39 @@
 		"label": "crowmulti2",
 		"subentries": [
 			{
-				"label": "crows",
+				"label": "crows_import",
 				"import": [
-					"crows"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"crows_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"crows",
-					"crowmulti2"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"crows"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"crows"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"crows_import"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "marmin",
 		"subentries": [
 			{
 				"label": "marmosets",
 				"import": [
-					"marmosets"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"marms_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"marmosets",
-					"marmin"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"marmosets"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"marmosets"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1805,41 +791,15 @@
 			{
 				"label": "marmosets",
 				"import": [
-					"marmosets"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"marms_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"marmosets",
-					"marmout"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"marmosets"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"marmosets"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
@@ -1850,86 +810,37 @@
 			{
 				"label": "marmosets",
 				"import": [
-					"marmosets"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"marms_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"marmosets",
-					"marmmulti"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
 					"marmosets"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"marmosets"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "foxes",
 		"subentries": [
 			{
-				"label": "foxes",
+				"label": "foxes_import",
 				"import": [
-					"foxes"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"foxes_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"foxes",
-					"fox"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"foxes"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"foxes"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"foxes_import"
 				]
 			}
 		]
@@ -1938,43 +849,17 @@
 		"label": "foxcorner",
 		"subentries": [
 			{
-				"label": "foxes",
+				"label": "foxes_import",
 				"import": [
-					"foxes"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"foxes_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"foxes",
-					"foxcorner"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"foxes"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"foxes"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"foxes_import"
 				]
 			}
 		]
@@ -1983,139 +868,61 @@
 		"label": "foxmulti",
 		"subentries": [
 			{
-				"label": "foxes",
+				"label": "foxes_import",
 				"import": [
-					"foxes"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
+					"foxes_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"foxes",
-					"foxmulti"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"foxes"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"foxes"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
+					"foxes_import"
 				]
 			}
 		]
 	},
+
+
+	
 	{
 		"label": "parrots",
 		"subentries": [
 			{
-				"label": "common",
+				"label": "parrots_import",
 				"import": [
-					"common"
+					"parrots_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"common",
-					"parrots"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"separator"
+					"parrots_import"
 				]
 			}
 		]
 	},
+
+
+
 	{
 		"label": "pasture",
 		"subentries": [
 			{
-				"label": "common",
+				"label": "pasture_import",
 				"import": [
-					"common"
+					"pasture_base"
 				]
 			}
 		],
 		"mods": [
 			{
-				"action": "remove",
-				"target": [
-					"common",
-					"pasture"
-				]
-			},
-			{
 				"action": "flatten",
 				"target": [
-					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"separator"
-				]
-			}
-		]
-	},
-	{
-		"label": "garden",
-		"subentries": [
-			{
-				"label": "common",
-				"import": [
-					"common"
-				]
-			}
-		],
-		"mods": [
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"garden"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"separator"
+					"pasture_import"
 				]
 			}
 		]

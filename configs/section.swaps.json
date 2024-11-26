@@ -1,0 +1,420 @@
+[
+	{
+		"label": "wolves_base",
+		"subentries": [
+			{
+				"label": "wolves",
+				"import": [
+					"wolves"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"wolves"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"wolves"
+				]
+			}
+		]
+	},
+	{
+		"label": "rats_base",
+		"subentries": [
+			{
+				"label": "rats",
+				"import": [
+					"rats"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"common",
+					"chins",
+					"chinmulti"
+				],
+				"props": {
+					"position": [ 
+						"rats"
+					],
+					"location": {
+						"anchor": "ratmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"rats"
+				]
+			},
+			{
+				"action": "swap",
+				"target": [
+					"common",
+					"chins"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"rats"
+				]
+			}
+		]
+	},
+	{
+		"label": "chins_base",
+		"subentries": [
+			{
+				"label": "chins",
+				"import": [
+					"chins"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"common",
+					"rats",
+					"ratmulti"
+				],
+				"props": {
+					"position": [ 
+						"chins"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chins"
+				]
+			},
+			{
+				"action": "swap",
+				"target": [
+					"common",
+					"rats"
+				],
+				"props": {
+					"position": [
+						"common", 
+						"wolves"
+					]
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"chins"
+				]
+			}
+		]
+	},
+	{
+		"label": "reptiles_base",
+		"subentries": [
+			{
+				"label": "reptiles",
+				"import": [
+					"reptiles"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"reptiles"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"reptiles"
+				]
+			}
+		]
+	},
+	{
+		"label": "insects_base",
+		"subentries": [
+			{
+				"label": "insects",
+				"import": [
+					"insects"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"insects"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"insects"
+				]
+			}
+		]
+	},
+	{
+		"label": "crows_base",
+		"subentries": [
+			{
+				"label": "crows",
+				"import": [
+					"crows"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"crows"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"crows"
+				]
+			}
+		]
+	},
+	{
+		"label": "marms_base",
+		"subentries": [
+			{
+				"label": "marmosets",
+				"import": [
+					"marmosets"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"marmosets"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"marmosets"
+				]
+			}
+		]
+	},
+	{
+		"label": "foxes_base",
+		"subentries": [
+			{
+				"label": "foxes",
+				"import": [
+					"foxes"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"foxes"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"foxes"
+				]
+			}
+		]
+	},
+	{
+		"label": "parrots_base",
+		"subentries": [
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"parrots"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"separator"
+				]
+			}
+		]
+	},
+	{
+		"label": "pasture_base",
+		"subentries": [
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"pasture"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"separator"
+				]
+			}
+		]
+	}
+]

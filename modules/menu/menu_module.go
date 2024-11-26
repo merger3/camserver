@@ -42,17 +42,26 @@ func (m *MenuModule) Init(resources map[string]any) {
 	m.LoadSource("base")
 	PopulateEntries(m.Sources["base"], m.Sources["base"])
 
+	m.LoadSource("section")
+	for i, e := range m.Sources["section"].SubEntries {
+		e := &e
+		PopulateEntries(e, m.Sources["base"])
+		m.ApplyMods(e)
+		m.Sources["section"].SubEntries[i] = *e
+	}
+
 	m.LoadSource("cams")
 	for _, e := range m.Sources["cams"].SubEntries {
 		e := &e
-		PopulateEntries(m.Sources["base"], e)
+		PopulateEntries(e, m.Sources["base"], m.Sources["section"])
 		m.ApplyMods(e)
+		ClearSelf(e)
 
 		ce := &CleanEntry{}
 		ce.CopyFromEntry(e)
 		m.Cams[e.Label] = ce
-	}
 
+	}
 }
 
 type ModAction string
@@ -139,22 +148,30 @@ func CopyImports(dst *Entry, src Entry) {
 	}
 }
 
-func PopulateEntries(source, entry *Entry) {
-	for i := range entry.SubEntries {
+func PopulateEntries(entry *Entry, sources ...*Entry) {
+	source := &Entry{Label: "source"}
+	for _, s := range sources {
+		source.SubEntries = append(source.SubEntries, s.SubEntries...)
+	}
+	i := 0
+	for i < len(entry.SubEntries) {
 		subEntry := &entry.SubEntries[i]
-		if len(subEntry.SubEntries) != 0 {
-			PopulateEntries(source, subEntry)
-		}
+		i++
 		if len(subEntry.Import) != 0 {
 			targetIndex, targetParent := findTarget(source, subEntry.Import...)
+
 			if targetIndex == -1 {
 				continue
 			}
 			importedEntry := targetParent.SubEntries[targetIndex]
-			CopyImports(subEntry, importedEntry)
 
+			CopyImports(subEntry, importedEntry)
+		}
+		if len(subEntry.SubEntries) != 0 {
+			PopulateEntries(subEntry, source)
 		}
 	}
+
 }
 
 func findTarget(entry *Entry, targetPath ...string) (int, *Entry) {
@@ -314,8 +331,58 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 			targetParent.SubEntries = slices.Insert(targetParent.SubEntries, targetIndex, target.SubEntries...)
 			targetIndex, targetParent = findTarget(entry, mod.Target...)
 			targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex+1)
+			for len(mod.Target) > 1 && len(targetParent.SubEntries) == 0 {
+				mod.Target = mod.Target[:len(mod.Target)-1]
+				targetIndex, targetParent = findTarget(entry, mod.Target...)
+				if targetIndex == -1 {
+					continue
+				}
+				targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex+1)
+			}
 		default:
 			continue
 		}
+	}
+}
+
+func SearchTarget(entry *Entry, target string) []string {
+
+	var path []string
+	for _, v := range entry.SubEntries {
+		if len(v.SubEntries) != 0 {
+			result := SearchTarget(&v, target)
+			if len(result) != 0 {
+				return append([]string{v.Label}, result...)
+			}
+		} else {
+			if v.Label == target {
+				// don't return just append
+				// fmt.Println(v.Label)
+				return []string{v.Label}
+			}
+		}
+	}
+	return path
+}
+
+func ClearSelf(entry *Entry) {
+	path := SearchTarget(entry, entry.Label)
+	if len(path) == 0 {
+		return
+	}
+
+	targetIndex, targetParent := findTarget(entry, path...)
+	if targetIndex == -1 {
+		return
+	}
+
+	targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex+1)
+	for len(path) > 1 && len(targetParent.SubEntries) == 0 {
+		path = path[:len(path)-1]
+		targetIndex, targetParent = findTarget(entry, path...)
+		if targetIndex == -1 {
+			continue
+		}
+		targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex)
 	}
 }
