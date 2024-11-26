@@ -104,6 +104,7 @@ func (u *User) RunQueue(ticker *time.Ticker) {
 			u.MessageQueue[lastIndex].Command = fmt.Sprintf("%s .", u.MessageQueue[lastIndex].Command)
 		}
 		u.LastMessage = u.MessageQueue[lastIndex].Command
+		fmt.Printf("[%v] sent by [%v]\n", u.MessageQueue[lastIndex].Command, u.Username)
 		u.Client.Say(u.MessageQueue[lastIndex].Channel, u.MessageQueue[lastIndex].Command)
 		u.MessageQueue = slices.Delete(u.MessageQueue, lastIndex, lastIndex+1)
 	}
