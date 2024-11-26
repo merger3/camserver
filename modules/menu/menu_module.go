@@ -356,8 +356,6 @@ func SearchTarget(entry *Entry, target string) []string {
 			}
 		} else {
 			if v.Label == target {
-				// don't return just append
-				// fmt.Println(v.Label)
 				return []string{v.Label}
 			}
 		}
