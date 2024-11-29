@@ -1,0 +1,1398 @@
+[
+	{
+		"name": "pasture",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": "a Backquote"
+			},
+			{
+				"name": "barn",
+				"hotkeys": "c"
+			},
+			{
+				"name": "insidebarn",
+				"hotkeys": "v"
+			},
+			{
+				"name": "poolw",
+				"hotkeys": "g"
+			},
+			{
+				"name": "poolw",
+				"hotkeys": "!g",
+				"sublayer": [
+					{
+						"name": "pooll",
+						"hotkeys": "f"
+					},
+					{
+						"name": "pool",
+						"hotkeys": "g"
+					},
+					{
+						"name": "poolr",
+						"hotkeys": "h"
+					}
+				]
+			},
+			{
+				"name": "pen",
+				"hotkeys": "f"
+			},
+			{
+				"name": "pen",
+				"hotkeys": "!f",
+				"sublayer": [
+					{
+						"name": "penl",
+						"hotkeys": "d"
+					},
+					{
+						"name": "pen",
+						"hotkeys": "f"
+					},
+					{
+						"name": "penr",
+						"hotkeys": "g"
+					}
+				]
+			},
+			{
+				"name": "middle",
+				"hotkeys": "d"
+			},
+			{
+				"name": "grove",
+				"hotkeys": "e"
+			},
+			{
+				"name": "barn2",
+				"hotkeys": "q"
+			},
+			{
+				"name": "barn2r",
+				"hotkeys": "w"
+			},
+			{
+				"name": "purplebase",
+				"hotkeys": "r"
+			},
+			{
+				"name": "purplenest",
+				"hotkeys": "^r"
+			},
+			{
+				"name": "grove2",
+				"hotkeys": "t"
+			},
+			
+			{
+				"name": "penr",
+				"hotkeys": "^s"
+			},
+			{
+				"name": "penl",
+				"hotkeys": "^a"
+			},
+			{
+				"name": "gate",
+				"hotkeys": "x"
+			},
+			{
+				"name": "feeder",
+				"hotkeys": "z"
+			},
+			{
+				"name": "angel",
+				"hotkeys": "^z"
+			},
+			{
+				"name": "stompyfood",
+				"hotkeys": "^v"
+			},
+			{
+				"name": "brush",
+				"hotkeys": "s"
+			},
+			{
+				"name": "feedstall",
+				"hotkeys": "^x"
+			},
+			{
+				"name": "water",
+				"hotkeys": "^c"
+			}
+		]
+	},
+	{
+		"name": "fox",
+		"presets": [
+			{
+				"name": "left",
+				"hotkeys": "a Backquote"
+			},
+			{
+				"name": "home",
+				"hotkeys": "^a"
+			},
+			{
+				"name": "treehouse",
+				"hotkeys": "s"
+			},
+			{
+				"name": "center",
+				"hotkeys": "d"
+			},
+			{
+				"name": "den",
+				"hotkeys": "f"
+			},
+			{
+				"name": "den",
+				"hotkeys": "!f",
+				"sublayer": [
+					{
+						"name": "denl",
+						"hotkeys": "d"
+					},
+					{
+						"name": "denf",
+						"hotkeys": "f"
+					},
+					{
+						"name": "den",
+						"hotkeys": "^f"
+					},
+					{
+						"name": "denr",
+						"hotkeys": "g"
+					}
+				]
+			},
+			{
+				"name": "right",
+				"hotkeys": "g"
+			},
+
+			{
+				"name": "leftfence",
+				"hotkeys": "q"
+			},
+			{
+				"name": "platform",
+				"hotkeys": "w"
+			},
+			{
+				"name": "platform",
+				"hotkeys": "!w",
+				"sublayer": [
+					{
+						"name": "platformbl",
+						"hotkeys": "Digit2"
+					},
+					{
+						"name": "platformfl",
+						"hotkeys": "q"
+					},
+					{
+						"name": "rampt",
+						"hotkeys": "w"
+					},
+					{
+						"name": "treeclimb",
+						"hotkeys": "^w"
+					},
+					{
+						"name": "platformfr",
+						"hotkeys": "e"
+					},
+					{
+						"name": "platformbr",
+						"hotkeys": "Digit3"
+					}
+				]
+			},				
+			{
+				"name": "treeclimb",
+				"hotkeys": "^w"
+			},
+			{
+				"name": "brush",
+				"hotkeys": "e"
+			},
+			{
+				"name": "insidedoor",
+				"hotkeys": "r"
+			},
+			{
+				"name": "table",
+				"hotkeys": "t"
+			},
+
+
+			{
+				"name": "treehousel",
+				"hotkeys": "z"
+			},
+			{
+				"name": "shade",
+				"hotkeys": "x"
+			},
+			{
+				"name": "belowplatform",
+				"hotkeys": "^x"
+			},
+			{
+				"name": "treehouser",
+				"hotkeys": "c"
+			},
+			{
+				"name": "belowramp",
+				"hotkeys": "^c"
+			},
+
+			{
+				"name": "down",
+				"hotkeys": "v"
+			},
+			{
+				"name": "down",
+				"hotkeys": "!v",
+				"sublayer": [
+					{
+						"name": "downleft",
+						"hotkeys": "c"
+					},
+					{
+						"name": "down",
+						"hotkeys": "v"
+					},
+					{
+						"name": "downright",
+						"hotkeys": "b"
+					}
+				]
+			},
+			{
+				"name": "bench",
+				"hotkeys": "b"
+			}
+		]
+	},
+	{
+		"name": "foxcorner",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": "a Backquote"
+			},
+			{
+				"name": "insidedoor",
+				"hotkeys": "q"
+			},
+			{
+				"name": "table",
+				"hotkeys": "w"
+			},
+			{
+				"name": "training",
+				"hotkeys": "e"
+			},
+			{
+				"name": "training2",
+				"hotkeys": "z"
+			},
+			{
+				"name": "bowl",
+				"hotkeys": "b"
+			},
+			{
+				"name": "den",
+				"hotkeys": "s"
+			},
+			{
+				"name": "hillleft",
+				"hotkeys": "x"
+			},
+			{
+				"name": "hillwide",
+				"hotkeys": "c"
+			},
+			{
+				"name": "hillright",
+				"hotkeys": "d"
+			}
+		]
+	},
+	{
+		"name": "parrot",
+		"presets": [
+			{
+				"name": "door",
+				"hotkeys": ""
+			},
+			{
+				"name": "macaws",
+				"hotkeys": ""
+			},
+			{
+				"name": "littles",
+				"hotkeys": ""
+			},
+			{
+				"name": "littles2",
+				"hotkeys": ""
+			},
+			{
+				"name": "abovedoor",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlesw",
+				"hotkeys": ""
+			},
+			{
+				"name": "macawsw",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "bothwindows",
+				"hotkeys": ""
+			},
+			{
+				"name": "chicken",
+				"hotkeys": ""
+			},
+			{
+				"name": "platform1",
+				"hotkeys": ""
+			},
+			{
+				"name": "platform2",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "littlesb",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlesbowl",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlesbowl2",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlesbowl3",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlessleep",
+				"hotkeys": ""
+			},
+			{
+				"name": "littlest",
+				"hotkeys": ""
+			},
+			
+			
+			{
+				"name": "macawsb",
+				"hotkeys": ""
+			},
+			{
+				"name": "macawsbowl",
+				"hotkeys": ""
+			},
+			{
+				"name": "macawsbowl2",
+				"hotkeys": ""
+			},
+			{
+				"name": "macawst",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "floorl",
+				"hotkeys": ""
+			},
+			{
+				"name": "floor",
+				"hotkeys": ""
+			},
+			{
+				"name": "floorr",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "crowout",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "right",
+				"hotkeys": ""
+			},
+			{
+				"name": "corner",
+				"hotkeys": ""
+			},
+			{
+				"name": "backcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "groundl",
+				"hotkeys": ""
+			},
+			{
+				"name": "ground",
+				"hotkeys": ""
+			},
+			{
+				"name": "groundr",
+				"hotkeys": ""
+			},
+			{
+				"name": "entry",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "inside",
+				"hotkeys": ""
+			},
+			{
+				"name": "platforminside",
+				"hotkeys": ""
+			},
+			{
+				"name": "insidewater",
+				"hotkeys": ""
+			},
+			{
+				"name": "insideperch",
+				"hotkeys": ""
+			},
+			{
+				"name": "table",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "platform",
+				"hotkeys": ""
+			},
+			{
+				"name": "bench",
+				"hotkeys": ""
+			},
+			{
+				"name": "cache",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "stickz",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "treet",
+				"hotkeys": ""
+			},
+			{
+				"name": "tree",
+				"hotkeys": ""
+			},
+			{
+				"name": "treeb",
+				"hotkeys": ""
+			},
+			{
+				"name": "treebase",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "crowin",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "entry",
+				"hotkeys": ""
+			},
+			{
+				"name": "back",
+				"hotkeys": ""
+			},
+			{
+				"name": "top",
+				"hotkeys": ""
+			},
+			{
+				"name": "backcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "heater",
+				"hotkeys": ""
+			},
+			{
+				"name": "backcornerr",
+				"hotkeys": ""
+			},
+			{
+				"name": "backleftcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightperch",
+				"hotkeys": ""
+			},
+			{
+				"name": "outside",
+				"hotkeys": ""
+			},
+			{
+				"name": "window",
+				"hotkeys": ""
+			},
+			{
+				"name": "windowc",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "platform",
+				"hotkeys": ""
+			},
+			{
+				"name": "table",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			},
+			{
+				"name": "hose",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "marmout",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "platformleft",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "rope",
+				"hotkeys": ""
+			},
+			{
+				"name": "right",
+				"hotkeys": ""
+			},
+			{
+				"name": "table",
+				"hotkeys": ""
+			},
+			{
+				"name": "top",
+				"hotkeys": ""
+			},
+			{
+				"name": "ir",
+				"hotkeys": ""
+			},
+			{
+				"name": "hose",
+				"hotkeys": ""
+			},
+			{
+				"name": "flapl",
+				"hotkeys": ""
+			},
+			{
+				"name": "flaps",
+				"hotkeys": ""
+			},
+			{
+				"name": "flapr",
+				"hotkeys": ""
+			},
+			{
+				"name": "topshelfl",
+				"hotkeys": ""
+			},
+			{
+				"name": "topshelfr",
+				"hotkeys": ""
+			},
+			{
+				"name": "domel",
+				"hotkeys": ""
+			},
+			{
+				"name": "domes",
+				"hotkeys": ""
+			},
+			{
+				"name": "domer",
+				"hotkeys": ""
+			},
+			{
+				"name": "bottomshelfl",
+				"hotkeys": ""
+			},
+			{
+				"name": "bottomshelfr",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+
+			
+			{
+				"name": "leftpostshelves",
+				"hotkeys": ""
+			},
+			{
+				"name": "leftpostshelvesl",
+				"hotkeys": ""
+			},
+			
+
+
+			{
+				"name": "rightshelvest",
+				"hotkeys": ""
+			},
+			{
+				"name": "ramp",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightshelvesb",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightpostb",
+				"hotkeys": ""
+			},
+			
+
+
+			{
+				"name": "frontdoor",
+				"hotkeys": ""
+			},
+			{
+				"name": "ground",
+				"hotkeys": ""
+			},
+			{
+				"name": "below",
+				"hotkeys": ""
+			},
+			{
+				"name": "groundr",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "marmin",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "right",
+				"hotkeys": ""
+			},
+			{
+				"name": "table",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "flaps",
+				"hotkeys": ""
+			},
+			{
+				"name": "bowll",
+				"hotkeys": ""
+			},
+			{
+				"name": "domeleft",
+				"hotkeys": ""
+			},
+			{
+				"name": "domeright",
+				"hotkeys": ""
+			},
+			{
+				"name": "bridgel",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "bridgem",
+				"hotkeys": ""
+			},
+			{
+				"name": "bridger",
+				"hotkeys": ""
+			},
+			{
+				"name": "win1",
+				"hotkeys": ""
+			},
+			{
+				"name": "win2",
+				"hotkeys": ""
+			},
+			{
+				"name": "win3",
+				"hotkeys": ""
+			},
+			{
+				"name": "win4",
+				"hotkeys": ""
+			},
+			{
+				"name": "floor",
+				"hotkeys": ""
+			},
+			{
+				"name": "pole",
+				"hotkeys": ""
+			},
+			{
+				"name": "cornershelf",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "wolf",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "river",
+				"hotkeys": ""
+			},
+			{
+				"name": "right",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightfence",
+				"hotkeys": ""
+			},
+			{
+				"name": "farfence",
+				"hotkeys": ""
+			},
+			{
+				"name": "grass",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "insidedoor",
+				"hotkeys": ""
+			},
+			{
+				"name": "pond",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowplatform",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "tipz",
+				"hotkeys": ""
+			},
+			{
+				"name": "shaft",
+				"hotkeys": ""
+			},
+			{
+				"name": "waterfall",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+
+			{
+				"name": "backleftcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "switchgater",
+				"hotkeys": ""
+			},
+			{
+				"name": "leftcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "downright",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+			
+
+			{
+				"name": "bigrocks",
+				"hotkeys": ""
+			},
+			{
+				"name": "farcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "den1t",
+				"hotkeys": ""
+			},
+			{
+				"name": "den1inside",
+				"hotkeys": ""
+			},
+			{
+				"name": "den1r",
+				"hotkeys": ""
+			},
+			{
+				"name": "den1",
+				"hotkeys": ""
+			},
+			{
+				"name": "den1l",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2t",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2m",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2b",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2l",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2r",
+				"hotkeys": ""
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "wolfcornercam",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "wolfcorner",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "grass",
+				"hotkeys": ""
+			},
+			{
+				"name": "leftcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightfence",
+				"hotkeys": ""
+			},
+			{
+				"name": "right",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowplatforml",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowplatform",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowplatformr",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2t",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2m",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2l",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2shade",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowrampl",
+				"hotkeys": ""
+			},
+			{
+				"name": "belowrampr",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2b",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2door",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2entrance",
+				"hotkeys": ""
+			},
+			{
+				"name": "den2inside",
+				"hotkeys": ""
+			},
+			
+		
+
+			{
+				"name": "leftfence",
+				"hotkeys": ""
+			},
+			{
+				"name": "grassl",
+				"hotkeys": ""
+			},
+			{
+				"name": "grassr",
+				"hotkeys": ""
+			},
+			{
+				"name": "backfence",
+				"hotkeys": ""
+			},
+			{
+				"name": "rightcorner",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "nearcorner",
+				"hotkeys": ""
+			},
+			{
+				"name": "downleft",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "downright",
+				"hotkeys": ""
+			},
+			
+
+
+			{
+				"name": "den1",
+				"hotkeys": ""
+			},
+			{
+				"name": "river",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"name": "wolfcam",
+				"hotkeys": ""
+			}
+		]
+	},
+	{
+		"name": "wolfinside",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "doors",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "platformleft",
+				"hotkeys": ""
+			},
+			{
+				"name": "platformcenter",
+				"hotkeys": ""
+			},
+			{
+				"name": "platformright",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "wolfden",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "wolfden2",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "bb",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "marty",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "hank",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "hankcorner",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+	
+	{
+		"name": "roaches",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "noodle",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "closebranch",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "farbranches",
+				"hotkeys": ""
+			},
+			{
+				"name": "left",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "toast",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "downright",
+				"hotkeys": ""
+			},
+			{
+				"name": "far",
+				"hotkeys": ""
+			},
+			{
+				"name": "food",
+				"hotkeys": ""
+			},
+			{
+				"name": "log",
+				"hotkeys": ""
+			},
+			{
+				"name": "logz",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "patchy",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "closebranches",
+				"hotkeys": ""
+			},
+			{
+				"name": "down",
+				"hotkeys": ""
+			},
+			{
+				"name": "farbranches",
+				"hotkeys": ""
+			},
+			{
+				"name": "groundm",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "pushpop",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "georgie",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			},
+			{
+				"name": "closedirt",
+				"hotkeys": ""
+			},
+			{
+				"name": "closeup",
+				"hotkeys": ""
+			},
+			{
+				"name": "dirt",
+				"hotkeys": ""
+			},
+			{
+				"name": "shore",
+				"hotkeys": ""
+			},
+			{
+				"name": "shoreright",
+				"hotkeys": ""
+			},
+			{
+				"name": "water",
+				"hotkeys": ""
+			},
+			{
+				"name": "wide",
+				"hotkeys": ""
+			}
+		]
+	},
+
+	{
+		"name": "garden",
+		"presets": [
+			{
+				"name": "home",
+				"hotkeys": ""
+			}
+		]
+	}
+]

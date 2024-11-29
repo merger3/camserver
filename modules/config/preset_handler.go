@@ -28,7 +28,7 @@ func (c ConfigModule) CheckCacheSync(ctx echo.Context) error {
 	}
 }
 
-func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
+func (c ConfigModule) GetButtonPresets(ctx echo.Context) error {
 	req := core.CamRequest{}
 
 	if err := ctx.Bind(&req); err != nil {
@@ -41,7 +41,51 @@ func (c ConfigModule) GetCamPresets(ctx echo.Context) error {
 		return err
 	}
 
-	for _, presets := range c.Cameras {
+	for _, presets := range c.ButtonPresets {
+		if c.Aliases.ToBase(presets.CamName) == c.Aliases.ToBase(req.Cam) {
+			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
+		}
+	}
+
+	return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
+}
+
+func (c ConfigModule) GetMenuPresets(ctx echo.Context) error {
+	req := core.CamRequest{}
+
+	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	for _, presets := range c.MenuPresets {
+		if c.Aliases.ToBase(presets.CamName) == c.Aliases.ToBase(req.Cam) {
+			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
+		}
+	}
+
+	return ctx.JSON(http.StatusOK, PresetResponse{Found: false, CamPresetsList: nil})
+}
+
+func (c ConfigModule) GetHotkeyPresets(ctx echo.Context) error {
+	req := core.CamRequest{}
+
+	if err := ctx.Bind(&req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	if err := (&echo.DefaultBinder{}).BindHeaders(ctx, &req); err != nil {
+		fmt.Printf("%v\n", err)
+		return err
+	}
+
+	for _, presets := range c.HotkeyPresets {
 		if c.Aliases.ToBase(presets.CamName) == c.Aliases.ToBase(req.Cam) {
 			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
 		}

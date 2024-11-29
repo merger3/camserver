@@ -2,6 +2,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -14,27 +15,31 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-type Presets struct {
-	Cameras []CamPresets `json:"cameras"`
-}
-
 type CamPresets struct {
-	CamName string   `json:"name"`
-	Presets []Preset `json:"presets"`
+	CamName string `json:"name"`
+	Presets []any  `json:"presets"`
 }
 
-type Preset struct {
-	Name       string   `json:"name"`
-	Hotkeys    string   `json:"hotkeys"`
-	Subentries []Preset `json:"subentries"`
-	Sublayer   []Preset `json:"sublayer"`
+type ButtonPreset struct {
+	Name string `json:"name"`
+}
+type MenuPreset struct {
+	Name       string       `json:"name"`
+	Subentries []MenuPreset `json:"subentries"`
+}
+type HotkeyPreset struct {
+	Name     string         `json:"name"`
+	Hotkeys  string         `json:"hotkeys"`
+	Sublayer []HotkeyPreset `json:"sublayer"`
 }
 
 type ConfigModule struct {
-	Twitch  *twitch.TwitchManager
-	Cache   *cache.CacheManager
-	Aliases alias.AliasManager
-	Presets
+	Twitch        *twitch.TwitchManager
+	Cache         *cache.CacheManager
+	Aliases       alias.AliasManager
+	ButtonPresets []CamPresets
+	MenuPresets   []CamPresets
+	HotkeyPresets []CamPresets
 }
 
 func NewConfigModule() *ConfigModule {
@@ -42,26 +47,30 @@ func NewConfigModule() *ConfigModule {
 }
 
 func (c ConfigModule) RegisterRoutes(server *echo.Echo) {
-	server.POST("/api/camera/presets", c.GetCamPresets)
+	server.POST("/api/camera/presets/buttons", c.GetButtonPresets)
+	server.POST("/api/camera/presets/menus", c.GetMenuPresets)
+	server.POST("/api/camera/presets/hotkeys", c.GetHotkeyPresets)
 	server.POST("/api/authorize", c.GetAuthorized)
 	server.GET("/api/synced", c.CheckCacheSync)
 }
 
 func (c *ConfigModule) Init(resources map[string]any) {
-	c.Presets = LoadPresets()
+	c.ButtonPresets = LoadPresets("buttons")
+	c.MenuPresets = LoadPresets("menus")
+	c.HotkeyPresets = LoadPresets("hotkeys")
 	c.Twitch = resources["twitch"].(*twitch.TwitchManager)
 	c.Cache = resources["cache"].(*cache.CacheManager)
 	c.Aliases = resources["aliases"].(alias.AliasManager)
 }
 
-func LoadPresets() Presets {
-	file, err := os.Open(filepath.Join("configs", "presets.json"))
+func LoadPresets(set string) []CamPresets {
+	file, err := os.Open(filepath.Join("configs", fmt.Sprintf("%s.presets.json", set)))
 	if err != nil {
 		log.Fatalf("failed to open file: %s", err)
 	}
 	defer file.Close()
 
-	var p Presets
+	var p []CamPresets
 
 	decoder := json.NewDecoder(file)
 	if err = decoder.Decode(&p); err != nil {

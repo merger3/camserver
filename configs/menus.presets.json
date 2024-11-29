@@ -1,0 +1,1183 @@
+[
+	{
+		"name": "pasture",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "barn"
+			},
+			{
+				"name": "insidebarn"
+			},
+			{
+				"name": "poolw"
+			},
+			{
+				"name": "pool",
+				"subentries": [
+					{
+						"name": "poolr"
+					},
+					{
+						"name": "pool"
+					},
+					{
+						"name": "pooll"
+					}
+				]
+			},
+			{
+				"name": "pen"
+			},
+			{
+				"name": "middle"
+			},
+			{
+				"name": "grove"
+			},
+			{
+				"name": "separator"
+			},
+			{
+				"name": "barn2"
+			},
+			{
+				"name": "barn2r"
+			},
+			{
+				"name": "purplebase"
+			},
+			{
+				"name": "purplenest"
+			},
+			{
+				"name": "grove2"
+			},
+			{
+				"name": "penr"
+			},
+			{
+				"name": "penl"
+			},
+			{
+				"name": "gate"
+			},
+			{
+				"name": "feeder"
+			},
+			{
+				"name": "angel"
+			},
+			{
+				"name": "stompyfood"
+			},
+			{
+				"name": "brush"
+			},
+			{
+				"name": "feedstall"
+			},
+			{
+				"name": "water"
+			}
+		]
+	},
+	{
+		"name": "fox",
+		"presets": [
+			{
+				"name": "left"
+			},
+			{
+				"name": "platform"
+			},
+			{
+				"name": "shade"
+			},
+			{
+				"name": "center"
+			},
+			{
+				"name": "den"
+			},
+
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "down"
+			},
+			
+			{
+				"name": "right"
+			},
+			{
+				"name": "bench"
+			},
+			{
+				"name": "treehouse",
+				"subentries": [
+					{
+						"name": "leftfence"
+					},
+					{
+						"name": "treehousel"
+					},
+					{
+						"name": "treehouse"
+					},
+					{
+						"name": "treehouser"
+					},
+					{
+						"name": "brush"
+					}
+				]
+			},
+
+			{
+				"name": "downleft"
+			},
+			{
+				"name": "downright"
+			},
+
+			{
+				"name": "den",
+				"subentries": [
+					{
+						"name": "denl"
+					},
+					{
+						"name": "denf"
+					},
+					{
+						"name": "denr"
+					}
+				]
+			},
+
+			{
+				"name": "treehouse",
+				"subentries": [
+					{
+						"name": "platformbl"
+					},
+					{
+						"name": "platformfl"
+					},
+					{
+						"name": "rampt"
+					},
+					{
+						"name": "platformfr"
+					},
+					{
+						"name": "platformbr"
+					}
+				]
+			},
+
+			{
+				"name": "belowplatform"
+			},
+			{
+				"name": "belowramp"
+			},
+
+			{
+				"name": "insidedoor"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "treeclimb"
+			},
+			{
+				"name": "home"
+			}
+		]
+	},
+	{
+		"name": "foxcorner",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "insidedoor"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "training"
+			},
+			{
+				"name": "training2"
+			},
+			{
+				"name": "bowl"
+			},
+			{
+				"name": "den"
+			},
+			{
+				"name": "hillleft"
+			},
+			{
+				"name": "hillwide"
+			},
+			{
+				"name": "hillright"
+			}
+		]
+	},
+	{
+		"name": "parrot",
+		"presets": [
+			{
+				"name": "door"
+			},
+			{
+				"name": "macaws"
+			},
+			{
+				"name": "littles"
+			},
+			{
+				"name": "littles2"
+			},
+			{
+				"name": "abovedoor"
+			},
+			{
+				"name": "littlesw"
+			},
+			{
+				"name": "macawsw"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "home"
+			},
+			{
+				"name": "bothwindows"
+			},
+			{
+				"name": "chicken"
+			},
+			{
+				"name": "platform1"
+			},
+			{
+				"name": "platform2"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "littlesb"
+			},
+			{
+				"name": "littlesbowl"
+			},
+			{
+				"name": "littlesbowl2"
+			},
+			{
+				"name": "littlesbowl3"
+			},
+			{
+				"name": "littlessleep"
+			},
+			{
+				"name": "littlest"
+			},
+			{
+				"name": "separator"
+			},
+			
+			{
+				"name": "macawsb"
+			},
+			{
+				"name": "macawsbowl"
+			},
+			{
+				"name": "macawsbowl2"
+			},
+			{
+				"name": "macawst"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "floorl"
+			},
+			{
+				"name": "floor"
+			},
+			{
+				"name": "floorr"
+			}
+		]
+	},
+
+	{
+		"name": "crowout",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "right"
+			},
+			{
+				"name": "corner"
+			},
+			{
+				"name": "backcorner"
+			},
+			{
+				"name": "ground",
+				"subentries": [
+					{
+						"name": "groundl"
+					},
+					{
+						"name": "ground"
+					},
+					{
+						"name": "groundr"
+					}
+				]
+			},
+			{
+				"name": "entry"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "inside"
+			},
+			{
+				"name": "platforminside"
+			},
+			{
+				"name": "insidewater"
+			},
+			{
+				"name": "insideperch"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "platform"
+			},
+			{
+				"name": "bench"
+			},
+			{
+				"name": "cache"
+			},
+			{
+				"name": "water"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "stickz"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "tree",
+				"subentries": [
+					{
+						"name": "treet"
+					},
+					{
+						"name": "tree"
+					},
+					{
+						"name": "treeb"
+					},
+					{
+						"name": "treebase"
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"name": "crowin",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "entry"
+			},
+			{
+				"name": "back"
+			},
+			{
+				"name": "top",
+				"subentries": [
+					{
+						"name": "top"
+					},
+					{
+						"name": "backcorner"
+					},
+					{
+						"name": "heater"
+					},
+					{
+						"name": "backcornerr"
+					},
+					{
+						"name": "backleftcorner"
+					}
+				]
+			},
+			{
+				"name": "rightperch",
+				"subentries": [
+					{
+						"name": "rightperch"
+					},
+					{
+						"name": "outside"
+					},
+					{
+						"name": "window"
+					},
+					{
+						"name": "windowc"
+					}
+				]
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "platform"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "water"
+			},
+			{
+				"name": "hose"
+			}
+		]
+	},
+
+	{
+		"name": "marmout",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "platformleft"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "rope"
+			},
+			{
+				"name": "right"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "top"
+			},
+			{
+				"name": "ir"
+			},
+			{
+				"name": "hose"
+			},
+			{
+				"name": "flaps",
+				"subentries": [
+					{
+						"name": "flapl"
+					},
+					{
+						"name": "flaps"
+					},
+					{
+						"name": "flapr"
+					}
+				]
+			},
+			{
+				"name": "leftshelf",
+				"subentries": [
+					{
+						"name": "topshelfl"
+					},
+					{
+						"name": "topshelfr"
+					},
+					{
+						"name": "domes",
+						"subentries": [
+							{
+								"name": "domel"
+							},
+							{
+								"name": "domes"
+							},
+							{
+								"name": "domer"
+							}
+						]
+					},
+					{
+						"name": "bottomshelfl"
+					},
+					{
+						"name": "bottomshelfr"
+					}
+				]
+			},
+			{
+				"name": "separator"
+			},
+
+
+			
+			{
+				"name": "leftpostshelves"
+			},
+			{
+				"name": "leftpostshelvesl"
+			},
+			{
+				"name": "separator"
+			},
+
+
+			{
+				"name": "rightshelvest"
+			},
+			{
+				"name": "ramp"
+			},
+			{
+				"name": "rightshelvesb"
+			},
+			{
+				"name": "rightpostb"
+			},
+			{
+				"name": "separator"
+			},
+
+
+			{
+				"name": "frontdoor"
+			},
+			{
+				"name": "ground"
+			},
+			{
+				"name": "below"
+			},
+			{
+				"name": "groundr"
+			}
+		]
+	},
+
+	{
+		"name": "marmin",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "right"
+			},
+			{
+				"name": "table"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "flaps"
+			},
+			{
+				"name": "bowll"
+			},
+			{
+				"name": "domeleft"
+			},
+			{
+				"name": "domeright"
+			},
+			{
+				"name": "bridge",
+				"subentries": [
+					{
+						"name": "bridgel"
+					},
+					{
+						"name": "down"
+					},
+					{
+						"name": "bridgem"
+					},
+					{
+						"name": "bridger"
+					}
+				]
+			},
+			{
+				"name": "windows",
+				"subentries": [
+					{
+						"name": "win1"
+					},
+					{
+						"name": "win2"
+					},
+					{
+						"name": "win3"
+					},
+					{
+						"name": "win4"
+					}
+				]
+			},
+			{
+				"name": "floor"
+			},
+			{
+				"name": "pole"
+			},
+			{
+				"name": "cornershelf"
+			}
+		]
+	},
+
+	{
+		"name": "wolf",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "river"
+			},
+			{
+				"name": "right"
+			},
+			{
+				"name": "rightfence"
+			},
+			{
+				"name": "farfence"
+			},
+			{
+				"name": "grass"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "insidedoor"
+			},
+			{
+				"name": "pond"
+			},
+			{
+				"name": "belowplatform"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "tipz"
+			},
+			{
+				"name": "shaft"
+			},
+			{
+				"name": "waterfall"
+			},
+			{
+				"name": "separator"
+			},
+
+
+			{
+				"name": "backleftcorner"
+			},
+			{
+				"name": "switchgater"
+			},
+			{
+				"name": "leftcorner"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "downright"
+			},
+			{
+				"name": "separator"
+			},
+			
+
+			{
+				"name": "bigrocks"
+			},
+			{
+				"name": "farcorner"
+			},
+			{
+				"name": "den1",
+				"subentries": [
+					{
+						"name": "den1t"
+					},
+					{
+						"name": "den1inside"
+					},
+					{
+						"name": "den1r"
+					},
+					{
+						"name": "den1"
+					},
+					{
+						"name": "den1l"
+					}
+				]
+			},
+			{
+				"name": "den2",
+				"subentries": [
+					{
+						"name": "den2"
+					},
+					{
+						"name": "den2t"
+					},
+					{
+						"name": "den2m"
+					},
+					{
+						"name": "den2b"
+					},
+					{
+						"name": "den2l"
+					},
+					{
+						"name": "den2r"
+					}
+				]
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "wolfcornercam"
+			}
+		]
+	},
+
+	{
+		"name": "wolfcorner",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "grass"
+			},
+			{
+				"name": "leftcorner"
+			},
+			{
+				"name": "rightfence"
+			},
+			{
+				"name": "right"
+			},
+			{
+				"name": "belowplatform",
+				"subentries": [
+					{
+						"name": "belowplatforml"
+					},
+					{
+						"name": "belowplatform"
+					},
+					{
+						"name": "water"
+					},
+					{
+						"name": "belowplatformr"
+					}
+				]
+			},
+			{
+				"name": "den2",
+				"subentries": [
+					{
+						"name": "den2t"
+					},
+					{
+						"name": "den2m"
+					},
+					{
+						"name": "den2l"
+					},
+					{
+						"name": "den2shade"
+					},
+					{
+						"name": "belowrampl"
+					},
+					{
+						"name": "belowrampr"
+					},
+					{
+						"name": "den2b"
+					},
+					{
+						"name": "den2door"
+					},
+					{
+						"name": "den2entrance"
+					},
+					{
+						"name": "den2inside"
+					}
+				]
+			},
+			{
+				"name": "separator"
+			},
+		
+
+			{
+				"name": "leftfence"
+			},
+			{
+				"name": "grassl"
+			},
+			{
+				"name": "grassr"
+			},
+			{
+				"name": "backfence"
+			},
+			{
+				"name": "rightcorner"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "nearcorner"
+			},
+			{
+				"name": "down",
+				"subentries": [
+					{
+						"name": "downleft"
+					},
+					{
+						"name": "down"
+					},
+					{
+						"name": "downright"
+					}
+				]
+			},
+			{
+				"name": "separator"
+			},
+
+
+			{
+				"name": "den1"
+			},
+			{
+				"name": "river"
+			},
+			{
+				"name": "separator"
+			},
+
+			{
+				"name": "wolfcam"
+			}
+		]
+	},
+
+
+	{
+		"name": "wolfinside",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "doors"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "platformleft"
+			},
+			{
+				"name": "platformcenter"
+			},
+			{
+				"name": "platformright"
+			}
+		]
+	},
+
+	{
+		"name": "wolfden",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "wolfden2",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "bb",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "marty",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "hank",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "hankcorner",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+	
+	{
+		"name": "roaches",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "noodle",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "closebranch"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "farbranches"
+			},
+			{
+				"name": "left"
+			},
+			{
+				"name": "water"
+			}
+		]
+	},
+
+	{
+		"name": "toast",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "downright"
+			},
+			{
+				"name": "far"
+			},
+			{
+				"name": "food"
+			},
+			{
+				"name": "log"
+			},
+			{
+				"name": "logz"
+			},
+			{
+				"name": "water"
+			}
+		]
+	},
+
+	{
+		"name": "patchy",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "closebranches"
+			},
+			{
+				"name": "down"
+			},
+			{
+				"name": "farbranches"
+			},
+			{
+				"name": "groundm"
+			},
+			{
+				"name": "water"
+			}
+		]
+	},
+
+	{
+		"name": "pushpop",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	},
+
+	{
+		"name": "georgie",
+		"presets": [
+			{
+				"name": "home"
+			},
+			{
+				"name": "closedirt"
+			},
+			{
+				"name": "closeup"
+			},
+			{
+				"name": "dirt"
+			},
+			{
+				"name": "shore"
+			},
+			{
+				"name": "shoreright"
+			},
+			{
+				"name": "water"
+			},
+			{
+				"name": "wide"
+			}
+		]
+	},
+
+	{
+		"name": "garden",
+		"presets": [
+			{
+				"name": "home"
+			}
+		]
+	}
+]
