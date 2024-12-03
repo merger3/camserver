@@ -55,7 +55,7 @@ func (m *MenuModule) Init(resources map[string]any) {
 		e := &e
 		PopulateEntries(e, m.Sources["base"], m.Sources["section"])
 		m.ApplyMods(e)
-		// ClearSelf(e)
+		ClearSelf(e)
 
 		ce := &CleanEntry{}
 		ce.CopyFromEntry(e)
