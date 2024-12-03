@@ -3,7 +3,7 @@
 		"label": "wolves_base",
 		"subentries": [
 			{
-				"label": "wolves",
+				"label": "wolves_import",
 				"import": [
 					"wolves"
 				]
@@ -19,6 +19,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"wolves_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"wolves"
 				]
 			},
@@ -27,12 +34,6 @@
 				"target": [
 					"common"
 				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"wolves"
-				]
 			}
 		]
 	},
@@ -40,7 +41,7 @@
 		"label": "rats_base",
 		"subentries": [
 			{
-				"label": "rats",
+				"label": "rats_import",
 				"import": [
 					"rats"
 				]
@@ -62,7 +63,7 @@
 				],
 				"props": {
 					"position": [ 
-						"rats"
+						"rats_import"
 					],
 					"location": {
 						"anchor": "ratmulti",
@@ -73,7 +74,7 @@
 			{
 				"action": "flatten",
 				"target": [
-					"rats"
+					"rats_import"
 				]
 			},
 			{
@@ -90,15 +91,16 @@
 				}
 			},
 			{
-				"action": "flatten",
+				"action": "remove",
 				"target": [
-					"common"
+					"common",
+					"rats"
 				]
 			},
 			{
-				"action": "remove",
+				"action": "flatten",
 				"target": [
-					"rats"
+					"common"
 				]
 			}
 		]
@@ -107,7 +109,7 @@
 		"label": "chins_base",
 		"subentries": [
 			{
-				"label": "chins",
+				"label": "chins_import",
 				"import": [
 					"chins"
 				]
@@ -129,7 +131,7 @@
 				],
 				"props": {
 					"position": [ 
-						"chins"
+						"chins_import"
 					],
 					"location": {
 						"anchor": "chinmulti",
@@ -140,7 +142,7 @@
 			{
 				"action": "flatten",
 				"target": [
-					"chins"
+					"chins_import"
 				]
 			},
 			{
@@ -157,15 +159,16 @@
 				}
 			},
 			{
-				"action": "flatten",
+				"action": "remove",
 				"target": [
-					"common"
+					"common",
+					"chins"
 				]
 			},
 			{
-				"action": "remove",
+				"action": "flatten",
 				"target": [
-					"chins"
+					"common"
 				]
 			}
 		]
@@ -174,7 +177,7 @@
 		"label": "reptiles_base",
 		"subentries": [
 			{
-				"label": "reptiles",
+				"label": "reptiles_import",
 				"import": [
 					"reptiles"
 				]
@@ -190,6 +193,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"reptiles_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"reptiles"
 				]
 			},
@@ -197,12 +207,6 @@
 				"action": "flatten",
 				"target": [
 					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"reptiles"
 				]
 			}
 		]
@@ -211,7 +215,7 @@
 		"label": "insects_base",
 		"subentries": [
 			{
-				"label": "insects",
+				"label": "insects_import",
 				"import": [
 					"insects"
 				]
@@ -227,6 +231,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"insects_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"insects"
 				]
 			},
@@ -234,12 +245,6 @@
 				"action": "flatten",
 				"target": [
 					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"insects"
 				]
 			}
 		]
@@ -248,7 +253,7 @@
 		"label": "crows_base",
 		"subentries": [
 			{
-				"label": "crows",
+				"label": "crows_import",
 				"import": [
 					"crows"
 				]
@@ -264,6 +269,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"crows_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"crows"
 				]
 			},
@@ -271,12 +283,6 @@
 				"action": "flatten",
 				"target": [
 					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"crows"
 				]
 			}
 		]
@@ -285,7 +291,7 @@
 		"label": "marms_base",
 		"subentries": [
 			{
-				"label": "marmosets",
+				"label": "marmosets_import",
 				"import": [
 					"marmosets"
 				]
@@ -301,6 +307,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"marmosets_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"marmosets"
 				]
 			},
@@ -308,12 +321,6 @@
 				"action": "flatten",
 				"target": [
 					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"marmosets"
 				]
 			}
 		]
@@ -322,7 +329,7 @@
 		"label": "foxes_base",
 		"subentries": [
 			{
-				"label": "foxes",
+				"label": "foxes_import",
 				"import": [
 					"foxes"
 				]
@@ -338,6 +345,13 @@
 			{
 				"action": "flatten",
 				"target": [
+					"foxes_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
 					"foxes"
 				]
 			},
@@ -345,12 +359,6 @@
 				"action": "flatten",
 				"target": [
 					"common"
-				]
-			},
-			{
-				"action": "remove",
-				"target": [
-					"foxes"
 				]
 			}
 		]

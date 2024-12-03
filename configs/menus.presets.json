@@ -1,433 +1,433 @@
 [
 	{
-		"name": "pasture",
-		"presets": [
+		"value": "pasture",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "barn"
+				"value": "barn"
 			},
 			{
-				"name": "insidebarn"
+				"value": "insidebarn"
 			},
 			{
-				"name": "poolw"
+				"value": "poolw"
 			},
 			{
-				"name": "pool",
-				"subentries": [
+				"value": "pool",
+				"items": [
 					{
-						"name": "poolr"
+						"value": "poolr"
 					},
 					{
-						"name": "pool"
+						"value": "pool"
 					},
 					{
-						"name": "pooll"
+						"value": "pooll"
 					}
 				]
 			},
 			{
-				"name": "pen"
+				"value": "pen"
 			},
 			{
-				"name": "middle"
+				"value": "middle"
 			},
 			{
-				"name": "grove"
+				"value": "grove"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 			{
-				"name": "barn2"
+				"value": "barn2"
 			},
 			{
-				"name": "barn2r"
+				"value": "barn2r"
 			},
 			{
-				"name": "purplebase"
+				"value": "purplebase"
 			},
 			{
-				"name": "purplenest"
+				"value": "purplenest"
 			},
 			{
-				"name": "grove2"
+				"value": "grove2"
 			},
 			{
-				"name": "penr"
+				"value": "penr"
 			},
 			{
-				"name": "penl"
+				"value": "penl"
 			},
 			{
-				"name": "gate"
+				"value": "gate"
 			},
 			{
-				"name": "feeder"
+				"value": "feeder"
 			},
 			{
-				"name": "angel"
+				"value": "angel"
 			},
 			{
-				"name": "stompyfood"
+				"value": "stompyfood"
 			},
 			{
-				"name": "brush"
+				"value": "brush"
 			},
 			{
-				"name": "feedstall"
+				"value": "feedstall"
 			},
 			{
-				"name": "water"
+				"value": "water"
 			}
 		]
 	},
 	{
-		"name": "fox",
-		"presets": [
+		"value": "fox",
+		"items": [
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "platform"
+				"value": "platform"
 			},
 			{
-				"name": "shade"
+				"value": "shade"
 			},
 			{
-				"name": "center"
+				"value": "center"
 			},
 			{
-				"name": "den"
-			},
-
-			{
-				"name": "separator"
+				"value": "den"
 			},
 
 			{
-				"name": "down"
+				"value": "separator"
+			},
+
+			{
+				"value": "down"
 			},
 			
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "bench"
+				"value": "bench"
 			},
 			{
-				"name": "treehouse",
-				"subentries": [
+				"value": "treehouse",
+				"items": [
 					{
-						"name": "leftfence"
+						"value": "leftfence"
 					},
 					{
-						"name": "treehousel"
+						"value": "treehousel"
 					},
 					{
-						"name": "treehouse"
+						"value": "treehouse"
 					},
 					{
-						"name": "treehouser"
+						"value": "treehouser"
 					},
 					{
-						"name": "brush"
+						"value": "brush"
 					}
 				]
 			},
 
 			{
-				"name": "downleft"
+				"value": "downleft"
 			},
 			{
-				"name": "downright"
+				"value": "downright"
 			},
 
 			{
-				"name": "den",
-				"subentries": [
+				"value": "den",
+				"items": [
 					{
-						"name": "denl"
+						"value": "denl"
 					},
 					{
-						"name": "denf"
+						"value": "denf"
 					},
 					{
-						"name": "denr"
+						"value": "denr"
 					}
 				]
 			},
 
 			{
-				"name": "treehouse",
-				"subentries": [
+				"value": "treehouse",
+				"items": [
 					{
-						"name": "platformbl"
+						"value": "platformbl"
 					},
 					{
-						"name": "platformfl"
+						"value": "platformfl"
 					},
 					{
-						"name": "rampt"
+						"value": "rampt"
 					},
 					{
-						"name": "platformfr"
+						"value": "platformfr"
 					},
 					{
-						"name": "platformbr"
+						"value": "platformbr"
 					}
 				]
 			},
 
 			{
-				"name": "belowplatform"
+				"value": "belowplatform"
 			},
 			{
-				"name": "belowramp"
+				"value": "belowramp"
 			},
 
 			{
-				"name": "insidedoor"
+				"value": "insidedoor"
 			},
 			{
-				"name": "table"
+				"value": "table"
 			},
 			{
-				"name": "treeclimb"
+				"value": "treeclimb"
 			},
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 	{
-		"name": "foxcorner",
-		"presets": [
+		"value": "foxcorner",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "insidedoor"
+				"value": "insidedoor"
 			},
 			{
-				"name": "table"
+				"value": "table"
 			},
 			{
-				"name": "training"
+				"value": "training"
 			},
 			{
-				"name": "training2"
+				"value": "training2"
 			},
 			{
-				"name": "bowl"
+				"value": "bowl"
 			},
 			{
-				"name": "den"
+				"value": "den"
 			},
 			{
-				"name": "hillleft"
+				"value": "hillleft"
 			},
 			{
-				"name": "hillwide"
+				"value": "hillwide"
 			},
 			{
-				"name": "hillright"
+				"value": "hillright"
 			}
 		]
 	},
 	{
-		"name": "parrot",
-		"presets": [
+		"value": "parrot",
+		"items": [
 			{
-				"name": "door"
+				"value": "door"
 			},
 			{
-				"name": "macaws"
+				"value": "macaws"
 			},
 			{
-				"name": "littles"
+				"value": "littles"
 			},
 			{
-				"name": "littles2"
+				"value": "littles2"
 			},
 			{
-				"name": "abovedoor"
+				"value": "abovedoor"
 			},
 			{
-				"name": "littlesw"
+				"value": "littlesw"
 			},
 			{
-				"name": "macawsw"
+				"value": "macawsw"
 			},
 			{
-				"name": "separator"
-			},
-
-			{
-				"name": "home"
-			},
-			{
-				"name": "bothwindows"
-			},
-			{
-				"name": "chicken"
-			},
-			{
-				"name": "platform1"
-			},
-			{
-				"name": "platform2"
-			},
-			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "littlesb"
+				"value": "home"
 			},
 			{
-				"name": "littlesbowl"
+				"value": "bothwindows"
 			},
 			{
-				"name": "littlesbowl2"
+				"value": "chicken"
 			},
 			{
-				"name": "littlesbowl3"
+				"value": "platform1"
 			},
 			{
-				"name": "littlessleep"
+				"value": "platform2"
 			},
 			{
-				"name": "littlest"
+				"value": "separator"
+			},
+
+			{
+				"value": "littlesb"
 			},
 			{
-				"name": "separator"
+				"value": "littlesbowl"
+			},
+			{
+				"value": "littlesbowl2"
+			},
+			{
+				"value": "littlesbowl3"
+			},
+			{
+				"value": "littlessleep"
+			},
+			{
+				"value": "littlest"
+			},
+			{
+				"value": "separator"
 			},
 			
 			{
-				"name": "macawsb"
+				"value": "macawsb"
 			},
 			{
-				"name": "macawsbowl"
+				"value": "macawsbowl"
 			},
 			{
-				"name": "macawsbowl2"
+				"value": "macawsbowl2"
 			},
 			{
-				"name": "macawst"
+				"value": "macawst"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "floorl"
+				"value": "floorl"
 			},
 			{
-				"name": "floor"
+				"value": "floor"
 			},
 			{
-				"name": "floorr"
+				"value": "floorr"
 			}
 		]
 	},
 
 	{
-		"name": "crowout",
-		"presets": [
+		"value": "crowout",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "corner"
+				"value": "corner"
 			},
 			{
-				"name": "backcorner"
+				"value": "backcorner"
 			},
 			{
-				"name": "ground",
-				"subentries": [
+				"value": "ground",
+				"items": [
 					{
-						"name": "groundl"
+						"value": "groundl"
 					},
 					{
-						"name": "ground"
+						"value": "ground"
 					},
 					{
-						"name": "groundr"
+						"value": "groundr"
 					}
 				]
 			},
 			{
-				"name": "entry"
+				"value": "entry"
 			},
 			{
-				"name": "separator"
-			},
-
-			{
-				"name": "inside"
-			},
-			{
-				"name": "platforminside"
-			},
-			{
-				"name": "insidewater"
-			},
-			{
-				"name": "insideperch"
-			},
-			{
-				"name": "table"
-			},
-			{
-				"name": "left"
-			},
-			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "platform"
+				"value": "inside"
 			},
 			{
-				"name": "bench"
+				"value": "platforminside"
 			},
 			{
-				"name": "cache"
+				"value": "insidewater"
 			},
 			{
-				"name": "water"
+				"value": "insideperch"
 			},
 			{
-				"name": "down"
+				"value": "table"
 			},
 			{
-				"name": "stickz"
+				"value": "left"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "tree",
-				"subentries": [
+				"value": "platform"
+			},
+			{
+				"value": "bench"
+			},
+			{
+				"value": "cache"
+			},
+			{
+				"value": "water"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "stickz"
+			},
+			{
+				"value": "separator"
+			},
+
+			{
+				"value": "tree",
+				"items": [
 					{
-						"name": "treet"
+						"value": "treet"
 					},
 					{
-						"name": "tree"
+						"value": "tree"
 					},
 					{
-						"name": "treeb"
+						"value": "treeb"
 					},
 					{
-						"name": "treebase"
+						"value": "treebase"
 					}
 				]
 			}
@@ -435,748 +435,765 @@
 	},
 
 	{
-		"name": "crowin",
-		"presets": [
+		"value": "crowin",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "down"
+				"value": "down"
 			},
 			{
-				"name": "entry"
+				"value": "entry"
 			},
 			{
-				"name": "back"
+				"value": "back"
 			},
 			{
-				"name": "top",
-				"subentries": [
+				"value": "top",
+				"items": [
 					{
-						"name": "top"
+						"value": "top"
 					},
 					{
-						"name": "backcorner"
+						"value": "backcorner"
 					},
 					{
-						"name": "heater"
+						"value": "heater"
 					},
 					{
-						"name": "backcornerr"
+						"value": "backcornerr"
 					},
 					{
-						"name": "backleftcorner"
+						"value": "backleftcorner"
 					}
 				]
 			},
 			{
-				"name": "rightperch",
-				"subentries": [
+				"value": "rightperch",
+				"items": [
 					{
-						"name": "rightperch"
+						"value": "rightperch"
 					},
 					{
-						"name": "outside"
+						"value": "outside"
 					},
 					{
-						"name": "window"
+						"value": "window"
 					},
 					{
-						"name": "windowc"
+						"value": "windowc"
 					}
 				]
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "platform"
+				"value": "platform"
 			},
 			{
-				"name": "table"
+				"value": "table"
 			},
 			{
-				"name": "water"
+				"value": "water"
 			},
 			{
-				"name": "hose"
+				"value": "hose"
 			}
 		]
 	},
 
 	{
-		"name": "marmout",
-		"presets": [
+		"value": "marmout",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "platformleft"
+				"value": "platformleft"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "rope"
+				"value": "rope"
 			},
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "table"
+				"value": "table"
 			},
 			{
-				"name": "top"
+				"value": "top"
 			},
 			{
-				"name": "ir"
+				"value": "ir"
 			},
 			{
-				"name": "hose"
+				"value": "hose"
 			},
 			{
-				"name": "flaps",
-				"subentries": [
+				"value": "flaps",
+				"items": [
 					{
-						"name": "flapl"
+						"value": "flapl"
 					},
 					{
-						"name": "flaps"
+						"value": "flaps"
 					},
 					{
-						"name": "flapr"
+						"value": "flapr"
 					}
 				]
 			},
 			{
-				"name": "leftshelf",
-				"subentries": [
+				"value": "leftshelf",
+				"items": [
 					{
-						"name": "topshelfl"
+						"value": "topshelfl"
 					},
 					{
-						"name": "topshelfr"
+						"value": "topshelfr"
 					},
 					{
-						"name": "domes",
-						"subentries": [
+						"value": "domes",
+						"items": [
 							{
-								"name": "domel"
+								"value": "domel"
 							},
 							{
-								"name": "domes"
+								"value": "domes"
 							},
 							{
-								"name": "domer"
+								"value": "domer"
 							}
 						]
 					},
 					{
-						"name": "bottomshelfl"
+						"value": "bottomshelfl"
 					},
 					{
-						"name": "bottomshelfr"
+						"value": "bottomshelfr"
 					}
 				]
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 
 			
 			{
-				"name": "leftpostshelves"
+				"value": "leftpostshelves"
 			},
 			{
-				"name": "leftpostshelvesl"
+				"value": "leftpostshelvesl"
 			},
 			{
-				"name": "separator"
-			},
-
-
-			{
-				"name": "rightshelvest"
-			},
-			{
-				"name": "ramp"
-			},
-			{
-				"name": "rightshelvesb"
-			},
-			{
-				"name": "rightpostb"
-			},
-			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 
 			{
-				"name": "frontdoor"
+				"value": "rightshelvest"
 			},
 			{
-				"name": "ground"
+				"value": "ramp"
 			},
 			{
-				"name": "below"
+				"value": "rightshelvesb"
 			},
 			{
-				"name": "groundr"
+				"value": "rightpostb"
+			},
+			{
+				"value": "separator"
+			},
+
+
+			{
+				"value": "frontdoor"
+			},
+			{
+				"value": "ground"
+			},
+			{
+				"value": "below"
+			},
+			{
+				"value": "groundr"
 			}
 		]
 	},
 
 	{
-		"name": "marmin",
-		"presets": [
+		"value": "marmin",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "table"
+				"value": "table"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "flaps"
+				"value": "flaps"
 			},
 			{
-				"name": "bowll"
+				"value": "bowll"
 			},
 			{
-				"name": "domeleft"
+				"value": "domeleft"
 			},
 			{
-				"name": "domeright"
+				"value": "domeright"
 			},
 			{
-				"name": "bridge",
-				"subentries": [
+				"value": "bridge",
+				"items": [
 					{
-						"name": "bridgel"
+						"value": "bridgel"
 					},
 					{
-						"name": "down"
+						"value": "down"
 					},
 					{
-						"name": "bridgem"
+						"value": "bridgem"
 					},
 					{
-						"name": "bridger"
+						"value": "bridger"
 					}
 				]
 			},
 			{
-				"name": "windows",
-				"subentries": [
+				"value": "windows",
+				"items": [
 					{
-						"name": "win1"
+						"value": "win1"
 					},
 					{
-						"name": "win2"
+						"value": "win2"
 					},
 					{
-						"name": "win3"
+						"value": "win3"
 					},
 					{
-						"name": "win4"
+						"value": "win4"
 					}
 				]
 			},
 			{
-				"name": "floor"
+				"value": "floor"
 			},
 			{
-				"name": "pole"
+				"value": "pole"
 			},
 			{
-				"name": "cornershelf"
+				"value": "cornershelf"
 			}
 		]
 	},
 
 	{
-		"name": "wolf",
-		"presets": [
+		"value": "wolf",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "river"
+				"value": "river"
 			},
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "rightfence"
+				"value": "rightfence"
 			},
 			{
-				"name": "farfence"
+				"value": "farfence"
 			},
 			{
-				"name": "grass"
+				"value": "grass"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "insidedoor"
+				"value": "insidedoor"
 			},
 			{
-				"name": "pond"
+				"value": "pond"
 			},
 			{
-				"name": "belowplatform"
+				"value": "belowplatform"
 			},
 			{
-				"name": "separator"
-			},
-
-			{
-				"name": "tipz"
-			},
-			{
-				"name": "shaft"
-			},
-			{
-				"name": "waterfall"
-			},
-			{
-				"name": "separator"
+				"value": "separator"
 			},
 
+			{
+				"value": "tipz"
+			},
+			{
+				"value": "shaft"
+			},
+			{
+				"value": "waterfall"
+			},
+			{
+				"value": "separator"
+			},
+
 
 			{
-				"name": "backleftcorner"
+				"value": "backleftcorner"
 			},
 			{
-				"name": "switchgater"
+				"value": "switchgater"
 			},
 			{
-				"name": "leftcorner"
+				"value": "leftcorner"
 			},
 			{
-				"name": "down"
+				"value": "down"
 			},
 			{
-				"name": "downright"
+				"value": "downright"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 			
 
 			{
-				"name": "bigrocks"
+				"value": "bigrocks"
 			},
 			{
-				"name": "farcorner"
+				"value": "farcorner"
 			},
 			{
-				"name": "den1",
-				"subentries": [
+				"value": "den1",
+				"items": [
 					{
-						"name": "den1t"
+						"value": "den1t"
 					},
 					{
-						"name": "den1inside"
+						"value": "den1inside"
 					},
 					{
-						"name": "den1r"
+						"value": "den1r"
 					},
 					{
-						"name": "den1"
+						"value": "den1"
 					},
 					{
-						"name": "den1l"
+						"value": "den1l"
 					}
 				]
 			},
 			{
-				"name": "den2",
-				"subentries": [
+				"value": "den2",
+				"items": [
 					{
-						"name": "den2"
+						"value": "den2"
 					},
 					{
-						"name": "den2t"
+						"value": "den2t"
 					},
 					{
-						"name": "den2m"
+						"value": "den2m"
 					},
 					{
-						"name": "den2b"
+						"value": "den2b"
 					},
 					{
-						"name": "den2l"
+						"value": "den2l"
 					},
 					{
-						"name": "den2r"
+						"value": "den2r"
 					}
 				]
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "wolfcornercam"
+				"value": "wolfcornercam"
 			}
 		]
 	},
 
 	{
-		"name": "wolfcorner",
-		"presets": [
+		"value": "wolfcorner",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "grass"
+				"value": "grass"
 			},
 			{
-				"name": "leftcorner"
+				"value": "leftcorner"
 			},
 			{
-				"name": "rightfence"
+				"value": "rightfence"
 			},
 			{
-				"name": "right"
+				"value": "right"
 			},
 			{
-				"name": "belowplatform",
-				"subentries": [
+				"value": "belowplatform",
+				"items": [
 					{
-						"name": "belowplatforml"
+						"value": "belowplatforml"
 					},
 					{
-						"name": "belowplatform"
+						"value": "belowplatform"
 					},
 					{
-						"name": "water"
+						"value": "water"
 					},
 					{
-						"name": "belowplatformr"
+						"value": "belowplatformr"
 					}
 				]
 			},
 			{
-				"name": "den2",
-				"subentries": [
+				"value": "den2",
+				"items": [
 					{
-						"name": "den2t"
+						"value": "den2t"
 					},
 					{
-						"name": "den2m"
+						"value": "den2m"
 					},
 					{
-						"name": "den2l"
+						"value": "den2l"
 					},
 					{
-						"name": "den2shade"
+						"value": "den2shade"
 					},
 					{
-						"name": "belowrampl"
+						"value": "belowrampl"
 					},
 					{
-						"name": "belowrampr"
+						"value": "belowrampr"
 					},
 					{
-						"name": "den2b"
+						"value": "den2b"
 					},
 					{
-						"name": "den2door"
+						"value": "den2door"
 					},
 					{
-						"name": "den2entrance"
+						"value": "den2entrance"
 					},
 					{
-						"name": "den2inside"
+						"value": "den2inside"
 					}
 				]
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 		
 
 			{
-				"name": "leftfence"
+				"value": "leftfence"
 			},
 			{
-				"name": "grassl"
+				"value": "grassl"
 			},
 			{
-				"name": "grassr"
+				"value": "grassr"
 			},
 			{
-				"name": "backfence"
+				"value": "backfence"
 			},
 			{
-				"name": "rightcorner"
+				"value": "rightcorner"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "nearcorner"
+				"value": "nearcorner"
 			},
 			{
-				"name": "down",
-				"subentries": [
+				"value": "down",
+				"items": [
 					{
-						"name": "downleft"
+						"value": "downleft"
 					},
 					{
-						"name": "down"
+						"value": "down"
 					},
 					{
-						"name": "downright"
+						"value": "downright"
 					}
 				]
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 
 			{
-				"name": "den1"
+				"value": "den1"
 			},
 			{
-				"name": "river"
+				"value": "river"
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "wolfcam"
+				"value": "wolfcam"
 			}
 		]
 	},
 
 
 	{
-		"name": "wolfinside",
-		"presets": [
+		"value": "wolfinside",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "doors"
+				"value": "doors"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "platformleft"
+				"value": "platformleft"
 			},
 			{
-				"name": "platformcenter"
+				"value": "platformcenter"
 			},
 			{
-				"name": "platformright"
+				"value": "platformright"
 			}
 		]
 	},
 
 	{
-		"name": "wolfden",
-		"presets": [
+		"value": "wolfden",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "wolfden2",
-		"presets": [
+		"value": "wolfden2",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "bb",
-		"presets": [
+		"value": "bb",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "marty",
-		"presets": [
+		"value": "marty",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "hank",
-		"presets": [
+		"value": "hank",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "hankcorner",
-		"presets": [
+		"value": "hankcorner",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 	
 	{
-		"name": "roaches",
-		"presets": [
+		"value": "roaches",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	},
 
 	{
-		"name": "noodle",
-		"presets": [
+		"value": "noodle",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "closebranch"
+				"value": "closebranch"
 			},
 			{
-				"name": "down"
+				"value": "down"
 			},
 			{
-				"name": "farbranches"
+				"value": "farbranches"
 			},
 			{
-				"name": "left"
+				"value": "left"
 			},
 			{
-				"name": "water"
+				"value": "water"
 			}
 		]
 	},
 
 	{
-		"name": "toast",
-		"presets": [
+		"value": "toast",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "down"
+				"value": "down"
 			},
 			{
-				"name": "downright"
+				"value": "downright"
 			},
 			{
-				"name": "far"
+				"value": "far"
 			},
 			{
-				"name": "food"
+				"value": "food"
 			},
 			{
-				"name": "log"
+				"value": "log"
 			},
 			{
-				"name": "logz"
+				"value": "logz"
 			},
 			{
-				"name": "water"
+				"value": "water"
 			}
 		]
 	},
 
 	{
-		"name": "patchy",
-		"presets": [
+		"value": "patchy",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
 			},
 			{
-				"name": "closebranches"
+				"value": "closebranches"
 			},
 			{
-				"name": "down"
+				"value": "down"
 			},
 			{
-				"name": "farbranches"
+				"value": "farbranches"
 			},
 			{
-				"name": "groundm"
+				"value": "groundm"
 			},
 			{
-				"name": "water"
+				"value": "water"
+			}
+		]
+	},
+	{
+		"value": "pushpop",
+		"items": [
+			{
+				"value": "home"
+			},
+			{
+				"value": "backleft"
+			},
+			{
+				"value": "backright"
+			},
+			{
+				"value": "behind"
+			},
+			{
+				"value": "left"
+			},
+			{
+				"value": "right"
+			},
+			{
+				"value": "food"
 			}
 		]
 	},
 
 	{
-		"name": "pushpop",
-		"presets": [
+		"value": "georgie",
+		"items": [
 			{
-				"name": "home"
+				"value": "home"
+			},
+			{
+				"value": "closedirt"
+			},
+			{
+				"value": "closeup"
+			},
+			{
+				"value": "dirt"
+			},
+			{
+				"value": "shore"
+			},
+			{
+				"value": "shoreright"
+			},
+			{
+				"value": "water"
+			},
+			{
+				"value": "wide"
 			}
 		]
 	},
 
 	{
-		"name": "georgie",
-		"presets": [
+		"value": "garden",
+		"items": [
 			{
-				"name": "home"
-			},
-			{
-				"name": "closedirt"
-			},
-			{
-				"name": "closeup"
-			},
-			{
-				"name": "dirt"
-			},
-			{
-				"name": "shore"
-			},
-			{
-				"name": "shoreright"
-			},
-			{
-				"name": "water"
-			},
-			{
-				"name": "wide"
-			}
-		]
-	},
-
-	{
-		"name": "garden",
-		"presets": [
-			{
-				"name": "home"
+				"value": "home"
 			}
 		]
 	}

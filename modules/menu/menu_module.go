@@ -55,7 +55,7 @@ func (m *MenuModule) Init(resources map[string]any) {
 		e := &e
 		PopulateEntries(e, m.Sources["base"], m.Sources["section"])
 		m.ApplyMods(e)
-		ClearSelf(e)
+		// ClearSelf(e)
 
 		ce := &CleanEntry{}
 		ce.CopyFromEntry(e)
@@ -89,8 +89,8 @@ type Mod struct {
 }
 
 type CleanEntry struct {
-	Label      string       `json:"label"`
-	SubEntries []CleanEntry `json:"subentries"`
+	Value    string       `json:"value"`
+	SubItems []CleanEntry `json:"items"`
 }
 
 func (m *MenuModule) LoadSource(name string) {
@@ -108,11 +108,11 @@ func (m *MenuModule) LoadSource(name string) {
 }
 
 func (dst *CleanEntry) CopyFromEntry(src *Entry) {
-	dst.Label = src.Label
+	dst.Value = src.Label
 	if len(src.SubEntries) != 0 {
-		dst.SubEntries = make([]CleanEntry, len(src.SubEntries))
+		dst.SubItems = make([]CleanEntry, len(src.SubEntries))
 		for i, v := range src.SubEntries {
-			dst.SubEntries[i].CopyFromEntry(&v)
+			dst.SubItems[i].CopyFromEntry(&v)
 		}
 	}
 }

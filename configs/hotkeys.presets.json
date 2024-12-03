@@ -1,1396 +1,1420 @@
 [
 	{
-		"name": "pasture",
-		"presets": [
+		"value": "pasture",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": "a Backquote"
 			},
 			{
-				"name": "barn",
+				"value": "barn",
 				"hotkeys": "c"
 			},
 			{
-				"name": "insidebarn",
+				"value": "insidebarn",
 				"hotkeys": "v"
 			},
 			{
-				"name": "poolw",
+				"value": "poolw",
 				"hotkeys": "g"
 			},
 			{
-				"name": "poolw",
+				"value": "poolw",
 				"hotkeys": "!g",
 				"sublayer": [
 					{
-						"name": "pooll",
+						"value": "pooll",
 						"hotkeys": "f"
 					},
 					{
-						"name": "pool",
+						"value": "pool",
 						"hotkeys": "g"
 					},
 					{
-						"name": "poolr",
+						"value": "poolr",
 						"hotkeys": "h"
 					}
 				]
 			},
 			{
-				"name": "pen",
+				"value": "pen",
 				"hotkeys": "f"
 			},
 			{
-				"name": "pen",
+				"value": "pen",
 				"hotkeys": "!f",
 				"sublayer": [
 					{
-						"name": "penl",
+						"value": "penl",
 						"hotkeys": "d"
 					},
 					{
-						"name": "pen",
+						"value": "pen",
 						"hotkeys": "f"
 					},
 					{
-						"name": "penr",
+						"value": "penr",
 						"hotkeys": "g"
 					}
 				]
 			},
 			{
-				"name": "middle",
+				"value": "middle",
 				"hotkeys": "d"
 			},
 			{
-				"name": "grove",
+				"value": "grove",
 				"hotkeys": "e"
 			},
 			{
-				"name": "barn2",
+				"value": "barn2",
 				"hotkeys": "q"
 			},
 			{
-				"name": "barn2r",
+				"value": "barn2r",
 				"hotkeys": "w"
 			},
 			{
-				"name": "purplebase",
+				"value": "purplebase",
 				"hotkeys": "r"
 			},
 			{
-				"name": "purplenest",
+				"value": "purplenest",
 				"hotkeys": "^r"
 			},
 			{
-				"name": "grove2",
+				"value": "grove2",
 				"hotkeys": "t"
 			},
 			
 			{
-				"name": "penr",
+				"value": "penr",
 				"hotkeys": "^s"
 			},
 			{
-				"name": "penl",
+				"value": "penl",
 				"hotkeys": "^a"
 			},
 			{
-				"name": "gate",
+				"value": "gate",
 				"hotkeys": "x"
 			},
 			{
-				"name": "feeder",
+				"value": "feeder",
 				"hotkeys": "z"
 			},
 			{
-				"name": "angel",
+				"value": "angel",
 				"hotkeys": "^z"
 			},
 			{
-				"name": "stompyfood",
+				"value": "stompyfood",
 				"hotkeys": "^v"
 			},
 			{
-				"name": "brush",
+				"value": "brush",
 				"hotkeys": "s"
 			},
 			{
-				"name": "feedstall",
+				"value": "feedstall",
 				"hotkeys": "^x"
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": "^c"
 			}
 		]
 	},
 	{
-		"name": "fox",
-		"presets": [
+		"value": "fox",
+		"items": [
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": "a Backquote"
 			},
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": "^a"
 			},
 			{
-				"name": "treehouse",
+				"value": "treehouse",
 				"hotkeys": "s"
 			},
 			{
-				"name": "center",
+				"value": "center",
 				"hotkeys": "d"
 			},
 			{
-				"name": "den",
+				"value": "den",
 				"hotkeys": "f"
 			},
 			{
-				"name": "den",
+				"value": "den",
 				"hotkeys": "!f",
 				"sublayer": [
 					{
-						"name": "denl",
+						"value": "denl",
 						"hotkeys": "d"
 					},
 					{
-						"name": "denf",
+						"value": "denf",
 						"hotkeys": "f"
 					},
 					{
-						"name": "den",
+						"value": "den",
 						"hotkeys": "^f"
 					},
 					{
-						"name": "denr",
+						"value": "denr",
 						"hotkeys": "g"
 					}
 				]
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": "g"
 			},
 
 			{
-				"name": "leftfence",
+				"value": "leftfence",
 				"hotkeys": "q"
 			},
 			{
-				"name": "platform",
+				"value": "platform",
 				"hotkeys": "w"
 			},
 			{
-				"name": "platform",
+				"value": "platform",
 				"hotkeys": "!w",
 				"sublayer": [
 					{
-						"name": "platformbl",
+						"value": "platformbl",
 						"hotkeys": "Digit2"
 					},
 					{
-						"name": "platformfl",
+						"value": "platformfl",
 						"hotkeys": "q"
 					},
 					{
-						"name": "rampt",
+						"value": "rampt",
 						"hotkeys": "w"
 					},
 					{
-						"name": "treeclimb",
+						"value": "treeclimb",
 						"hotkeys": "^w"
 					},
 					{
-						"name": "platformfr",
+						"value": "platformfr",
 						"hotkeys": "e"
 					},
 					{
-						"name": "platformbr",
+						"value": "platformbr",
 						"hotkeys": "Digit3"
 					}
 				]
 			},				
 			{
-				"name": "treeclimb",
+				"value": "treeclimb",
 				"hotkeys": "^w"
 			},
 			{
-				"name": "brush",
+				"value": "brush",
 				"hotkeys": "e"
 			},
 			{
-				"name": "insidedoor",
+				"value": "insidedoor",
 				"hotkeys": "r"
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": "t"
 			},
 
 
 			{
-				"name": "treehousel",
+				"value": "treehousel",
 				"hotkeys": "z"
 			},
 			{
-				"name": "shade",
+				"value": "shade",
 				"hotkeys": "x"
 			},
 			{
-				"name": "belowplatform",
+				"value": "belowplatform",
 				"hotkeys": "^x"
 			},
 			{
-				"name": "treehouser",
+				"value": "treehouser",
 				"hotkeys": "c"
 			},
 			{
-				"name": "belowramp",
+				"value": "belowramp",
 				"hotkeys": "^c"
 			},
 
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": "v"
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": "!v",
 				"sublayer": [
 					{
-						"name": "downleft",
+						"value": "downleft",
 						"hotkeys": "c"
 					},
 					{
-						"name": "down",
+						"value": "down",
 						"hotkeys": "v"
 					},
 					{
-						"name": "downright",
+						"value": "downright",
 						"hotkeys": "b"
 					}
 				]
 			},
 			{
-				"name": "bench",
+				"value": "bench",
 				"hotkeys": "b"
 			}
 		]
 	},
 	{
-		"name": "foxcorner",
-		"presets": [
+		"value": "foxcorner",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": "a Backquote"
 			},
 			{
-				"name": "insidedoor",
+				"value": "insidedoor",
 				"hotkeys": "q"
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": "w"
 			},
 			{
-				"name": "training",
+				"value": "training",
 				"hotkeys": "e"
 			},
 			{
-				"name": "training2",
+				"value": "training2",
 				"hotkeys": "z"
 			},
 			{
-				"name": "bowl",
+				"value": "bowl",
 				"hotkeys": "b"
 			},
 			{
-				"name": "den",
+				"value": "den",
 				"hotkeys": "s"
 			},
 			{
-				"name": "hillleft",
+				"value": "hillleft",
 				"hotkeys": "x"
 			},
 			{
-				"name": "hillwide",
+				"value": "hillwide",
 				"hotkeys": "c"
 			},
 			{
-				"name": "hillright",
+				"value": "hillright",
 				"hotkeys": "d"
 			}
 		]
 	},
 	{
-		"name": "parrot",
-		"presets": [
+		"value": "parrot",
+		"items": [
 			{
-				"name": "door",
+				"value": "door",
 				"hotkeys": ""
 			},
 			{
-				"name": "macaws",
+				"value": "macaws",
 				"hotkeys": ""
 			},
 			{
-				"name": "littles",
+				"value": "littles",
 				"hotkeys": ""
 			},
 			{
-				"name": "littles2",
+				"value": "littles2",
 				"hotkeys": ""
 			},
 			{
-				"name": "abovedoor",
+				"value": "abovedoor",
 				"hotkeys": ""
 			},
 			{
-				"name": "littlesw",
+				"value": "littlesw",
 				"hotkeys": ""
 			},
 			{
-				"name": "macawsw",
+				"value": "macawsw",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "bothwindows",
+				"value": "bothwindows",
 				"hotkeys": ""
 			},
 			{
-				"name": "chicken",
+				"value": "chicken",
 				"hotkeys": ""
 			},
 			{
-				"name": "platform1",
+				"value": "platform1",
 				"hotkeys": ""
 			},
 			{
-				"name": "platform2",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"name": "littlesb",
-				"hotkeys": ""
-			},
-			{
-				"name": "littlesbowl",
-				"hotkeys": ""
-			},
-			{
-				"name": "littlesbowl2",
-				"hotkeys": ""
-			},
-			{
-				"name": "littlesbowl3",
-				"hotkeys": ""
-			},
-			{
-				"name": "littlessleep",
-				"hotkeys": ""
-			},
-			{
-				"name": "littlest",
-				"hotkeys": ""
-			},
-			
-			
-			{
-				"name": "macawsb",
-				"hotkeys": ""
-			},
-			{
-				"name": "macawsbowl",
-				"hotkeys": ""
-			},
-			{
-				"name": "macawsbowl2",
-				"hotkeys": ""
-			},
-			{
-				"name": "macawst",
+				"value": "platform2",
 				"hotkeys": ""
 			},
 			
 
 			{
-				"name": "floorl",
+				"value": "littlesb",
 				"hotkeys": ""
 			},
 			{
-				"name": "floor",
+				"value": "littlesbowl",
 				"hotkeys": ""
 			},
 			{
-				"name": "floorr",
+				"value": "littlesbowl2",
+				"hotkeys": ""
+			},
+			{
+				"value": "littlesbowl3",
+				"hotkeys": ""
+			},
+			{
+				"value": "littlessleep",
+				"hotkeys": ""
+			},
+			{
+				"value": "littlest",
+				"hotkeys": ""
+			},
+			
+			
+			{
+				"value": "macawsb",
+				"hotkeys": ""
+			},
+			{
+				"value": "macawsbowl",
+				"hotkeys": ""
+			},
+			{
+				"value": "macawsbowl2",
+				"hotkeys": ""
+			},
+			{
+				"value": "macawst",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"value": "floorl",
+				"hotkeys": ""
+			},
+			{
+				"value": "floor",
+				"hotkeys": ""
+			},
+			{
+				"value": "floorr",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "crowout",
-		"presets": [
+		"value": "crowout",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": ""
 			},
 			{
-				"name": "corner",
+				"value": "corner",
 				"hotkeys": ""
 			},
 			{
-				"name": "backcorner",
+				"value": "backcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "groundl",
+				"value": "groundl",
 				"hotkeys": ""
 			},
 			{
-				"name": "ground",
+				"value": "ground",
 				"hotkeys": ""
 			},
 			{
-				"name": "groundr",
+				"value": "groundr",
 				"hotkeys": ""
 			},
 			{
-				"name": "entry",
+				"value": "entry",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "inside",
+				"value": "inside",
 				"hotkeys": ""
 			},
 			{
-				"name": "platforminside",
+				"value": "platforminside",
 				"hotkeys": ""
 			},
 			{
-				"name": "insidewater",
+				"value": "insidewater",
 				"hotkeys": ""
 			},
 			{
-				"name": "insideperch",
+				"value": "insideperch",
 				"hotkeys": ""
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			
 
 			{
-				"name": "platform",
+				"value": "platform",
 				"hotkeys": ""
 			},
 			{
-				"name": "bench",
+				"value": "bench",
 				"hotkeys": ""
 			},
 			{
-				"name": "cache",
+				"value": "cache",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "stickz",
+				"value": "stickz",
 				"hotkeys": ""
 			},
 			
 
 			{
-				"name": "treet",
+				"value": "treet",
 				"hotkeys": ""
 			},
 			{
-				"name": "tree",
+				"value": "tree",
 				"hotkeys": ""
 			},
 			{
-				"name": "treeb",
+				"value": "treeb",
 				"hotkeys": ""
 			},
 			{
-				"name": "treebase",
+				"value": "treebase",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "crowin",
-		"presets": [
+		"value": "crowin",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "entry",
+				"value": "entry",
 				"hotkeys": ""
 			},
 			{
-				"name": "back",
+				"value": "back",
 				"hotkeys": ""
 			},
 			{
-				"name": "top",
+				"value": "top",
 				"hotkeys": ""
 			},
 			{
-				"name": "backcorner",
+				"value": "backcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "heater",
+				"value": "heater",
 				"hotkeys": ""
 			},
 			{
-				"name": "backcornerr",
+				"value": "backcornerr",
 				"hotkeys": ""
 			},
 			{
-				"name": "backleftcorner",
+				"value": "backleftcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "rightperch",
+				"value": "rightperch",
 				"hotkeys": ""
 			},
 			{
-				"name": "outside",
+				"value": "outside",
 				"hotkeys": ""
 			},
 			{
-				"name": "window",
+				"value": "window",
 				"hotkeys": ""
 			},
 			{
-				"name": "windowc",
+				"value": "windowc",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "platform",
+				"value": "platform",
 				"hotkeys": ""
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			},
 			{
-				"name": "hose",
+				"value": "hose",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "marmout",
-		"presets": [
+		"value": "marmout",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "platformleft",
+				"value": "platformleft",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			{
-				"name": "rope",
+				"value": "rope",
 				"hotkeys": ""
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": ""
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": ""
 			},
 			{
-				"name": "top",
+				"value": "top",
 				"hotkeys": ""
 			},
 			{
-				"name": "ir",
+				"value": "ir",
 				"hotkeys": ""
 			},
 			{
-				"name": "hose",
+				"value": "hose",
 				"hotkeys": ""
 			},
 			{
-				"name": "flapl",
+				"value": "flapl",
 				"hotkeys": ""
 			},
 			{
-				"name": "flaps",
+				"value": "flaps",
 				"hotkeys": ""
 			},
 			{
-				"name": "flapr",
+				"value": "flapr",
 				"hotkeys": ""
 			},
 			{
-				"name": "topshelfl",
+				"value": "topshelfl",
 				"hotkeys": ""
 			},
 			{
-				"name": "topshelfr",
+				"value": "topshelfr",
 				"hotkeys": ""
 			},
 			{
-				"name": "domel",
+				"value": "domel",
 				"hotkeys": ""
 			},
 			{
-				"name": "domes",
+				"value": "domes",
 				"hotkeys": ""
 			},
 			{
-				"name": "domer",
+				"value": "domer",
 				"hotkeys": ""
 			},
 			{
-				"name": "bottomshelfl",
+				"value": "bottomshelfl",
 				"hotkeys": ""
 			},
 			{
-				"name": "bottomshelfr",
+				"value": "bottomshelfr",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 
 			
 			{
-				"name": "leftpostshelves",
+				"value": "leftpostshelves",
 				"hotkeys": ""
 			},
 			{
-				"name": "leftpostshelvesl",
-				"hotkeys": ""
-			},
-			
-
-
-			{
-				"name": "rightshelvest",
-				"hotkeys": ""
-			},
-			{
-				"name": "ramp",
-				"hotkeys": ""
-			},
-			{
-				"name": "rightshelvesb",
-				"hotkeys": ""
-			},
-			{
-				"name": "rightpostb",
+				"value": "leftpostshelvesl",
 				"hotkeys": ""
 			},
 			
 
 
 			{
-				"name": "frontdoor",
+				"value": "rightshelvest",
 				"hotkeys": ""
 			},
 			{
-				"name": "ground",
+				"value": "ramp",
 				"hotkeys": ""
 			},
 			{
-				"name": "below",
+				"value": "rightshelvesb",
 				"hotkeys": ""
 			},
 			{
-				"name": "groundr",
+				"value": "rightpostb",
+				"hotkeys": ""
+			},
+			
+
+
+			{
+				"value": "frontdoor",
+				"hotkeys": ""
+			},
+			{
+				"value": "ground",
+				"hotkeys": ""
+			},
+			{
+				"value": "below",
+				"hotkeys": ""
+			},
+			{
+				"value": "groundr",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "marmin",
-		"presets": [
+		"value": "marmin",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": ""
 			},
 			{
-				"name": "table",
+				"value": "table",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			{
-				"name": "flaps",
+				"value": "flaps",
 				"hotkeys": ""
 			},
 			{
-				"name": "bowll",
+				"value": "bowll",
 				"hotkeys": ""
 			},
 			{
-				"name": "domeleft",
+				"value": "domeleft",
 				"hotkeys": ""
 			},
 			{
-				"name": "domeright",
+				"value": "domeright",
 				"hotkeys": ""
 			},
 			{
-				"name": "bridgel",
+				"value": "bridgel",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "bridgem",
+				"value": "bridgem",
 				"hotkeys": ""
 			},
 			{
-				"name": "bridger",
+				"value": "bridger",
 				"hotkeys": ""
 			},
 			{
-				"name": "win1",
+				"value": "win1",
 				"hotkeys": ""
 			},
 			{
-				"name": "win2",
+				"value": "win2",
 				"hotkeys": ""
 			},
 			{
-				"name": "win3",
+				"value": "win3",
 				"hotkeys": ""
 			},
 			{
-				"name": "win4",
+				"value": "win4",
 				"hotkeys": ""
 			},
 			{
-				"name": "floor",
+				"value": "floor",
 				"hotkeys": ""
 			},
 			{
-				"name": "pole",
+				"value": "pole",
 				"hotkeys": ""
 			},
 			{
-				"name": "cornershelf",
+				"value": "cornershelf",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "wolf",
-		"presets": [
+		"value": "wolf",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "river",
+				"value": "river",
 				"hotkeys": ""
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": ""
 			},
 			{
-				"name": "rightfence",
+				"value": "rightfence",
 				"hotkeys": ""
 			},
 			{
-				"name": "farfence",
+				"value": "farfence",
 				"hotkeys": ""
 			},
 			{
-				"name": "grass",
+				"value": "grass",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			{
-				"name": "insidedoor",
+				"value": "insidedoor",
 				"hotkeys": ""
 			},
 			{
-				"name": "pond",
+				"value": "pond",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowplatform",
+				"value": "belowplatform",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "tipz",
+				"value": "tipz",
 				"hotkeys": ""
 			},
 			{
-				"name": "shaft",
+				"value": "shaft",
 				"hotkeys": ""
 			},
 			{
-				"name": "waterfall",
+				"value": "waterfall",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 
 			{
-				"name": "backleftcorner",
+				"value": "backleftcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "switchgater",
+				"value": "switchgater",
 				"hotkeys": ""
 			},
 			{
-				"name": "leftcorner",
+				"value": "leftcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "downright",
+				"value": "downright",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 			
 
 			{
-				"name": "bigrocks",
+				"value": "bigrocks",
 				"hotkeys": ""
 			},
 			{
-				"name": "farcorner",
+				"value": "farcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "den1t",
+				"value": "den1t",
 				"hotkeys": ""
 			},
 			{
-				"name": "den1inside",
+				"value": "den1inside",
 				"hotkeys": ""
 			},
 			{
-				"name": "den1r",
+				"value": "den1r",
 				"hotkeys": ""
 			},
 			{
-				"name": "den1",
+				"value": "den1",
 				"hotkeys": ""
 			},
 			{
-				"name": "den1l",
+				"value": "den1l",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2",
+				"value": "den2",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2t",
+				"value": "den2t",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2m",
+				"value": "den2m",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2b",
+				"value": "den2b",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2l",
+				"value": "den2l",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2r",
+				"value": "den2r",
 				"hotkeys": ""
 			},
 			{
-				"name": "separator"
+				"value": "separator"
 			},
 
 			{
-				"name": "wolfcornercam",
+				"value": "wolfcornercam",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "wolfcorner",
-		"presets": [
+		"value": "wolfcorner",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			{
-				"name": "grass",
+				"value": "grass",
 				"hotkeys": ""
 			},
 			{
-				"name": "leftcorner",
+				"value": "leftcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "rightfence",
+				"value": "rightfence",
 				"hotkeys": ""
 			},
 			{
-				"name": "right",
+				"value": "right",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowplatforml",
+				"value": "belowplatforml",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowplatform",
+				"value": "belowplatform",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowplatformr",
+				"value": "belowplatformr",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2t",
+				"value": "den2t",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2m",
+				"value": "den2m",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2l",
+				"value": "den2l",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2shade",
+				"value": "den2shade",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowrampl",
+				"value": "belowrampl",
 				"hotkeys": ""
 			},
 			{
-				"name": "belowrampr",
+				"value": "belowrampr",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2b",
+				"value": "den2b",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2door",
+				"value": "den2door",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2entrance",
+				"value": "den2entrance",
 				"hotkeys": ""
 			},
 			{
-				"name": "den2inside",
+				"value": "den2inside",
 				"hotkeys": ""
 			},
 			
 		
 
 			{
-				"name": "leftfence",
+				"value": "leftfence",
 				"hotkeys": ""
 			},
 			{
-				"name": "grassl",
+				"value": "grassl",
 				"hotkeys": ""
 			},
 			{
-				"name": "grassr",
+				"value": "grassr",
 				"hotkeys": ""
 			},
 			{
-				"name": "backfence",
+				"value": "backfence",
 				"hotkeys": ""
 			},
 			{
-				"name": "rightcorner",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"name": "nearcorner",
-				"hotkeys": ""
-			},
-			{
-				"name": "downleft",
-				"hotkeys": ""
-			},
-			{
-				"name": "down",
-				"hotkeys": ""
-			},
-			{
-				"name": "downright",
-				"hotkeys": ""
-			},
-			
-
-
-			{
-				"name": "den1",
-				"hotkeys": ""
-			},
-			{
-				"name": "river",
+				"value": "rightcorner",
 				"hotkeys": ""
 			},
 			
 
 			{
-				"name": "wolfcam",
-				"hotkeys": ""
-			}
-		]
-	},
-	{
-		"name": "wolfinside",
-		"presets": [
-			{
-				"name": "home",
+				"value": "nearcorner",
 				"hotkeys": ""
 			},
 			{
-				"name": "doors",
+				"value": "downleft",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "platformleft",
+				"value": "downright",
+				"hotkeys": ""
+			},
+			
+
+
+			{
+				"value": "den1",
 				"hotkeys": ""
 			},
 			{
-				"name": "platformcenter",
+				"value": "river",
+				"hotkeys": ""
+			},
+			
+
+			{
+				"value": "wolfcam",
+				"hotkeys": ""
+			}
+		]
+	},
+	{
+		"value": "wolfinside",
+		"items": [
+			{
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "platformright",
+				"value": "doors",
+				"hotkeys": ""
+			},
+			{
+				"value": "left",
+				"hotkeys": ""
+			},
+			{
+				"value": "platformleft",
+				"hotkeys": ""
+			},
+			{
+				"value": "platformcenter",
+				"hotkeys": ""
+			},
+			{
+				"value": "platformright",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "wolfden",
-		"presets": [
+		"value": "wolfden",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "wolfden2",
-		"presets": [
+		"value": "wolfden2",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "bb",
-		"presets": [
+		"value": "bb",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "marty",
-		"presets": [
+		"value": "marty",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "hank",
-		"presets": [
+		"value": "hank",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "hankcorner",
-		"presets": [
+		"value": "hankcorner",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 	
 	{
-		"name": "roaches",
-		"presets": [
+		"value": "roaches",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "noodle",
-		"presets": [
+		"value": "noodle",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "closebranch",
+				"value": "closebranch",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "farbranches",
+				"value": "farbranches",
 				"hotkeys": ""
 			},
 			{
-				"name": "left",
+				"value": "left",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "toast",
-		"presets": [
+		"value": "toast",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "downright",
+				"value": "downright",
 				"hotkeys": ""
 			},
 			{
-				"name": "far",
+				"value": "far",
 				"hotkeys": ""
 			},
 			{
-				"name": "food",
+				"value": "food",
 				"hotkeys": ""
 			},
 			{
-				"name": "log",
+				"value": "log",
 				"hotkeys": ""
 			},
 			{
-				"name": "logz",
+				"value": "logz",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "patchy",
-		"presets": [
+		"value": "patchy",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "closebranches",
+				"value": "closebranches",
 				"hotkeys": ""
 			},
 			{
-				"name": "down",
+				"value": "down",
 				"hotkeys": ""
 			},
 			{
-				"name": "farbranches",
+				"value": "farbranches",
 				"hotkeys": ""
 			},
 			{
-				"name": "groundm",
+				"value": "groundm",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "pushpop",
-		"presets": [
+		"value": "pushpop",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
+				"hotkeys": ""
+			},
+			{
+				"value": "backleft",
+				"hotkeys": ""
+			},
+			{
+				"value": "backright",
+				"hotkeys": ""
+			},
+			{
+				"value": "behind",
+				"hotkeys": ""
+			},
+			{
+				"value": "left",
+				"hotkeys": ""
+			},
+			{
+				"value": "right",
+				"hotkeys": ""
+			},
+			{
+				"value": "food",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "georgie",
-		"presets": [
+		"value": "georgie",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			},
 			{
-				"name": "closedirt",
+				"value": "closedirt",
 				"hotkeys": ""
 			},
 			{
-				"name": "closeup",
+				"value": "closeup",
 				"hotkeys": ""
 			},
 			{
-				"name": "dirt",
+				"value": "dirt",
 				"hotkeys": ""
 			},
 			{
-				"name": "shore",
+				"value": "shore",
 				"hotkeys": ""
 			},
 			{
-				"name": "shoreright",
+				"value": "shoreright",
 				"hotkeys": ""
 			},
 			{
-				"name": "water",
+				"value": "water",
 				"hotkeys": ""
 			},
 			{
-				"name": "wide",
+				"value": "wide",
 				"hotkeys": ""
 			}
 		]
 	},
 
 	{
-		"name": "garden",
-		"presets": [
+		"value": "garden",
+		"items": [
 			{
-				"name": "home",
+				"value": "home",
 				"hotkeys": ""
 			}
 		]

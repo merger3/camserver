@@ -16,19 +16,19 @@ import (
 )
 
 type CamPresets struct {
-	CamName string `json:"name"`
-	Presets []any  `json:"presets"`
+	CamName string `json:"value"`
+	Presets []any  `json:"items"`
 }
 
 type ButtonPreset struct {
-	Name string `json:"name"`
+	Name string `json:"value"`
 }
 type MenuPreset struct {
-	Name       string       `json:"name"`
-	Subentries []MenuPreset `json:"subentries"`
+	Name       string       `json:"value"`
+	Subentries []MenuPreset `json:"items"`
 }
 type HotkeyPreset struct {
-	Name     string         `json:"name"`
+	Name     string         `json:"value"`
 	Hotkeys  string         `json:"hotkeys"`
 	Sublayer []HotkeyPreset `json:"sublayer"`
 }

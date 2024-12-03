@@ -15,7 +15,7 @@ import (
 type SwapMenuResponse struct {
 	Found    bool        `json:"found"`
 	Cam      string      `json:"cam"`
-	SwapMenu *CleanEntry `json:"swaps"`
+	SwapMenu *CleanEntry `json:"items"`
 }
 
 func (m *MenuModule) GetSwapMenu(ctx echo.Context) error {

@@ -234,6 +234,9 @@
 				"label": "separator"
 			},
 			{
+				"label": "primary"
+			},
+			{
 				"label": "swap",
 				"import": ["swap"]
 			}
