@@ -194,7 +194,10 @@
 					"chin3"
 				],
 				"props": {
-					"position": "top"
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
 				}
 			}
 		]
@@ -222,7 +225,13 @@
 					"chin"
 				],
 				"props": {
-					"position": "top"
+					"position": [ 
+						"chins_import"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
 				}
 			}
 		]
@@ -243,7 +252,23 @@
 				"target": [
 					"chins"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"chin2"
+				],
+				"props": {
+					"position": [ 
+						"chins_import"
+					],
+					"location": {
+						"anchor": "chinmulti",
+						"relation": "below"
+					}
+				}
 			}
+
 		]
 	},
 	{

@@ -136,23 +136,36 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, Aliases: aliases, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
-	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
+	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["botSwap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
 	tm.Clients["merger4"].Client.Join("alveussanctuary")
 
 	return &tm
 }
 
 func (tm *TwitchManager) CreateListeners() {
+	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
+	botSwapRE := regexp.MustCompile(`^\w+: Swap (\w+ \w+) ?`)
+
 	tm.Listeners["scenecams"] = func(message Message, user string) {
-		if match, _ := regexp.MatchString(`^(\d: \w+,? ?)+$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+		if match, _ := regexp.MatchString(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+			matches := scenecamsRE.FindStringSubmatch(message.Message)
 			tm.Cache.SyncAttempts = 0
-			tm.Cache.ParseScene(message.Message)
+			tm.Cache.ParseScene(matches[1])
 		}
 	}
 
 	tm.Listeners["swap"] = func(message Message, user string) {
 		if match, _ := regexp.MatchString(`^\!swap \w+ \w+ ?`, message.Message); tm.Cache != nil && match && tm.CheckUsername(message.User.Name) {
 			args := strings.Split(message.Message, " ")[1:]
+			tm.Cache.ProcessSwap(args[0], args[1])
+			fmt.Printf("%v\n", tm.Cache.Cams)
+		}
+	}
+
+	tm.Listeners["botSwap"] = func(message Message, user string) {
+		if match, _ := regexp.MatchString(`^\w+: Swap (\w+ \w+) ?`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+			matches := botSwapRE.FindStringSubmatch(message.Message)
+			args := strings.Split(matches[1], " ")
 			tm.Cache.ProcessSwap(args[0], args[1])
 			fmt.Printf("%v\n", tm.Cache.Cams)
 		}

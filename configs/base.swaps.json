@@ -40,6 +40,9 @@
 		"label": "chins",
 		"subentries": [
 			{
+				"label": "chinmulti"
+			},
+			{
 				"label": "chin"
 			},
 			{
@@ -47,9 +50,6 @@
 			},
 			{
 				"label": "chin3"
-			},
-			{
-				"label": "chinmulti"
 			}
 		]
 	},
@@ -174,6 +174,12 @@
 				"label": "separator"
 			},
 			{
+				"label": "primary"
+			},
+			{
+				"label": "separator"
+			},
+			{
 				"label": "wolves",
 				"import": ["wolves"]
 			},
@@ -211,9 +217,6 @@
 			},
 			{
 				"label": "separator"
-			},
-			{
-				"label": "primary"
 			},
 			{
 				"label": "swap",

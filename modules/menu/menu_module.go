@@ -253,16 +253,19 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 				}
 				targetParent.SubEntries = slices.Insert(targetParent.SubEntries, position, tmpTarget)
 			case []interface{}:
+				var swapEntry *Entry
 				itemStrings, err := convertToStringSlice(mod.Props["position"])
 				if err != nil {
-					panic(err)
+					swapEntry = entry
+					fmt.Println(swapEntry)
+				} else {
+					swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
+					if swapEntryIndex == -1 {
+						fmt.Println("continuing...")
+						continue
+					}
+					swapEntry = &swapEntryParent.SubEntries[swapEntryIndex]
 				}
-				swapEntryIndex, swapEntryParent := findTarget(entry, itemStrings...)
-				if swapEntryIndex == -1 {
-					fmt.Println("continuing...")
-					continue
-				}
-				swapEntry := &swapEntryParent.SubEntries[swapEntryIndex]
 
 				location := len(swapEntry.SubEntries)
 				switch mod.Props["location"].(type) {
@@ -308,8 +311,9 @@ func (m MenuModule) ApplyMods(entry *Entry) {
 
 				}
 
-				swapEntry.SubEntries = slices.Insert(swapEntry.SubEntries, location, *target)
+				dereferencedTarget := *target
 				targetParent.SubEntries = slices.Delete(targetParent.SubEntries, targetIndex, targetIndex+1)
+				swapEntry.SubEntries = slices.Insert(swapEntry.SubEntries, location, dereferencedTarget)
 			}
 
 		case Swap:
