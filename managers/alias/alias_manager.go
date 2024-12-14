@@ -174,7 +174,8 @@ var aliases = map[string]string{
 	"crowincrow":         "crowmulti2",
 
 	// fox
-	"fox": "fox",
+	"fox":   "fox",
+	"foxes": "fox",
 
 	// foxmulti
 	"fox2":              "foxmulti",

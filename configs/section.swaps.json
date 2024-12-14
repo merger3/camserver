@@ -37,74 +37,7 @@
 			}
 		]
 	},
-	{
-		"label": "rats_base",
-		"subentries": [
-			{
-				"label": "rats_import",
-				"import": [
-					"rats"
-				]
-			},
-			{
-				"label": "common",
-				"import": [
-					"common"
-				]
-			}
-		],
-		"mods": [
-			{
-				"action": "move",
-				"target": [
-					"common",
-					"chins",
-					"chinmulti"
-				],
-				"props": {
-					"position": [ 
-						"rats_import"
-					],
-					"location": {
-						"anchor": "ratmulti",
-						"relation": "below"
-					}
-				}
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"rats_import"
-				]
-			},
-			{
-				"action": "swap",
-				"target": [
-					"common",
-					"chins"
-				],
-				"props": {
-					"position": [
-						"common", 
-						"wolves"
-					]
-				}
-			},
-			{
-				"action": "remove",
-				"target": [
-					"common",
-					"rats"
-				]
-			},
-			{
-				"action": "flatten",
-				"target": [
-					"common"
-				]
-			}
-		]
-	},
+
 	{
 		"label": "chins_base",
 		"subentries": [

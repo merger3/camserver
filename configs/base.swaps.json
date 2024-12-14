@@ -37,23 +37,6 @@
 		]
 	},
 	{
-		"label": "rats",
-		"subentries": [
-			{
-				"label": "rat1"
-			},
-			{
-				"label": "rat2"
-			},
-			{
-				"label": "rat3"
-			},
-			{
-				"label": "ratmulti"
-			}
-		]
-	},
-	{
 		"label": "chins",
 		"subentries": [
 			{
@@ -193,10 +176,6 @@
 			{
 				"label": "wolves",
 				"import": ["wolves"]
-			},
-			{
-				"label": "rats",
-				"import": ["rats"]
 			},
 			{
 				"label": "chins",
