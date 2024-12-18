@@ -105,6 +105,8 @@ func setCookie(c echo.Context, token string) {
 	cookie := new(http.Cookie)
 	cookie.Name = "token"
 	cookie.Value = token
+	cookie.Expires = time.Now().AddDate(3, 0, 0)
+	cookie.MaxAge = 60 * 60 * 24 * 365 * 3
 	c.SetCookie(cookie)
 }
 
