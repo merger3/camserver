@@ -1,7 +1,11 @@
 package cache
 
 import (
+	"bytes"
+	"context"
+	"encoding/json"
 	"fmt"
+	"net/http"
 	"regexp"
 	"slices"
 	"strconv"
@@ -19,10 +23,49 @@ type CacheManager struct {
 	LastAttemptedSync time.Time
 	SyncAttempts      float64
 	IsSynced          bool
+	HTTPClient        *http.Client
 }
 
-func NewCacheManager() *CacheManager {
-	return &CacheManager{Cams: make([]string, 6)}
+func NewCacheManager(client *http.Client) *CacheManager {
+	return &CacheManager{Cams: make([]string, 6), HTTPClient: client}
+}
+
+func (cm *CacheManager) SyncCache() error {
+	url := "https://api.ptz.app:2053/api/command"
+
+	requestBody, err := json.Marshal(core.Payload{Message: "!scenecams"})
+	if err != nil {
+		return err
+	}
+
+	request, err := http.NewRequestWithContext(context.Background(), http.MethodPost, url, bytes.NewBuffer(requestBody))
+	if err != nil {
+		return err
+	}
+
+	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3MzQ4OTA4OTEsImV4cCI6MTczNzQ4Mjg5MX0.OGZHt4W1GpIHjWjjElkFertQqVI4xyo5XEKu0thu8EM")
+	request.Header.Set("Content-Type", "application/json")
+
+	rsp, err := cm.HTTPClient.Do(request)
+	if err != nil {
+		return err
+	}
+
+	defer rsp.Body.Close()
+
+	if rsp.StatusCode != http.StatusOK {
+		return fmt.Errorf("Non-200 response code")
+	}
+
+	// Parse the response body
+	var response core.Payload
+	if err := json.NewDecoder(rsp.Body).Decode(&response); err != nil {
+		return err
+	}
+
+	cm.ParseScene(strings.ReplaceAll(response.Message, "\n", ""))
+
+	return nil
 }
 
 func isNumber(s string) bool {
@@ -30,7 +73,15 @@ func isNumber(s string) bool {
 	return d.MatchString(s)
 }
 
-func (cm *CacheManager) ParseScene(scenecams string) {
+func (cm *CacheManager) ParseScene(scenecamsRaw string) {
+	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
+	if !scenecamsRE.MatchString(scenecamsRaw) {
+		return
+	}
+
+	matches := scenecamsRE.FindStringSubmatch(scenecamsRaw)
+	scenecams := matches[1]
+
 	camsArray := strings.Split(strings.ReplaceAll(scenecams, " ", ""), ",")
 	newArray := make([]string, 0)
 	for i := 0; i < len(camsArray); i++ {

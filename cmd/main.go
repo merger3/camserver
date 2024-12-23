@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"math"
+	"net"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -53,9 +54,10 @@ func LoadResources() {
 
 	resources = make(map[string]any)
 
+	resources["client"] = NewHTTPClient()
 	resources["aliases"] = *alias.NewAliasManager()
-	resources["cache"] = cache.NewCacheManager()
-	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager))
+	resources["cache"] = cache.NewCacheManager(resources["client"].(*http.Client))
+	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager), resources["client"].(*http.Client))
 }
 
 func LoadModules(e *echo.Echo) {
@@ -99,6 +101,26 @@ func main() {
 	e.Use(CheckCache(resources["cache"].(*cache.CacheManager), resources["twitch"].(*twitch.TwitchManager)))
 
 	e.Logger.Fatal(e.Start("127.0.0.1:8080"))
+}
+
+func NewHTTPClient() *http.Client {
+	transport := &http.Transport{
+		DialContext: (&net.Dialer{
+			Timeout:   30 * time.Second, // Timeout for establishing connection
+			KeepAlive: 30 * time.Second, // Keep-alive period
+		}).DialContext,
+		MaxIdleConns:          100,              // Maximum number of idle connections
+		IdleConnTimeout:       90 * time.Second, // Idle timeout
+		TLSHandshakeTimeout:   10 * time.Second, // Timeout for TLS handshake
+		ExpectContinueTimeout: 1 * time.Second,  // Timeout for Expect: 100-continue responses
+	}
+
+	client := &http.Client{
+		Transport: transport,
+		Timeout:   60 * time.Second, // Overall request timeout
+	}
+
+	return client
 }
 
 func setCookie(c echo.Context, token string) {
@@ -200,7 +222,8 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 			if !cache.IsSynced {
 				fmt.Printf("Attempting sync at %v, backoff is %v, attempt number %v\n", int(time.Since(cache.LastAttemptedSync).Seconds()), math.Max(6, 6*math.Pow(3, cache.SyncAttempts)), cache.SyncAttempts)
 				if time.Since(cache.LastAttemptedSync).Seconds() >= math.Max(6, 6*math.Pow(3, cache.SyncAttempts)) && cache.SyncAttempts <= 6 {
-					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+					client.Cache.SyncCache()
 					cache.SyncAttempts += 1
 					cache.LastAttemptedSync = time.Now()
 					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})

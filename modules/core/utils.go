@@ -22,3 +22,7 @@ type CamRequest struct {
 	AuthHeaders
 	Cam string `json:"camera"`
 }
+
+type Payload struct {
+	Message string `json:"message"`
+}

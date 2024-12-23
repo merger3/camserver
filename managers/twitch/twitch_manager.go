@@ -1,6 +1,8 @@
 package twitch
 
 import (
+	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -71,6 +73,7 @@ type User struct {
 	LastMessage     string
 	MessageQueue    []Command
 	QueueRunning    bool
+	APIKey          string
 }
 
 func (u *User) CallUsersListeners(message Message) {
@@ -122,18 +125,43 @@ func (u *User) RunQueue(ticker *time.Ticker) {
 }
 
 type TwitchManager struct {
-	Clients   map[string]*User
-	Cache     *cache.CacheManager
-	Aliases   alias.AliasManager
-	OAuth     OAuthTokenManager
-	AuthMap   map[string]bool
-	Channel   string
-	Sentinel  string
-	Listeners map[string]Listener
+	Clients    map[string]*User
+	Cache      *cache.CacheManager
+	Aliases    alias.AliasManager
+	HTTPClient *http.Client
+	OAuth      OAuthTokenManager
+	AuthMap    map[string]bool
+	Channel    string
+	Sentinel   string
+	Listeners  map[string]Listener
 }
 
-func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, aliases alias.AliasManager) *TwitchManager {
-	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, Aliases: aliases, Listeners: make(map[string]Listener)}
+func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) {
+	url := "https://api.ptz.app:2053/api/command"
+
+	requestBody, err := json.Marshal(Payload{Message: message.Command})
+	if err != nil {
+		return http.Response{}, err
+	}
+
+	request, err := http.NewRequestWithContext(context.Background(), http.MethodPost, url, bytes.NewBuffer(requestBody))
+	if err != nil {
+		return http.Response{}, err
+	}
+
+	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3MzQ4OTA4OTEsImV4cCI6MTczNzQ4Mjg5MX0.OGZHt4W1GpIHjWjjElkFertQqVI4xyo5XEKu0thu8EM")
+	request.Header.Set("Content-Type", "application/json")
+
+	rsp, err := tm.HTTPClient.Do(request)
+	if err != nil {
+		return http.Response{}, err
+	}
+
+	return *rsp, nil
+}
+
+func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, aliases alias.AliasManager, client *http.Client) *TwitchManager {
+	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, Aliases: aliases, HTTPClient: client, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
 	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["botSwap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
@@ -143,14 +171,12 @@ func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, alias
 }
 
 func (tm *TwitchManager) CreateListeners() {
-	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
+
 	botSwapRE := regexp.MustCompile(`^\w+: Swap (\w+ \w+) ?`)
 
 	tm.Listeners["scenecams"] = func(message Message, user string) {
 		if match, _ := regexp.MatchString(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
-			matches := scenecamsRE.FindStringSubmatch(message.Message)
-			tm.Cache.SyncAttempts = 0
-			tm.Cache.ParseScene(matches[1])
+			tm.Cache.ParseScene(message.Message)
 		}
 	}
 
@@ -236,7 +262,11 @@ func (tm TwitchManager) Send(cmd Command) {
 		return
 	}
 
-	user.QueueMessage(cmd)
+	if user.Username == "merger3" {
+		tm.SendAPIMessage(cmd)
+	} else {
+		user.QueueMessage(cmd)
+	}
 }
 
 func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
