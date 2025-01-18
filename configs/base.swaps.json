@@ -9,13 +9,16 @@
 				"label": "wolfcorner"
 			},
 			{
-				"label": "wolfindoor"
+				"label": "wolfswitch"
 			},
 			{
 				"label": "wolfden"
 			},
 			{
 				"label": "wolfden2"
+			},
+			{
+				"label": "wolfindoor"
 			},
 			{
 				"label": "wolfmultis",

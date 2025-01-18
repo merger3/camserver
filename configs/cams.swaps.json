@@ -38,6 +38,25 @@
 		]
 	},
 	{
+		"label": "wolfswitch",
+		"subentries": [
+			{
+				"label": "wolves_import",
+				"import": [
+					"wolves_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"wolves_import"
+				]
+			}
+		]
+	},
+	{
 		"label": "wolfindoor",
 		"subentries": [
 			{

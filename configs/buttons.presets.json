@@ -862,6 +862,39 @@
 	},
 
 	{
+		"value": "wolfswitch",
+		"items": [
+			{
+				"value": "home"
+			},
+			{
+				"value": "den"
+			},
+			{
+				"value": "dentop"
+			},
+			{
+				"value": "downleft"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "farleft"
+			},
+			{
+				"value": "farright"
+			},
+			{
+				"value": "insidedoor"
+			}
+		]
+	},
+
+	{
 		"value": "wolfden",
 		"items": [
 			{

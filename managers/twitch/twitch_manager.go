@@ -262,6 +262,7 @@ func (tm TwitchManager) Send(cmd Command) {
 		return
 	}
 
+	// cmd.Command = strings.ReplaceAll(cmd.Command, "wolfswitch", "wolfindoor")
 	if user.Username == "merger3" {
 		tm.SendAPIMessage(cmd)
 	} else {
