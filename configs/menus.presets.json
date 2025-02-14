@@ -724,10 +724,36 @@
 				"value": "grass"
 			},
 			{
+				"value": "neargrass"
+			},
+			{
 				"value": "left"
 			},
 			{
+				"value": "leftcorner"
+			},
+			{
 				"value": "insidedoor"
+			},
+			{
+				"value": "backleftcorner"
+			},
+			{
+				"value": "switchpen",
+				"items": [
+					{
+						"value": "switchpen"
+					},
+					{
+						"value": "switchpenr"
+					},
+					{
+						"value": "switchden"
+					},
+					{
+						"value": "switchpenl"
+					}
+				]
 			},
 			{
 				"value": "pond"
@@ -975,19 +1001,37 @@
 				"value": "home"
 			},
 			{
-				"value": "doors"
-			},
-			{
 				"value": "left"
 			},
 			{
-				"value": "platformleft"
+				"value": "right"
+			},
+			{
+				"value": "neardoor"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "platformright"
 			},
 			{
 				"value": "platformcenter"
 			},
 			{
-				"value": "platformright"
+				"value": "platformleft"
+			},
+			{
+				"value": "platformrightb"
+			},
+			{
+				"value": "platformleftb"
+			},
+			{
+				"value": "doors"
+			},
+			{
+				"value": "down"
 			}
 		]
 	},
@@ -1002,13 +1046,16 @@
 				"value": "den"
 			},
 			{
-				"value": "dentop"
+				"value": "back"
 			},
 			{
 				"value": "downleft"
 			},
 			{
 				"value": "down"
+			},
+			{
+				"value": "insidedoor"
 			},
 			{
 				"value": "downright"
@@ -1020,7 +1067,10 @@
 				"value": "farright"
 			},
 			{
-				"value": "insidedoor"
+				"value": "water"
+			},
+			{
+				"value": "dentop"
 			}
 		]
 	},

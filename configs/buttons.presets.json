@@ -635,10 +635,37 @@
 				"value": "grass"
 			},
 			{
+				"value": "neargrass"
+			},	
+			{
 				"value": "left"
 			},
 			{
+				"value": "leftcorner"
+			},
+			{
 				"value": "insidedoor"
+			},
+			{
+				"value": "backleftcorner"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "switchpen"
+			},
+			{
+				"value": "switchpenr"
+			},
+			{
+				"value": "switchden"
+			},
+			{
+				"value": "switchpenl"
 			},
 			{
 				"value": "pond"
@@ -646,8 +673,10 @@
 			{
 				"value": "belowplatform"
 			},
+			{
+				"value": "switchgater"
+			},			
 			
-
 			{
 				"value": "tipz"
 			},
@@ -658,26 +687,6 @@
 				"value": "waterfall"
 			},
 			
-
-
-			{
-				"value": "backleftcorner"
-			},
-			{
-				"value": "switchgater"
-			},
-			{
-				"value": "leftcorner"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-			
-			
-
 			{
 				"value": "bigrocks"
 			},
@@ -844,19 +853,37 @@
 				"value": "home"
 			},
 			{
-				"value": "doors"
-			},
-			{
 				"value": "left"
 			},
 			{
-				"value": "platformleft"
+				"value": "right"
+			},
+			{
+				"value": "neardoor"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "platformright"
 			},
 			{
 				"value": "platformcenter"
 			},
 			{
-				"value": "platformright"
+				"value": "platformleft"
+			},
+			{
+				"value": "platformrightb"
+			},
+			{
+				"value": "platformleftb"
+			},
+			{
+				"value": "doors"
+			},
+			{
+				"value": "down"
 			}
 		]
 	},
@@ -871,13 +898,16 @@
 				"value": "den"
 			},
 			{
-				"value": "dentop"
+				"value": "back"
 			},
 			{
 				"value": "downleft"
 			},
 			{
 				"value": "down"
+			},
+			{
+				"value": "insidedoor"
 			},
 			{
 				"value": "downright"
@@ -889,7 +919,10 @@
 				"value": "farright"
 			},
 			{
-				"value": "insidedoor"
+				"value": "water"
+			},
+			{
+				"value": "dentop"
 			}
 		]
 	},

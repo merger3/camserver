@@ -27,7 +27,20 @@ type CacheManager struct {
 }
 
 func NewCacheManager(client *http.Client) *CacheManager {
-	return &CacheManager{Cams: make([]string, 6), HTTPClient: client}
+	newCM := &CacheManager{Cams: make([]string, 6), HTTPClient: client}
+	newCM.SyncCache()
+	go newCM.HydrateCache()
+	return newCM
+}
+
+func (cm *CacheManager) HydrateCache() error {
+	ticker := time.NewTicker(1 * time.Minute)
+	for range ticker.C {
+		if err := cm.SyncCache(); err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (cm *CacheManager) SyncCache() error {
@@ -43,7 +56,7 @@ func (cm *CacheManager) SyncCache() error {
 		return err
 	}
 
-	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3MzQ4OTA4OTEsImV4cCI6MTczNzQ4Mjg5MX0.OGZHt4W1GpIHjWjjElkFertQqVI4xyo5XEKu0thu8EM")
+	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3Mzc0ODM4MDcsImV4cCI6MTc0MDA3NTgwN30.BRL3f0SF8INBGxtoj2RgjS9yHvQYsOiMzg_8aPfrR8I")
 	request.Header.Set("Content-Type", "application/json")
 
 	rsp, err := cm.HTTPClient.Do(request)
@@ -63,6 +76,7 @@ func (cm *CacheManager) SyncCache() error {
 		return err
 	}
 
+	// cm.ParseScene("Scene: customcamsbig Cams: 1: crowoutdoor, 2: pushpop, 3: marmosetindoor, 4: pasture, 5: wolfswitch, 6: wolf")
 	cm.ParseScene(strings.ReplaceAll(response.Message, "\n", ""))
 
 	return nil
@@ -92,7 +106,7 @@ func (cm *CacheManager) ParseScene(scenecamsRaw string) {
 	cm.Cams = newArray
 	cm.IsSynced = true
 	cm.LastSynced = time.Now()
-	fmt.Println(cm.Cams)
+	// fmt.Println(cm.Cams)
 }
 
 func (cm CacheManager) ProcessSwap(first, second string) {

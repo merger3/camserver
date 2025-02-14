@@ -149,7 +149,7 @@ func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) 
 		return http.Response{}, err
 	}
 
-	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3MzQ4OTA4OTEsImV4cCI6MTczNzQ4Mjg5MX0.OGZHt4W1GpIHjWjjElkFertQqVI4xyo5XEKu0thu8EM")
+	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3Mzc0ODM4MDcsImV4cCI6MTc0MDA3NTgwN30.BRL3f0SF8INBGxtoj2RgjS9yHvQYsOiMzg_8aPfrR8I")
 	request.Header.Set("Content-Type", "application/json")
 
 	rsp, err := tm.HTTPClient.Do(request)
@@ -264,7 +264,11 @@ func (tm TwitchManager) Send(cmd Command) {
 
 	// cmd.Command = strings.ReplaceAll(cmd.Command, "wolfswitch", "wolfindoor")
 	if user.Username == "merger3" {
-		tm.SendAPIMessage(cmd)
+		if cmd.Command == "!scenecams" {
+			tm.Cache.SyncCache()
+		} else {
+			tm.SendAPIMessage(cmd)
+		}
 	} else {
 		user.QueueMessage(cmd)
 	}

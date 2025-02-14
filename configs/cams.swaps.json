@@ -53,6 +53,15 @@
 				"target": [
 					"wolves_import"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfindoor"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},
@@ -67,6 +76,16 @@
 			}
 		],
 		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"wolves_import",
+					"wolfswitch"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
 			{
 				"action": "flatten",
 				"target": [

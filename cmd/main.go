@@ -214,7 +214,7 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			if time.Since(cache.LastSynced).Hours() >= 6 {
+			if time.Since(cache.LastSynced).Minutes() >= 5 {
 				fmt.Println("Invalidating cache from middleware because of timeout")
 				cache.Invalidate()
 			}
