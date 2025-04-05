@@ -148,6 +148,15 @@
 				"target": [
 					"wolves_import"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfcorner"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},
@@ -167,6 +176,15 @@
 				"target": [
 					"wolves_import"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfindoor"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},
@@ -186,6 +204,15 @@
 				"target": [
 					"wolves_import"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfden"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},
@@ -205,6 +232,53 @@
 				"target": [
 					"wolves_import"
 				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfden2"
+				],
+				"props": {
+					"position": "top"
+				}
+			}
+		]
+	},
+
+	{
+		"label": "wolfmulti5",
+		"subentries": [
+			{
+				"label": "wolves_import",
+				"import": [
+					"wolves_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"wolves_import"
+				]
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfcorner"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "move",
+				"target": [
+					"wolfindoor"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},

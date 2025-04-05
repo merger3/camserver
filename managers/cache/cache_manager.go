@@ -24,21 +24,20 @@ type CacheManager struct {
 	SyncAttempts      float64
 	IsSynced          bool
 	HTTPClient        *http.Client
+	APIKey            string
 }
 
-func NewCacheManager(client *http.Client) *CacheManager {
-	newCM := &CacheManager{Cams: make([]string, 6), HTTPClient: client}
+func NewCacheManager(client *http.Client, token string) *CacheManager {
+	newCM := &CacheManager{Cams: make([]string, 6), HTTPClient: client, APIKey: token}
 	newCM.SyncCache()
 	go newCM.HydrateCache()
 	return newCM
 }
 
 func (cm *CacheManager) HydrateCache() error {
-	ticker := time.NewTicker(1 * time.Minute)
+	ticker := time.NewTicker(5 * time.Minute)
 	for range ticker.C {
-		if err := cm.SyncCache(); err != nil {
-			return err
-		}
+		cm.SyncCache()
 	}
 	return nil
 }
@@ -56,7 +55,7 @@ func (cm *CacheManager) SyncCache() error {
 		return err
 	}
 
-	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3Mzc0ODM4MDcsImV4cCI6MTc0MDA3NTgwN30.BRL3f0SF8INBGxtoj2RgjS9yHvQYsOiMzg_8aPfrR8I")
+	request.Header.Set("Authorization", fmt.Sprintf("Bearer %s", cm.APIKey))
 	request.Header.Set("Content-Type", "application/json")
 
 	rsp, err := cm.HTTPClient.Do(request)
@@ -66,20 +65,21 @@ func (cm *CacheManager) SyncCache() error {
 
 	defer rsp.Body.Close()
 
-	if rsp.StatusCode != http.StatusOK {
-		return fmt.Errorf("Non-200 response code")
-	}
+	if rsp.StatusCode == http.StatusOK {
+		// Parse the response body
+		var response core.Payload
+		if err := json.NewDecoder(rsp.Body).Decode(&response); err != nil {
+			return err
+		}
 
-	// Parse the response body
-	var response core.Payload
-	if err := json.NewDecoder(rsp.Body).Decode(&response); err != nil {
-		return err
+		// cm.ParseScene("Scene: customcamsbig Cams: 1: crowoutdoor, 2: pushpop, 3: marmosetindoor, 4: pasture, 5: wolfswitch, 6: wolf")
+		cm.ParseScene(strings.ReplaceAll(response.Message, "\n", ""))
+	} else {
+		return core.ErrFailedToSyncCacheWithAPI
 	}
-
-	// cm.ParseScene("Scene: customcamsbig Cams: 1: crowoutdoor, 2: pushpop, 3: marmosetindoor, 4: pasture, 5: wolfswitch, 6: wolf")
-	cm.ParseScene(strings.ReplaceAll(response.Message, "\n", ""))
 
 	return nil
+
 }
 
 func isNumber(s string) bool {
@@ -97,6 +97,10 @@ func (cm *CacheManager) ParseScene(scenecamsRaw string) {
 	scenecams := matches[1]
 
 	camsArray := strings.Split(strings.ReplaceAll(scenecams, " ", ""), ",")
+	if len(camsArray) < 6 {
+		return
+	}
+
 	newArray := make([]string, 0)
 	for i := 0; i < len(camsArray); i++ {
 		if len(camsArray[i]) > 2 {

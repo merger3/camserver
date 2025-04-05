@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -39,16 +40,19 @@ type Message struct {
 	RawType string
 	Message string
 	Channel string
+
+	Original twitch.PrivateMessage
 }
 
 func NewMessageFromPrivateMessage(pm twitch.PrivateMessage) Message {
 	return Message{
-		User:    pm.User,
-		Raw:     pm.Raw,
-		Type:    pm.Type,
-		RawType: pm.RawType,
-		Message: pm.Message,
-		Channel: pm.Channel,
+		User:     pm.User,
+		Raw:      pm.Raw,
+		Type:     pm.Type,
+		RawType:  pm.RawType,
+		Message:  pm.Message,
+		Channel:  pm.Channel,
+		Original: pm,
 	}
 }
 
@@ -63,7 +67,7 @@ func NewMessageFromUserStateMessage(pm twitch.UserStateMessage) Message {
 	}
 }
 
-type Listener func(message Message, user string)
+type Listener func(message twitch.PrivateMessage)
 
 type User struct {
 	Username        string
@@ -76,9 +80,9 @@ type User struct {
 	APIKey          string
 }
 
-func (u *User) CallUsersListeners(message Message) {
+func (u *User) CallUsersListeners(message twitch.PrivateMessage) {
 	for _, listener := range u.ActiveListeners {
-		listener(message, u.Username)
+		listener(message)
 	}
 }
 
@@ -126,6 +130,7 @@ func (u *User) RunQueue(ticker *time.Ticker) {
 
 type TwitchManager struct {
 	Clients    map[string]*User
+	Users      map[string]string
 	Cache      *cache.CacheManager
 	Aliases    alias.AliasManager
 	HTTPClient *http.Client
@@ -133,10 +138,12 @@ type TwitchManager struct {
 	AuthMap    map[string]bool
 	Channel    string
 	Sentinel   string
+	APIKey     string
 	Listeners  map[string]Listener
 }
 
 func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) {
+	fmt.Printf("Sending API command: %+v\n", message)
 	url := "https://api.ptz.app:2053/api/command"
 
 	requestBody, err := json.Marshal(Payload{Message: message.Command})
@@ -149,7 +156,7 @@ func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) 
 		return http.Response{}, err
 	}
 
-	request.Header.Set("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Im1lcmdlcjMiLCJ1c2VySWQiOiI2NzY4NTU4YmUxZjM1MDE3ZDU0NjlmNWIiLCJpYXQiOjE3Mzc0ODM4MDcsImV4cCI6MTc0MDA3NTgwN30.BRL3f0SF8INBGxtoj2RgjS9yHvQYsOiMzg_8aPfrR8I")
+	request.Header.Set("Authorization", fmt.Sprintf("Bearer %s", tm.APIKey))
 	request.Header.Set("Content-Type", "application/json")
 
 	rsp, err := tm.HTTPClient.Do(request)
@@ -160,8 +167,8 @@ func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) 
 	return *rsp, nil
 }
 
-func NewTwitchManager(channel, sentinel string, cache *cache.CacheManager, aliases alias.AliasManager, client *http.Client) *TwitchManager {
-	tm := TwitchManager{Clients: make(map[string]*User), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, Aliases: aliases, HTTPClient: client, Listeners: make(map[string]Listener)}
+func NewTwitchManager(channel, sentinel, token string, cache *cache.CacheManager, aliases alias.AliasManager, client *http.Client) *TwitchManager {
+	tm := TwitchManager{Clients: make(map[string]*User), Users: make(map[string]string), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, APIKey: token, Aliases: aliases, HTTPClient: client, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
 	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["botSwap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
@@ -174,13 +181,13 @@ func (tm *TwitchManager) CreateListeners() {
 
 	botSwapRE := regexp.MustCompile(`^\w+: Swap (\w+ \w+) ?`)
 
-	tm.Listeners["scenecams"] = func(message Message, user string) {
+	tm.Listeners["scenecams"] = func(message twitch.PrivateMessage) {
 		if match, _ := regexp.MatchString(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			tm.Cache.ParseScene(message.Message)
 		}
 	}
 
-	tm.Listeners["swap"] = func(message Message, user string) {
+	tm.Listeners["swap"] = func(message twitch.PrivateMessage) {
 		if match, _ := regexp.MatchString(`^\!swap \w+ \w+ ?`, message.Message); tm.Cache != nil && match && tm.CheckUsername(message.User.Name) {
 			args := strings.Split(message.Message, " ")[1:]
 			tm.Cache.ProcessSwap(args[0], args[1])
@@ -188,7 +195,7 @@ func (tm *TwitchManager) CreateListeners() {
 		}
 	}
 
-	tm.Listeners["botSwap"] = func(message Message, user string) {
+	tm.Listeners["botSwap"] = func(message twitch.PrivateMessage) {
 		if match, _ := regexp.MatchString(`^\w+: Swap (\w+ \w+) ?`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			matches := botSwapRE.FindStringSubmatch(message.Message)
 			args := strings.Split(matches[1], " ")
@@ -197,14 +204,14 @@ func (tm *TwitchManager) CreateListeners() {
 		}
 	}
 
-	tm.Listeners["resync"] = func(message Message, user string) {
+	tm.Listeners["resync"] = func(message twitch.PrivateMessage) {
 		if tm.Cache != nil && (message.Message == "!nightcams" || message.Message == "!livecams") {
 			fmt.Println("Invalidating cache")
 			tm.Cache.Invalidate()
 		}
 	}
 
-	tm.Listeners["misswap"] = func(message Message, user string) {
+	tm.Listeners["misswap"] = func(message twitch.PrivateMessage) {
 		if tm.Cache != nil && message.User.Name == tm.Sentinel && (message.Message == "Invalid Access" || message.Message == "Invalid Command") {
 			fmt.Println("Invalidating cache")
 			tm.Cache.Invalidate()
@@ -220,7 +227,7 @@ func (tm *TwitchManager) AddClient(username, oauth string, listeners []Listener)
 	})
 
 	user.Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		user.CallUsersListeners(NewMessageFromPrivateMessage(message))
+		user.CallUsersListeners(message)
 	})
 
 	user.ActiveListeners = listeners
@@ -228,6 +235,7 @@ func (tm *TwitchManager) AddClient(username, oauth string, listeners []Listener)
 	user.Client.Join(tm.Channel)
 
 	tm.Clients[username] = user
+	tm.Users[oauth] = username
 
 	go tm.Clients[username].Client.Connect()
 }
@@ -263,9 +271,12 @@ func (tm TwitchManager) Send(cmd Command) {
 	}
 
 	// cmd.Command = strings.ReplaceAll(cmd.Command, "wolfswitch", "wolfindoor")
-	if user.Username == "merger3" {
+	if user.Username == "merger3" && !cmd.UseChat {
 		if cmd.Command == "!scenecams" {
-			tm.Cache.SyncCache()
+			err := tm.Cache.SyncCache()
+			if errors.Is(err, ErrFailedToSyncCacheWithAPI) {
+				user.QueueMessage(cmd)
+			}
 		} else {
 			tm.SendAPIMessage(cmd)
 		}
@@ -278,7 +289,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 	// return ClickedCam{Found: true, Name: "pasture", Position: 2}
 	ch := make(chan string)
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
+		tm.Clients[rect.User].CallUsersListeners(message)
 		if match, _ := regexp.MatchString(`{"cam":"\w+","position":[1-6]}`, message.Message); message.User.Name == tm.Sentinel && match {
 			ch <- message.Message
 		}
@@ -302,7 +313,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 	}
 
 	tm.Clients[rect.User].Client.OnPrivateMessage(func(message twitch.PrivateMessage) {
-		tm.Clients[rect.User].CallUsersListeners(NewMessageFromPrivateMessage(message))
+		tm.Clients[rect.User].CallUsersListeners(message)
 	})
 
 	if timeout {
@@ -322,6 +333,12 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 }
 
 func (tm TwitchManager) GetUserFromToken(token string) string {
+	user, ok := tm.Users[token]
+	if ok {
+		return user
+	}
+
+	fmt.Println("Going to twitch servers")
 	req, _ := http.NewRequest(http.MethodGet, "https://id.twitch.tv/oauth2/validate", nil)
 	req.Header.Add("Authorization", fmt.Sprintf("OAuth %s", token))
 

@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"math"
@@ -11,6 +12,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/merger3/camserver/modules/cams"
 	"github.com/merger3/camserver/modules/click"
 	"github.com/merger3/camserver/modules/config"
 	"github.com/merger3/camserver/modules/core"
@@ -18,6 +20,7 @@ import (
 
 	"github.com/merger3/camserver/managers/alias"
 	"github.com/merger3/camserver/managers/cache"
+	"github.com/merger3/camserver/managers/notifications"
 	"github.com/merger3/camserver/managers/twitch"
 
 	"github.com/labstack/echo/v4"
@@ -29,8 +32,11 @@ var (
 )
 
 type SetupVars struct {
-	Channel  string `json:"channel"`
-	Sentinel string `json:"sentinel"`
+	Channel        string `json:"channel"`
+	Sentinel       string `json:"sentinel"`
+	APIKey         string `json:"token"`
+	PushoverKey    string `json:"pushover_api_key"`
+	PushoverDevice string `json:"pushover_device_key"`
 }
 
 type Module interface {
@@ -54,10 +60,12 @@ func LoadResources() {
 
 	resources = make(map[string]any)
 
+	resources["token"] = setup.APIKey
 	resources["client"] = NewHTTPClient()
 	resources["aliases"] = *alias.NewAliasManager()
-	resources["cache"] = cache.NewCacheManager(resources["client"].(*http.Client))
-	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager), resources["client"].(*http.Client))
+	resources["cache"] = cache.NewCacheManager(resources["client"].(*http.Client), resources["token"].(string))
+	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["token"].(string), resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager), resources["client"].(*http.Client))
+	resources["notifications"] = notifications.NewNotificationsManager(resources["twitch"].(*twitch.TwitchManager), resources["twitch"].(*twitch.TwitchManager).Clients["merger4"], setup.PushoverKey, setup.PushoverDevice)
 }
 
 func LoadModules(e *echo.Echo) {
@@ -65,6 +73,7 @@ func LoadModules(e *echo.Echo) {
 
 	modules["config"] = config.NewConfigModule()
 	modules["click"] = click.NewClickModule()
+	modules["cams"] = cams.NewCamsModule()
 	modules["menu"] = menu.NewMenuModule()
 
 	for _, v := range modules {
@@ -214,18 +223,16 @@ func ProcessUser(tm *twitch.TwitchManager) echo.MiddlewareFunc {
 func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			if time.Since(cache.LastSynced).Minutes() >= 5 {
-				fmt.Println("Invalidating cache from middleware because of timeout")
-				cache.Invalidate()
-			}
-
 			if !cache.IsSynced {
 				fmt.Printf("Attempting sync at %v, backoff is %v, attempt number %v\n", int(time.Since(cache.LastAttemptedSync).Seconds()), math.Max(6, 6*math.Pow(3, cache.SyncAttempts)), cache.SyncAttempts)
 				if time.Since(cache.LastAttemptedSync).Seconds() >= math.Max(6, 6*math.Pow(3, cache.SyncAttempts)) && cache.SyncAttempts <= 6 {
 					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
-					client.Cache.SyncCache()
 					cache.SyncAttempts += 1
 					cache.LastAttemptedSync = time.Now()
+					err := client.Cache.SyncCache()
+					if errors.Is(err, core.ErrFailedToSyncCacheWithAPI) {
+						client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams", UseChat: true})
+					}
 					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
 				}
 			}

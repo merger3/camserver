@@ -9,6 +9,7 @@ type Command struct {
 	Channel string
 	User    string `header:"X-User-Name"`
 	Command string `query:"command"`
+	UseChat bool
 }
 
 type ClickedCam struct {
