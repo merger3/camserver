@@ -9,6 +9,12 @@
 				"label": "wolfcorner"
 			},
 			{
+				"label": "wolfindoor"
+			},
+			{
+				"label": "wolfmulti2"
+			},
+			{
 				"label": "wolfswitch"
 			},
 			{
@@ -16,9 +22,6 @@
 			},
 			{
 				"label": "wolfden2"
-			},
-			{
-				"label": "wolfindoor"
 			},
 			{
 				"label": "wolfmultis",
@@ -63,9 +66,6 @@
 		"label": "reptiles",
 		"subentries": [
 			{
-				"label": "georgie"
-			},
-			{
 				"label": "noodle"
 			},
 			{
@@ -80,17 +80,8 @@
 		]
 	},
 	{
-		"label": "georgiewater"
-	},
-	{
 		"label": "insects",
 		"subentries": [
-			{
-				"label": "marty"
-			},
-			{
-				"label": "bb"
-			},
 			{
 				"label": "roaches"
 			},

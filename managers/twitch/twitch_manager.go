@@ -335,6 +335,7 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 func (tm TwitchManager) GetUserFromToken(token string) string {
 	user, ok := tm.Users[token]
 	if ok {
+		// fmt.Println("found user in cache")
 		return user
 	}
 

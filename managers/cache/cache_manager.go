@@ -45,6 +45,10 @@ func (cm *CacheManager) HydrateCache() error {
 func (cm *CacheManager) SyncCache() error {
 	url := "https://api.ptz.app:2053/api/command"
 
+	// str := "Scene: Custom Cams: 1: wolf, 2: wolfcorner, 3: wolfmulti, 4: wolfmulti2, 5: wolfmulti5, 6: crowin"
+	// cm.ParseScene(str)
+	// return nil
+
 	requestBody, err := json.Marshal(core.Payload{Message: "!scenecams"})
 	if err != nil {
 		return err

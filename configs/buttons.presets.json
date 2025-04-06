@@ -2,7 +2,6 @@
 	{
 		"value": "pasture",
 		"items": [
-			
 			{
 				"value": "home"
 			},
@@ -19,22 +18,25 @@
 				"value": "pen"
 			},
 			{
-				"value": "grove"
-			},
-			{
 				"value": "barn2"
 			},
 			{
-				"value": "barn2r"
-			},
-			{
-				"value": "grove2"
+				"value": "grove"
 			},
 			{
 				"value": "purplebase"
 			},
 			{
+				"value": "grove2"
+			},
+			{
+				"value": "barn2r"
+			},
+			{
 				"value": "feeder"
+			},
+			{
+				"value": "middle"
 			},
 			{
 				"value": "pooll"
@@ -87,33 +89,32 @@
 				"value": "platform"
 			},
 			{
-				"value": "shade"
-			},
-			{
 				"value": "center"
 			},
 			{
 				"value": "den"
 			},
 			{
-				"value": "down"
-			},
-			{
 				"value": "right"
-			},
-			{
-				"value": "bench"
-			},
-			{
-				"value": "treehouse"
 			},
 			{
 				"value": "leftfence"
 			},
 			{
+				"value": "down"
+			},
+			{
+				"value": "treehouse"
+			},
+			{
+				"value": "shade"
+			},
+			{
 				"value": "brush"
 			},
-
+			{
+				"value": "bench"
+			},
 			{
 				"value": "denl"
 			},
@@ -231,21 +232,27 @@
 				"value": "littles"
 			},
 			{
-				"value": "littles2"
-			},
-			{
-				"value": "abovedoor"
-			},
-			{
 				"value": "littlesw"
 			},
 			{
 				"value": "macawsw"
 			},
-
+			{
+				"value": "littles2"
+			},
+			{
+				"value": "littlest"
+			},
+			{
+				"value": "macawst"
+			},
 			{
 				"value": "home"
 			},
+			{
+				"value": "abovedoor"
+			},
+	
 			{
 				"value": "bothwindows"
 			},
@@ -274,11 +281,7 @@
 			{
 				"value": "littlessleep"
 			},
-			{
-				"value": "littlest"
-			},
-			
-			
+	
 			{
 				"value": "macawsb"
 			},
@@ -288,9 +291,7 @@
 			{
 				"value": "macawsbowl2"
 			},
-			{
-				"value": "macawst"
-			},
+
 			
 
 			{
@@ -308,14 +309,15 @@
 	{
 		"value": "crowout",
 		"items": [
-			{
-				"value": "home"
-			},
+
 			{
 				"value": "right"
 			},
 			{
 				"value": "corner"
+			},
+			{
+				"value": "bench"
 			},
 			{
 				"value": "backcorner"
@@ -334,7 +336,28 @@
 			{
 				"value": "entry"
 			},
-			
+			{
+				"value": "down"
+			},
+			{
+				"value": "home"
+			},
+			{
+				"value": "platform"
+			},
+
+			{
+				"value": "tree"
+			},
+			{
+				"value": "treet"
+			},
+			{
+				"value": "treeb"
+			},
+			{
+				"value": "treebase"
+			},
 
 			{
 				"value": "inside"
@@ -357,35 +380,14 @@
 			
 
 			{
-				"value": "platform"
-			},
-			{
-				"value": "bench"
-			},
-			{
 				"value": "cache"
 			},
 			{
 				"value": "water"
 			},
-			{
-				"value": "down"
-			},
+
 			{
 				"value": "stickz"
-			},
-			
-			{
-				"value": "treet"
-			},
-			{
-				"value": "tree"
-			},
-			{
-				"value": "treeb"
-			},
-			{
-				"value": "treebase"
 			}
 		]
 	},
@@ -400,16 +402,28 @@
 				"value": "down"
 			},
 			{
-				"value": "entry"
+				"value": "rightperch"
 			},
 			{
-				"value": "back"
+				"value": "window"
 			},
 			{
 				"value": "top"
 			},
 			{
 				"value": "backcorner"
+			},
+			{
+				"value": "outside"
+			},
+			{
+				"value": "back"
+			},
+			{
+				"value": "platform"
+			},
+			{
+				"value": "windowc"
 			},
 			{
 				"value": "heater"
@@ -421,20 +435,7 @@
 				"value": "backleftcorner"
 			},
 			{
-				"value": "rightperch"
-			},
-			{
-				"value": "outside"
-			},
-			{
-				"value": "window"
-			},
-			{
-				"value": "windowc"
-			},
-
-			{
-				"value": "platform"
+				"value": "entry"
 			},
 			{
 				"value": "table"
@@ -458,10 +459,10 @@
 				"value": "platformleft"
 			},
 			{
-				"value": "left"
+				"value": "rope"
 			},
 			{
-				"value": "rope"
+				"value": "left"
 			},
 			{
 				"value": "right"
@@ -470,10 +471,10 @@
 				"value": "table"
 			},
 			{
-				"value": "top"
+				"value": "ir"
 			},
 			{
-				"value": "ir"
+				"value": "top"
 			},
 			{
 				"value": "hose"
@@ -510,9 +511,6 @@
 			{
 				"value": "bottomshelfr"
 			},
-			
-
-
 			
 			{
 				"value": "leftpostshelves"
@@ -563,19 +561,22 @@
 				"value": "table"
 			},
 			{
-				"value": "left"
+				"value": "bowll"
+			},
+			{
+				"value": "bridgel"
 			},
 			{
 				"value": "flaps"
-			},
-			{
-				"value": "bowll"
 			},
 			{
 				"value": "domeleft"
 			},
 			{
 				"value": "domeright"
+			},
+			{
+				"value": "left"
 			},
 			{
 				"value": "bridgel"
@@ -629,25 +630,10 @@
 				"value": "rightfence"
 			},
 			{
-				"value": "farfence"
-			},
-			{
-				"value": "grass"
-			},
-			{
-				"value": "neargrass"
-			},	
-			{
 				"value": "left"
 			},
 			{
 				"value": "leftcorner"
-			},
-			{
-				"value": "insidedoor"
-			},
-			{
-				"value": "backleftcorner"
 			},
 			{
 				"value": "down"
@@ -656,33 +642,53 @@
 				"value": "downright"
 			},
 			{
-				"value": "switchpen"
+				"value": "insidedoor"
+			},
+
+			{
+				"value": "farfence"
 			},
 			{
-				"value": "switchpenr"
+				"value": "grass"
 			},
 			{
-				"value": "switchden"
-			},
-			{
-				"value": "switchpenl"
-			},
-			{
-				"value": "pond"
+				"value": "neargrass"
 			},
 			{
 				"value": "belowplatform"
+			},	
+			{
+				"value": "backleftcorner"
+			},
+			
+			{
+				"value": "den1l"
 			},
 			{
-				"value": "switchgater"
-			},			
-			
+				"value": "den1r"
+			},
+			{
+				"value": "den1t"
+			},
+
+			{
+				"value": "den1inside"
+			},
+			{
+				"value": "den1"
+			},
+			{
+				"value": "pond"
+			},	
+			{
+				"value": "shaft"
+			},
 			{
 				"value": "tipz"
 			},
 			{
-				"value": "shaft"
-			},
+				"value": "switchgater"
+			},		
 			{
 				"value": "waterfall"
 			},
@@ -692,21 +698,6 @@
 			},
 			{
 				"value": "farcorner"
-			},
-			{
-				"value": "den1t"
-			},
-			{
-				"value": "den1inside"
-			},
-			{
-				"value": "den1r"
-			},
-			{
-				"value": "den1"
-			},
-			{
-				"value": "den1l"
 			},
 			{
 				"value": "den2"
@@ -726,7 +717,18 @@
 			{
 				"value": "den2r"
 			},
-			
+			{
+				"value": "switchpen"
+			},
+			{
+				"value": "switchpenr"
+			},
+			{
+				"value": "switchden"
+			},
+			{
+				"value": "switchpenl"
+			},
 
 			{
 				"value": "wolfcornercam"
@@ -744,17 +746,25 @@
 				"value": "left"
 			},
 			{
-				"value": "grass"
+				"value": "leftcornerw"
 			},
 			{
-				"value": "leftcorner"
+				"value": "right"
 			},
 			{
 				"value": "rightfence"
 			},
 			{
-				"value": "right"
+				"value": "leftfence"
 			},
+
+			{
+				"value": "grass"
+			},
+			{
+				"value": "den2l"
+			},
+
 			{
 				"value": "belowplatforml"
 			},
@@ -767,16 +777,16 @@
 			{
 				"value": "belowplatformr"
 			},
-			
+			{
+				"value": "leftcorner"
+			},
 			{
 				"value": "den2t"
 			},
 			{
 				"value": "den2m"
 			},
-			{
-				"value": "den2l"
-			},
+
 			{
 				"value": "den2shade"
 			},
@@ -799,9 +809,6 @@
 				"value": "den2inside"
 			},
 		
-			{
-				"value": "leftfence"
-			},
 			{
 				"value": "grassl"
 			},
@@ -845,7 +852,6 @@
 		]
 	},
 
-
 	{
 		"value": "wolfinside",
 		"items": [
@@ -859,31 +865,32 @@
 				"value": "right"
 			},
 			{
-				"value": "neardoor"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "platformright"
-			},
-			{
-				"value": "platformcenter"
-			},
-			{
-				"value": "platformleft"
+				"value": "platformleftb"
 			},
 			{
 				"value": "platformrightb"
 			},
 			{
-				"value": "platformleftb"
+				"value": "down"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "neardoor"
+			},
+			{
+				"value": "platformleft"
+			},
+
+			{
+				"value": "platformcenter"
+			},
+			{
+				"value": "platformright"
 			},
 			{
 				"value": "doors"
-			},
-			{
-				"value": "down"
 			}
 		]
 	},
@@ -986,6 +993,24 @@
 		"items": [
 			{
 				"value": "home"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "downr"
+			},
+			{
+				"value": "left"
+			},
+			{
+				"value": "right"
+			},
+			{
+				"value": "stick"
+			},
+			{
+				"value": "food"
 			}
 		]
 	},
@@ -1051,10 +1076,10 @@
 				"value": "home"
 			},
 			{
-				"value": "closebranches"
+				"value": "down"
 			},
 			{
-				"value": "down"
+				"value": "closebranches"
 			},
 			{
 				"value": "farbranches"
@@ -1075,6 +1100,9 @@
 				"value": "home"
 			},
 			{
+				"value": "right"
+			},
+			{
 				"value": "backleft"
 			},
 			{
@@ -1085,9 +1113,6 @@
 			},
 			{
 				"value": "left"
-			},
-			{
-				"value": "right"
 			},
 			{
 				"value": "food"

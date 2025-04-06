@@ -73,14 +73,16 @@
 				"import": [
 					"wolves_base"
 				]
+			},
+			{
+				"label": "wolfmulti2"
 			}
 		],
 		"mods": [
 			{
 				"action": "move",
 				"target": [
-					"wolves_import",
-					"wolfswitch"
+					"wolfmulti2"
 				],
 				"props": {
 					"position": "top"
@@ -500,7 +502,7 @@
 				"action": "move",
 				"target": [
 					"reptiles",
-					"toast"
+					"patchy"
 				],
 				"props": {
 					"position": "top"
@@ -558,7 +560,7 @@
 				"action": "move",
 				"target": [
 					"reptiles",
-					"noodle"
+					"toast"
 				],
 				"props": {
 					"position": "top"
@@ -667,9 +669,6 @@
 				"import": [
 					"insects_base"
 				]
-			},
-			{
-				"label": "hankcorner"
 			}
 		],
 		"mods": [

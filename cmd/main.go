@@ -101,6 +101,7 @@ func main() {
 			return err
 		}
 
+		// fmt.Println(cmd)
 		resources["twitch"].(*twitch.TwitchManager).Send(cmd)
 
 		return ctx.NoContent(http.StatusOK)

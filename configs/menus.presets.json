@@ -32,29 +32,39 @@
 				"value": "pen"
 			},
 			{
-				"value": "middle"
+				"value": "barn2"
 			},
 			{
 				"value": "grove"
 			},
 			{
-				"value": "separator"
+				"value": "purplebase"
 			},
 			{
-				"value": "barn2"
+				"value": "grove2"
 			},
 			{
 				"value": "barn2r"
 			},
 			{
-				"value": "purplebase"
+				"value": "feeder"
 			},
+			{
+				"value": "middle"
+			},
+
+			{
+				"value": "separator"
+			},
+
+			{
+				"value": "barn2r"
+			},
+
 			{
 				"value": "purplenest"
 			},
-			{
-				"value": "grove2"
-			},
+
 			{
 				"value": "penr"
 			},
@@ -64,9 +74,7 @@
 			{
 				"value": "gate"
 			},
-			{
-				"value": "feeder"
-			},
+
 			{
 				"value": "angel"
 			},
@@ -94,13 +102,16 @@
 				"value": "platform"
 			},
 			{
-				"value": "shade"
-			},
-			{
 				"value": "center"
 			},
 			{
 				"value": "den"
+			},
+			{
+				"value": "right"
+			},
+			{
+				"value": "leftfence"
 			},
 
 			{
@@ -109,10 +120,6 @@
 
 			{
 				"value": "down"
-			},
-			
-			{
-				"value": "right"
 			},
 			{
 				"value": "bench"
@@ -250,16 +257,16 @@
 				"value": "littles"
 			},
 			{
-				"value": "littles2"
-			},
-			{
-				"value": "abovedoor"
-			},
-			{
 				"value": "littlesw"
 			},
 			{
 				"value": "macawsw"
+			},
+			{
+				"value": "littles2"
+			},
+			{
+				"value": "littlest"
 			},
 			{
 				"value": "separator"
@@ -270,6 +277,9 @@
 			},
 			{
 				"value": "bothwindows"
+			},
+			{
+				"value": "abovedoor"
 			},
 			{
 				"value": "chicken"
@@ -347,6 +357,9 @@
 				"value": "corner"
 			},
 			{
+				"value": "bench"
+			},
+			{
 				"value": "backcorner"
 			},
 			{
@@ -365,6 +378,32 @@
 			},
 			{
 				"value": "entry"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "home"
+			},
+			{
+				"value": "platform"
+			},
+			{
+				"value": "tree",
+				"items": [
+					{
+						"value": "treet"
+					},
+					{
+						"value": "tree"
+					},
+					{
+						"value": "treeb"
+					},
+					{
+						"value": "treebase"
+					}
+				]
 			},
 			{
 				"value": "separator"
@@ -392,12 +431,7 @@
 				"value": "separator"
 			},
 
-			{
-				"value": "platform"
-			},
-			{
-				"value": "bench"
-			},
+
 			{
 				"value": "cache"
 			},
@@ -405,31 +439,7 @@
 				"value": "water"
 			},
 			{
-				"value": "down"
-			},
-			{
 				"value": "stickz"
-			},
-			{
-				"value": "separator"
-			},
-
-			{
-				"value": "tree",
-				"items": [
-					{
-						"value": "treet"
-					},
-					{
-						"value": "tree"
-					},
-					{
-						"value": "treeb"
-					},
-					{
-						"value": "treebase"
-					}
-				]
 			}
 		]
 	},
@@ -444,10 +454,13 @@
 				"value": "down"
 			},
 			{
-				"value": "entry"
+				"value": "rightperch"
 			},
 			{
 				"value": "back"
+			},
+			{
+				"value": "top"
 			},
 			{
 				"value": "top",
@@ -489,7 +502,9 @@
 			{
 				"value": "separator"
 			},
-
+			{
+				"value": "entry"
+			},
 			{
 				"value": "platform"
 			},
@@ -515,10 +530,10 @@
 				"value": "platformleft"
 			},
 			{
-				"value": "left"
+				"value": "rope"
 			},
 			{
-				"value": "rope"
+				"value": "left"
 			},
 			{
 				"value": "right"
@@ -642,14 +657,12 @@
 				"value": "table"
 			},
 			{
-				"value": "left"
+				"value": "bridgel"
 			},
 			{
 				"value": "flaps"
 			},
-			{
-				"value": "bowll"
-			},
+
 			{
 				"value": "domeleft"
 			},
@@ -672,6 +685,9 @@
 						"value": "bridger"
 					}
 				]
+			},
+			{
+				"value": "left"
 			},
 			{
 				"value": "windows",
@@ -706,9 +722,6 @@
 		"value": "wolf",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
 				"value": "river"
 			},
 			{
@@ -718,72 +731,7 @@
 				"value": "rightfence"
 			},
 			{
-				"value": "farfence"
-			},
-			{
-				"value": "grass"
-			},
-			{
-				"value": "neargrass"
-			},
-			{
 				"value": "left"
-			},
-			{
-				"value": "leftcorner"
-			},
-			{
-				"value": "insidedoor"
-			},
-			{
-				"value": "backleftcorner"
-			},
-			{
-				"value": "switchpen",
-				"items": [
-					{
-						"value": "switchpen"
-					},
-					{
-						"value": "switchpenr"
-					},
-					{
-						"value": "switchden"
-					},
-					{
-						"value": "switchpenl"
-					}
-				]
-			},
-			{
-				"value": "pond"
-			},
-			{
-				"value": "belowplatform"
-			},
-			{
-				"value": "separator"
-			},
-
-			{
-				"value": "tipz"
-			},
-			{
-				"value": "shaft"
-			},
-			{
-				"value": "waterfall"
-			},
-			{
-				"value": "separator"
-			},
-
-
-			{
-				"value": "backleftcorner"
-			},
-			{
-				"value": "switchgater"
 			},
 			{
 				"value": "leftcorner"
@@ -795,9 +743,58 @@
 				"value": "downright"
 			},
 			{
-				"value": "separator"
+				"value": "insidedoor"
+			},
+			{
+				"value": "farfence"
+			},
+			{
+				"value": "grass"
+			},
+			{
+				"value": "neargrass"
+			},
+			{
+				"value": "belowplatform"
+			},
+
+			{
+				"value": "backleftcorner"
+			},
+			{
+				"value": "den1l"
+			},
+			{
+				"value": "den1r"
+			},
+			{
+				"value": "den1t"
 			},
 			
+			{
+				"value": "separator"
+			},
+			{
+				"value": "pond"
+			},
+			{
+				"value": "shaft"
+			},
+			{
+				"value": "tipz"
+			},
+			{
+				"value": "den1inside"
+			},
+			{
+				"value": "home"
+			},
+			{
+				"value": "waterfall"
+			},
+			{
+				"value": "switchgater"
+			},
 
 			{
 				"value": "bigrocks"
@@ -851,7 +848,23 @@
 			{
 				"value": "separator"
 			},
-
+			{
+				"value": "switchpen",
+				"items": [
+					{
+						"value": "switchpen"
+					},
+					{
+						"value": "switchpenr"
+					},
+					{
+						"value": "switchden"
+					},
+					{
+						"value": "switchpenl"
+					}
+				]
+			},
 			{
 				"value": "wolfcornercam"
 			}
@@ -868,17 +881,29 @@
 				"value": "left"
 			},
 			{
-				"value": "grass"
+				"value": "leftcornerw"
 			},
 			{
-				"value": "leftcorner"
+				"value": "right"
 			},
 			{
 				"value": "rightfence"
 			},
 			{
-				"value": "right"
+				"value": "leftfence"
 			},
+			{
+				"value": "grass"
+			},
+			{
+				"value": "den2l"
+			},
+			{
+				"value": "leftcorner"
+			},
+
+
+
 			{
 				"value": "belowplatform",
 				"items": [
@@ -935,10 +960,6 @@
 				"value": "separator"
 			},
 		
-
-			{
-				"value": "leftfence"
-			},
 			{
 				"value": "grassl"
 			},
@@ -1007,31 +1028,32 @@
 				"value": "right"
 			},
 			{
-				"value": "neardoor"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "platformright"
-			},
-			{
-				"value": "platformcenter"
-			},
-			{
-				"value": "platformleft"
+				"value": "platformleftb"
 			},
 			{
 				"value": "platformrightb"
 			},
 			{
-				"value": "platformleftb"
+				"value": "down"
+			},
+			{
+				"value": "downright"
+			},
+			{
+				"value": "neardoor"
+			},
+			{
+				"value": "platformleft"
+			},
+
+			{
+				"value": "platformcenter"
+			},
+			{
+				"value": "platformright"
 			},
 			{
 				"value": "doors"
-			},
-			{
-				"value": "down"
 			}
 		]
 	},
@@ -1134,6 +1156,24 @@
 		"items": [
 			{
 				"value": "home"
+			},
+			{
+				"value": "down"
+			},
+			{
+				"value": "downr"
+			},
+			{
+				"value": "left"
+			},
+			{
+				"value": "right"
+			},
+			{
+				"value": "stick"
+			},
+			{
+				"value": "food"
 			}
 		]
 	},
@@ -1199,10 +1239,10 @@
 				"value": "home"
 			},
 			{
-				"value": "closebranches"
+				"value": "down"
 			},
 			{
-				"value": "down"
+				"value": "closebranches"
 			},
 			{
 				"value": "farbranches"
@@ -1222,6 +1262,9 @@
 				"value": "home"
 			},
 			{
+				"value": "right"
+			},
+			{
 				"value": "backleft"
 			},
 			{
@@ -1232,9 +1275,6 @@
 			},
 			{
 				"value": "left"
-			},
-			{
-				"value": "right"
 			},
 			{
 				"value": "food"
