@@ -73,12 +73,15 @@
 				"import": [
 					"wolves_base"
 				]
-			},
-			{
-				"label": "wolfmulti2"
 			}
 		],
 		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"wolves_import"
+				]
+			},
 			{
 				"action": "move",
 				"target": [
@@ -89,10 +92,13 @@
 				}
 			},
 			{
-				"action": "flatten",
+				"action": "move",
 				"target": [
-					"wolves_import"
-				]
+					"wolfswitch"
+				],
+				"props": {
+					"position": "top"
+				}
 			}
 		]
 	},
@@ -421,20 +427,27 @@
 		"label": "georgie",
 		"subentries": [
 			{
-				"label": "reptiles",
+				"label": "georgie_import",
 				"import": [
-					"reptiles_base"
+					"georgie_base"
 				]
-			},
-			{
-				"label": "georgiewater"
 			}
 		],
 		"mods": [
 			{
+				"action": "move",
+				"target": [
+					"georgie_import",
+					"georgiewater"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
-					"reptiles"
+					"georgie_import"
 				]
 			}
 		]
@@ -443,17 +456,56 @@
 		"label": "georgiewater",
 		"subentries": [
 			{
-				"label": "reptiles",
+				"label": "georgie_import",
 				"import": [
-					"reptiles_base"
+					"georgie_base"
 				]
 			}
 		],
 		"mods": [
 			{
+				"action": "move",
+				"target": [
+					"georgie_import",
+					"georgie"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
 				"action": "flatten",
 				"target": [
-					"reptiles"
+					"georgie_import"
+				]
+			}
+		]
+	},
+	{
+		"label": "georgiemulti",
+		"subentries": [
+			{
+				"label": "georgie_import",
+				"import": [
+					"georgie_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"georgie_import",
+					"georgiewater"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"georgie_import"
 				]
 			}
 		]
@@ -502,7 +554,7 @@
 				"action": "move",
 				"target": [
 					"reptiles",
-					"patchy"
+					"noodle"
 				],
 				"props": {
 					"position": "top"
@@ -549,9 +601,9 @@
 		"label": "pushpop",
 		"subentries": [
 			{
-				"label": "reptiles",
+				"label": "pushpop_import",
 				"import": [
-					"reptiles_base"
+					"pushpop_base"
 				]
 			}
 		],
@@ -559,8 +611,8 @@
 			{
 				"action": "move",
 				"target": [
-					"reptiles",
-					"toast"
+					"pushpop_import",
+					"pushin"
 				],
 				"props": {
 					"position": "top"
@@ -569,14 +621,156 @@
 			{
 				"action": "flatten",
 				"target": [
-					"reptiles"
+					"pushpop_import"
 				]
 			}
 		]
 	},
-
-
-
+	{
+		"label": "pushin",
+		"subentries": [
+			{
+				"label": "pushpop_import",
+				"import": [
+					"pushpop_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"pushpop_import",
+					"pushpop"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"pushpop_import"
+				]
+			}
+		]
+	},
+	{
+		"label": "pushcrunch",
+		"subentries": [
+			{
+				"label": "pushpop_import",
+				"import": [
+					"pushpop_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"pushpop_import",
+					"pushpop"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"pushpop_import"
+				]
+			}
+		]
+	},
+	{
+		"label": "chicken",
+		"subentries": [
+			{
+				"label": "chickens_import",
+				"import": [
+					"chickens_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"chickens_import",
+					"chickenin"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chickens_import"
+				]
+			}
+		]
+	},
+	{
+		"label": "chickenin",
+		"subentries": [
+			{
+				"label": "chickens_import",
+				"import": [
+					"chickens_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"chickens_import",
+					"chicken"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chickens_import"
+				]
+			}
+		]
+	},
+	{
+		"label": "chickenmulti",
+		"subentries": [
+			{
+				"label": "chickens_import",
+				"import": [
+					"chickens_base"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"chickens_import",
+					"chickenin"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"chickens_import"
+				]
+			}
+		]
+	},
 	{
 		"label": "marty",
 		"subentries": [
@@ -890,6 +1084,16 @@
 			}
 		],
 		"mods": [
+			{
+				"action": "move",
+				"target": [
+					"foxes_import",
+					"foxes"
+				],
+				"props": {
+					"position": "top"
+				}
+			},
 			{
 				"action": "flatten",
 				"target": [

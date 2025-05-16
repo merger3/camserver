@@ -62,6 +62,9 @@ var common = map[string]string{
 	"marmoset":       "marmout",
 	"marmosetindoor": "marmin",
 	"parrot":         "parrots",
+	"pushpopindoor":  "pushin",
+	"pushpopcrunch":  "pushcrunch",
+	"chickenindoor":  "chickenin",
 }
 
 var aliases = map[string]string{
@@ -397,4 +400,24 @@ var aliases = map[string]string{
 	"wolfcornerwolfinmulti": "wolfmulti5",
 	"wolfcwolfin":           "wolfmulti5",
 	"wolfcwolfi":            "wolfmulti5",
+
+	// pushpop
+	"pushpop":    "pushpop",
+	"pushpopout": "pushpop",
+	"pushout":    "pushpop",
+
+	// pushpopindoor
+	"pushpopindoor": "pushpopindoor",
+	"pushpopin":     "pushpopindoor",
+	"pushin":        "pushpopindoor",
+	"pushinptz":     "pushpopindoor",
+
+	"pushpopcrunch": "pushpopcrunch",
+	"pushcrunch":    "pushpopcrunch",
+
+	"chicken": "chicken",
+
+	"chickenindoor": "chickenindoor",
+	"chickeninside": "chickenindoor",
+	"chickenin":     "chickenindoor",
 }

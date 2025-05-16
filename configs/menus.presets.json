@@ -787,13 +787,13 @@
 				"value": "den1inside"
 			},
 			{
-				"value": "home"
-			},
-			{
 				"value": "waterfall"
 			},
 			{
 				"value": "switchgater"
+			},
+			{
+				"value": "home"
 			},
 
 			{
@@ -1260,24 +1260,24 @@
 		"items": [
 			{
 				"value": "home"
+			}
+		]
+	},
+
+	{
+		"value": "pushin",
+		"items": [
+			{
+				"value": "home"
 			},
 			{
-				"value": "right"
+				"value": "leftcorner"
 			},
 			{
-				"value": "backleft"
+				"value": "digbox"
 			},
 			{
-				"value": "backright"
-			},
-			{
-				"value": "behind"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "food"
+				"value": "rightcorner"
 			}
 		]
 	},
@@ -1287,27 +1287,48 @@
 		"items": [
 			{
 				"value": "home"
+			}
+		]
+	},
+	{
+		"value": "georgiewater",
+		"items": [
+			{
+				"value": "home"
+			}
+		]
+	},
+	{
+		"value": "chicken",
+		"items": [
+			{
+				"value": "home"
 			},
 			{
-				"value": "closedirt"
+				"value": "right"
 			},
 			{
-				"value": "closeup"
+				"value": "backright"
 			},
 			{
-				"value": "dirt"
+				"value": "left"
 			},
 			{
-				"value": "shore"
+				"value": "down"
 			},
 			{
-				"value": "shoreright"
+				"value": "downright"
 			},
 			{
-				"value": "water"
-			},
+				"value": "window"
+			}
+		]
+	},
+	{
+		"value": "chickenindoor",
+		"items": [
 			{
-				"value": "wide"
+				"value": "home"
 			}
 		]
 	},

@@ -63,6 +63,20 @@
 		]
 	},
 	{
+		"label": "pushpop",
+		"subentries": [
+			{
+				"label": "pushpop"
+			},
+			{
+				"label": "pushin"
+			},
+			{
+				"label": "pushcrunch"
+			}
+		]
+	},
+	{
 		"label": "reptiles",
 		"subentries": [
 			{
@@ -73,9 +87,20 @@
 			},
 			{
 				"label": "toast"
+			}
+		]
+	},
+	{
+		"label": "georgie",
+		"subentries": [
+			{
+				"label": "georgie"
 			},
 			{
-				"label": "pushpop"
+				"label": "georgiewater"
+			},
+			{
+				"label": "georgiemulti"
 			}
 		]
 	},
@@ -87,6 +112,20 @@
 			},
 			{
 				"label": "hank"
+			}
+		]
+	},
+	{
+		"label": "chickens",
+		"subentries": [
+			{
+				"label": "chicken"
+			},
+			{
+				"label": "chickenin"
+			},
+			{
+				"label": "chickenmulti"
 			}
 		]
 	},
@@ -181,12 +220,24 @@
 				"import": ["wolves"]
 			},
 			{
-				"label": "chins",
-				"import": ["chins"]
+				"label": "chickens",
+				"import": ["chickens"]
+			},
+			{
+				"label": "pushpop",
+				"import": ["pushpop"]
 			},
 			{
 				"label": "reptiles",
 				"import": ["reptiles"]
+			},
+			{
+				"label": "georgie",
+				"import": ["georgie"]
+			},
+			{
+				"label": "chins",
+				"import": ["chins"]
 			},
 			{
 				"label": "insects",

@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	activeMessageThreshold int = 4
+	activeMessageThreshold int = 3
 	activeMessageTimeframe int = 9
 
 	inactivityNotifications = []Notification{
@@ -134,19 +134,74 @@ func NewNotificationsManager(twitchManager *twitch.TwitchManager, user *twitch.U
 	return &nm
 }
 
+func (nm *NotificationsManager) getActiveUsersWithExemption(exemption string) []string {
+	var activeUsers []string
+	activeUsers = make([]string, 0)
+	for _, u := range nm.History {
+		if u.IsActive() && u.Name != exemption {
+			activeUsers = append(activeUsers, u.Name)
+		}
+	}
+	return activeUsers
+}
+
+type NotificationAction int
+
+const (
+	addedUser NotificationAction = iota
+	removedUser
+)
+
+func (nm *NotificationsManager) buildNotification(action NotificationAction, username string) string {
+	var msg string
+	term := "also"
+	if action == addedUser {
+		msg += fmt.Sprintf("%s is now on cams", username)
+	} else if action == removedUser {
+		msg += fmt.Sprintf("%s is off cams", username)
+		term = "still"
+	}
+
+	activeUsers := nm.getActiveUsersWithExemption(username)
+	fmt.Printf("Active users:\n%+v\n", activeUsers)
+	switch len(activeUsers) {
+	case 1:
+		msg += fmt.Sprintf(". %s is %s on cams", activeUsers[0], term)
+	case 2:
+		msg += fmt.Sprintf(". %s and %s are %s on cams", activeUsers[0], activeUsers[1], term)
+	default:
+		if len(activeUsers) >= 3 {
+			var nameList string
+			for i, n := range activeUsers {
+				if i == 0 {
+					nameList += fmt.Sprintf(". %s, ", n)
+				} else if i != len(activeUsers)-1 {
+					nameList += n + ", "
+				} else {
+					nameList += fmt.Sprintf("and %s are %s on cams", n, term)
+
+				}
+			}
+			msg += nameList
+		}
+	}
+	fmt.Println(msg)
+	return msg
+}
+
 func (nm *NotificationsManager) manageActiveUsers() {
 	for {
 		select {
 		case u := <-nm.ActiveUsers:
 			if u != "merger31" {
-				if err := nm.SendWithTimestamp(pushover.NewMessage(fmt.Sprintf("%s is on cams", u)), nm.Recipient); err != nil {
+				if err := nm.SendWithTimestamp(pushover.NewMessage(nm.buildNotification(addedUser, u)), nm.Recipient); err != nil {
 					log.Panic(err)
 				}
 			}
 
 		case u := <-nm.InactiveUsers:
 			if !nm.History[u].SkipDeletionNotification {
-				if err := nm.SendWithTimestamp(pushover.NewMessage(fmt.Sprintf("%s is off cams", u)), nm.Recipient); err != nil {
+				if err := nm.SendWithTimestamp(pushover.NewMessage(nm.buildNotification(removedUser, u)), nm.Recipient); err != nil {
 					log.Panic(err)
 				}
 			}
@@ -196,9 +251,28 @@ func cleanName(s string) string {
 }
 
 func (nm *NotificationsManager) activityMonitor(message chat.PrivateMessage) {
+	if message.Channel == "alveusgg" && (strings.HasPrefix(message.Message, "!") && !(strings.HasPrefix(message.Message, "!getvolume") || strings.HasPrefix(message.Message, "!setvolume"))) {
+		user := message.User.Name
+		userHistory, ok := nm.History[user]
+		if !ok {
+			nm.History[user] = &ActiveUser{Name: user, InactiveUsers: nm.InactiveUsers, ActiveUsers: nm.ActiveUsers}
+			userHistory = nm.History[user]
+		}
+
+		userHistory.Increment()
+		if userHistory.IsActive() {
+			t := nm.NotificationTimer
+			t.Notifications = inactivityNotifications
+			t.Index = 0
+			t.Timer.Reset(time.Duration(t.Notifications[0].Delay) * time.Minute)
+		}
+	}
+}
+
+func (nm *NotificationsManager) ApiActivityMonitor(message chat.PrivateMessage) {
 	if message.Channel == "alveusgg" && message.User.Name == "alveussanctuary" {
 		user := cleanName(message.Message)
-		if user == "Scene" || user == "PTZ" || user == "Volumes" || user == "!nightcams" {
+		if user == "Scene" || user == "PTZ" || user == "Volumes" || user == "!nightcams" || user == "Feeder" || user == "Clicked" || strings.HasPrefix(message.Message, "{") {
 			return
 		}
 		userHistory, ok := nm.History[user]

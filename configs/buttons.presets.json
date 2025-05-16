@@ -3,184 +3,399 @@
 		"value": "pasture",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "barn"
+					},
+					{
+						"value": "insidebarn"
+					},
+					{
+						"value": "poolw"
+					},
+					{
+						"value": "pen"
+					},
+					{
+						"value": "barn2"
+					},
+					{
+						"value": "grove"
+					},
+					{
+						"value": "purplebase"
+					},
+					{
+						"value": "grove2"
+					},
+					{
+						"value": "barn2r"
+					},
+					{
+						"value": "feeder"
+					},
+					{
+						"value": "middle"
+					},
+					{
+						"value": "pooll"
+					},
+					{
+						"value": "pool"
+					},
+					{
+						"value": "poolr"
+					},
+					{
+						"value": "penl"
+					},
+					{
+						"value": "pen"
+					},
+					{
+						"value": "penr"
+					},
+					{
+						"value": "middle"
+					},
+					{
+						"value": "gate"
+					},
+					{
+						"value": "angel"
+					},
+					{
+						"value": "stompyfood"
+					},
+					{
+						"value": "feedstall"
+					},
+					{
+						"value": "water"
+					},
+					{
+						"value": "purplenest"
+					}
+				]
 			},
 			{
-				"value": "barn"
+				"tab": "right",
+				"buttons": [
+					{
+						"value": "one"
+					},
+					{
+						"value": "two"
+					},
+					{
+						"value": "three"
+					},
+					{
+						"value": "four"
+					},
+					{
+						"value": "five"
+					},
+					{
+						"value": "six"
+					},
+					{
+						"value": "seven"
+					},
+					{
+						"value": "eight"
+					},
+					{
+						"value": "nine"
+					},
+					{
+						"value": "ten"
+					},
+					{
+						"value": "eleven"
+					},
+					{
+						"value": "twelve"
+					},
+					{
+						"value": "thirteen"
+					},
+					{
+						"value": "fourteen"
+					},
+					{
+						"value": "fifteen"
+					},
+					{
+						"value": "sixteen"
+					},
+					{
+						"value": "seventeen"
+					},
+					{
+						"value": "eighteen"
+					},
+					{
+						"value": "ninteen"
+					},
+					{
+						"value": "twenty"
+					},
+					{
+						"value": "twentyone"
+					}
+				]
 			},
 			{
-				"value": "insidebarn"
+				"tab": "other",
+				"buttons": [
+					{
+						"value": "one"
+					},
+					{
+						"value": "two"
+					},
+					{
+						"value": "three"
+					},
+					{
+						"value": "four"
+					},
+					{
+						"value": "five"
+					},
+					{
+						"value": "six"
+					},
+					{
+						"value": "seven"
+					},
+					{
+						"value": "eight"
+					},
+					{
+						"value": "nine"
+					},
+					{
+						"value": "ten"
+					},
+					{
+						"value": "eleven"
+					},
+					{
+						"value": "twelve"
+					},
+					{
+						"value": "thirteen"
+					},
+					{
+						"value": "fourteen"
+					},
+					{
+						"value": "fifteen"
+					},
+					{
+						"value": "sixteen"
+					},
+					{
+						"value": "seventeen"
+					},
+					{
+						"value": "eighteen"
+					},
+					{
+						"value": "ninteen"
+					},
+					{
+						"value": "twenty"
+					},
+					{
+						"value": "twentyone"
+					}
+				]
 			},
 			{
-				"value": "poolw"
-			},
-			{
-				"value": "pen"
-			},
-			{
-				"value": "barn2"
-			},
-			{
-				"value": "grove"
-			},
-			{
-				"value": "purplebase"
-			},
-			{
-				"value": "grove2"
-			},
-			{
-				"value": "barn2r"
-			},
-			{
-				"value": "feeder"
-			},
-			{
-				"value": "middle"
-			},
-			{
-				"value": "pooll"
-			},
-			{
-				"value": "pool"
-			},
-			{
-				"value": "poolr"
-			},
-			{
-				"value": "penl"
-			},
-			{
-				"value": "pen"
-			},
-			{
-				"value": "penr"
-			},
-			{
-				"value": "middle"
-			},
-			{
-				"value": "gate"
-			},
-			{
-				"value": "angel"
-			},
-			{
-				"value": "stompyfood"
-			},
-			{
-				"value": "feedstall"
-			},
-			{
-				"value": "water"
-			},
-			{
-				"value": "purplenest"
+				"tab": "miskc",
+				"buttons": [
+					{
+						"value": "one"
+					},
+					{
+						"value": "two"
+					},
+					{
+						"value": "three"
+					},
+					{
+						"value": "four"
+					},
+					{
+						"value": "five"
+					},
+					{
+						"value": "six"
+					},
+					{
+						"value": "seven"
+					},
+					{
+						"value": "eight"
+					},
+					{
+						"value": "nine"
+					},
+					{
+						"value": "ten"
+					},
+					{
+						"value": "eleven"
+					},
+					{
+						"value": "twelve"
+					},
+					{
+						"value": "thirteen"
+					},
+					{
+						"value": "fourteen"
+					},
+					{
+						"value": "fifteen"
+					},
+					{
+						"value": "sixteen"
+					},
+					{
+						"value": "seventeen"
+					},
+					{
+						"value": "eighteen"
+					},
+					{
+						"value": "ninteen"
+					},
+					{
+						"value": "twenty"
+					},
+					{
+						"value": "twentyone"
+					}
+				]
 			}
+			
 		]
 	},
 	{
 		"value": "fox",
 		"items": [
 			{
-				"value": "left"
-			},
-			{
-				"value": "platform"
-			},
-			{
-				"value": "center"
-			},
-			{
-				"value": "den"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "leftfence"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "treehouse"
-			},
-			{
-				"value": "shade"
-			},
-			{
-				"value": "brush"
-			},
-			{
-				"value": "bench"
-			},
-			{
-				"value": "denl"
-			},
-			{
-				"value": "denf"
-			},
-			{
-				"value": "denr"
-			},
-
-			{
-				"value": "downleft"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-
-			{
-				"value": "treehousel"
-			},
-			{
-				"value": "belowplatform"
-			},
-			{
-				"value": "treehouser"
-			},
-
-			{
-				"value": "platform"
-			},
-			{
-				"value": "platformbl"
-			},
-			{
-				"value": "platformfl"
-			},
-			{
-				"value": "rampt"
-			},
-			{
-				"value": "treeclimb"
-			},
-			{
-				"value": "platformfr"
-			},
-			{
-				"value": "platformbr"
-			},
-
-			{
-				"value": "belowramp"
-			},
-			{
-				"value": "insidedoor"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "treeclimb"
-			},
-			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "left"
+					},
+					{
+						"value": "platform"
+					},
+					{
+						"value": "center"
+					},
+					{
+						"value": "den"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "leftfence"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "treehouse"
+					},
+					{
+						"value": "shade"
+					},
+					{
+						"value": "brush"
+					},
+					{
+						"value": "bench"
+					},
+					{
+						"value": "denl"
+					},
+					{
+						"value": "denf"
+					},
+					{
+						"value": "denr"
+					},
+		
+					{
+						"value": "downleft"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+		
+					{
+						"value": "treehousel"
+					},
+					{
+						"value": "belowplatform"
+					},
+					{
+						"value": "treehouser"
+					},
+		
+					{
+						"value": "platform"
+					},
+					{
+						"value": "platformbl"
+					},
+					{
+						"value": "platformfl"
+					},
+					{
+						"value": "rampt"
+					},
+					{
+						"value": "treeclimb"
+					},
+					{
+						"value": "platformfr"
+					},
+					{
+						"value": "platformbr"
+					},
+		
+					{
+						"value": "belowramp"
+					},
+					{
+						"value": "insidedoor"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "treeclimb"
+					},
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -188,34 +403,39 @@
 		"value": "foxcorner",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "insidedoor"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "training"
-			},
-			{
-				"value": "training2"
-			},
-			{
-				"value": "bowl"
-			},
-			{
-				"value": "den"
-			},
-			{
-				"value": "hillleft"
-			},
-			{
-				"value": "hillwide"
-			},
-			{
-				"value": "hillright"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "insidedoor"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "training"
+					},
+					{
+						"value": "training2"
+					},
+					{
+						"value": "bowl"
+					},
+					{
+						"value": "den"
+					},
+					{
+						"value": "hillleft"
+					},
+					{
+						"value": "hillwide"
+					},
+					{
+						"value": "hillright"
+					}
+				]
 			}
 		]
 	},
@@ -223,85 +443,87 @@
 		"value": "parrot",
 		"items": [
 			{
-				"value": "door"
-			},
-			{
-				"value": "macaws"
-			},
-			{
-				"value": "littles"
-			},
-			{
-				"value": "littlesw"
-			},
-			{
-				"value": "macawsw"
-			},
-			{
-				"value": "littles2"
-			},
-			{
-				"value": "littlest"
-			},
-			{
-				"value": "macawst"
-			},
-			{
-				"value": "home"
-			},
-			{
-				"value": "abovedoor"
-			},
-	
-			{
-				"value": "bothwindows"
-			},
-			{
-				"value": "chicken"
-			},
-			{
-				"value": "platform1"
-			},
-			{
-				"value": "platform2"
-			},
-
-			{
-				"value": "littlesb"
-			},
-			{
-				"value": "littlesbowl"
-			},
-			{
-				"value": "littlesbowl2"
-			},
-			{
-				"value": "littlesbowl3"
-			},
-			{
-				"value": "littlessleep"
-			},
-	
-			{
-				"value": "macawsb"
-			},
-			{
-				"value": "macawsbowl"
-			},
-			{
-				"value": "macawsbowl2"
-			},
-
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "door"
+					},
+					{
+						"value": "macaws"
+					},
+					{
+						"value": "littles"
+					},
+					{
+						"value": "littlesw"
+					},
+					{
+						"value": "macawsw"
+					},
+					{
+						"value": "littles2"
+					},
+					{
+						"value": "littlest"
+					},
+					{
+						"value": "macawst"
+					},
+					{
+						"value": "home"
+					},
+					{
+						"value": "abovedoor"
+					},
 			
-
-			{
-				"value": "floorl"
-			},
-			{
-				"value": "floor"
-			},
-			{
-				"value": "floorr"
+					{
+						"value": "bothwindows"
+					},
+					{
+						"value": "chicken"
+					},
+					{
+						"value": "platform1"
+					},
+					{
+						"value": "platform2"
+					},
+		
+					{
+						"value": "littlesb"
+					},
+					{
+						"value": "littlesbowl"
+					},
+					{
+						"value": "littlesbowl2"
+					},
+					{
+						"value": "littlesbowl3"
+					},
+					{
+						"value": "littlessleep"
+					},
+			
+					{
+						"value": "macawsb"
+					},
+					{
+						"value": "macawsbowl"
+					},
+					{
+						"value": "macawsbowl2"
+					},
+					{
+						"value": "floorl"
+					},
+					{
+						"value": "floor"
+					},
+					{
+						"value": "floorr"
+					}
+				]
 			}
 		]
 	},
@@ -309,85 +531,88 @@
 	{
 		"value": "crowout",
 		"items": [
-
 			{
-				"value": "right"
-			},
-			{
-				"value": "corner"
-			},
-			{
-				"value": "bench"
-			},
-			{
-				"value": "backcorner"
-			},
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "right"
+					},
+					{
+						"value": "corner"
+					},
+					{
+						"value": "bench"
+					},
+					{
+						"value": "backcorner"
+					},
+				
+					{
+						"value": "groundl"
+					},
+					{
+						"value": "ground"
+					},
+					{
+						"value": "groundr"
+					},
+					
+					{
+						"value": "entry"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "home"
+					},
+					{
+						"value": "platform"
+					},
 		
-			{
-				"value": "groundl"
-			},
-			{
-				"value": "ground"
-			},
-			{
-				"value": "groundr"
-			},
-			
-			{
-				"value": "entry"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "home"
-			},
-			{
-				"value": "platform"
-			},
-
-			{
-				"value": "tree"
-			},
-			{
-				"value": "treet"
-			},
-			{
-				"value": "treeb"
-			},
-			{
-				"value": "treebase"
-			},
-
-			{
-				"value": "inside"
-			},
-			{
-				"value": "platforminside"
-			},
-			{
-				"value": "insidewater"
-			},
-			{
-				"value": "insideperch"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "left"
-			},
-			
-
-			{
-				"value": "cache"
-			},
-			{
-				"value": "water"
-			},
-
-			{
-				"value": "stickz"
+					{
+						"value": "tree"
+					},
+					{
+						"value": "treet"
+					},
+					{
+						"value": "treeb"
+					},
+					{
+						"value": "treebase"
+					},
+		
+					{
+						"value": "inside"
+					},
+					{
+						"value": "platforminside"
+					},
+					{
+						"value": "insidewater"
+					},
+					{
+						"value": "insideperch"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "left"
+					},
+					
+					{
+						"value": "cache"
+					},
+					{
+						"value": "water"
+					},
+		
+					{
+						"value": "stickz"
+					}
+				]
 			}
 		]
 	},
@@ -396,55 +621,60 @@
 		"value": "crowin",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "rightperch"
-			},
-			{
-				"value": "window"
-			},
-			{
-				"value": "top"
-			},
-			{
-				"value": "backcorner"
-			},
-			{
-				"value": "outside"
-			},
-			{
-				"value": "back"
-			},
-			{
-				"value": "platform"
-			},
-			{
-				"value": "windowc"
-			},
-			{
-				"value": "heater"
-			},
-			{
-				"value": "backcornerr"
-			},
-			{
-				"value": "backleftcorner"
-			},
-			{
-				"value": "entry"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "water"
-			},
-			{
-				"value": "hose"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "rightperch"
+					},
+					{
+						"value": "window"
+					},
+					{
+						"value": "top"
+					},
+					{
+						"value": "backcorner"
+					},
+					{
+						"value": "outside"
+					},
+					{
+						"value": "back"
+					},
+					{
+						"value": "platform"
+					},
+					{
+						"value": "windowc"
+					},
+					{
+						"value": "heater"
+					},
+					{
+						"value": "backcornerr"
+					},
+					{
+						"value": "backleftcorner"
+					},
+					{
+						"value": "entry"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "water"
+					},
+					{
+						"value": "hose"
+					}
+				]
 			}
 		]
 	},
@@ -453,98 +683,102 @@
 		"value": "marmout",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "platformleft"
-			},
-			{
-				"value": "rope"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "ir"
-			},
-			{
-				"value": "top"
-			},
-			{
-				"value": "hose"
-			},
-			{
-				"value": "flapl"
-			},
-			{
-				"value": "flaps"
-			},
-			{
-				"value": "flapr"
-			},
-
-			{
-				"value": "topshelfl"
-			},
-			{
-				"value": "topshelfr"
-			},
-			{
-				"value": "domel"
-			},
-			{
-				"value": "domes"
-			},
-			{
-				"value": "domer"
-			},
-			
-			{
-				"value": "bottomshelfl"
-			},
-			{
-				"value": "bottomshelfr"
-			},
-			
-			{
-				"value": "leftpostshelves"
-			},
-			{
-				"value": "leftpostshelvesl"
-			},
-			
-
-
-			{
-				"value": "rightshelvest"
-			},
-			{
-				"value": "ramp"
-			},
-			{
-				"value": "rightshelvesb"
-			},
-			{
-				"value": "rightpostb"
-			},
-			{
-				"value": "frontdoor"
-			},
-			{
-				"value": "ground"
-			},
-			{
-				"value": "below"
-			},
-			{
-				"value": "groundr"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "platformleft"
+					},
+					{
+						"value": "rope"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "ir"
+					},
+					{
+						"value": "top"
+					},
+					{
+						"value": "hose"
+					},
+					{
+						"value": "flapl"
+					},
+					{
+						"value": "flaps"
+					},
+					{
+						"value": "flapr"
+					},
+		
+					{
+						"value": "topshelfl"
+					},
+					{
+						"value": "topshelfr"
+					},
+					{
+						"value": "domel"
+					},
+					{
+						"value": "domes"
+					},
+					{
+						"value": "domer"
+					},
+					
+					{
+						"value": "bottomshelfl"
+					},
+					{
+						"value": "bottomshelfr"
+					},
+					
+					{
+						"value": "leftpostshelves"
+					},
+					{
+						"value": "leftpostshelvesl"
+					},
+	
+					{
+						"value": "rightshelvest"
+					},
+					{
+						"value": "ramp"
+					},
+					{
+						"value": "rightshelvesb"
+					},
+					{
+						"value": "rightpostb"
+					},
+					{
+						"value": "frontdoor"
+					},
+					{
+						"value": "ground"
+					},
+					{
+						"value": "below"
+					},
+					{
+						"value": "groundr"
+					}
+				]
 			}
+			
 		]
 	},
 
@@ -552,64 +786,69 @@
 		"value": "marmin",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "table"
-			},
-			{
-				"value": "bowll"
-			},
-			{
-				"value": "bridgel"
-			},
-			{
-				"value": "flaps"
-			},
-			{
-				"value": "domeleft"
-			},
-			{
-				"value": "domeright"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "bridgel"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "bridgem"
-			},
-			{
-				"value": "bridger"
-			},
-			{
-				"value": "win1"
-			},
-			{
-				"value": "win2"
-			},
-			{
-				"value": "win3"
-			},
-			{
-				"value": "win4"
-			},
-			{
-				"value": "floor"
-			},
-			{
-				"value": "pole"
-			},
-			{
-				"value": "cornershelf"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "table"
+					},
+					{
+						"value": "bowll"
+					},
+					{
+						"value": "bridgel"
+					},
+					{
+						"value": "flaps"
+					},
+					{
+						"value": "domeleft"
+					},
+					{
+						"value": "domeright"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "bridgel"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "bridgem"
+					},
+					{
+						"value": "bridger"
+					},
+					{
+						"value": "win1"
+					},
+					{
+						"value": "win2"
+					},
+					{
+						"value": "win3"
+					},
+					{
+						"value": "win4"
+					},
+					{
+						"value": "floor"
+					},
+					{
+						"value": "pole"
+					},
+					{
+						"value": "cornershelf"
+					}
+				]
 			}
 		]
 	},
@@ -618,120 +857,126 @@
 		"value": "wolf",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "river"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "rightfence"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "leftcorner"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "insidedoor"
-			},
-
-			{
-				"value": "farfence"
-			},
-			{
-				"value": "grass"
-			},
-			{
-				"value": "neargrass"
-			},
-			{
-				"value": "belowplatform"
-			},	
-			{
-				"value": "backleftcorner"
-			},
-			
-			{
-				"value": "den1l"
-			},
-			{
-				"value": "den1r"
-			},
-			{
-				"value": "den1t"
-			},
-
-			{
-				"value": "den1inside"
-			},
-			{
-				"value": "den1"
-			},
-			{
-				"value": "pond"
-			},	
-			{
-				"value": "shaft"
-			},
-			{
-				"value": "tipz"
-			},
-			{
-				"value": "switchgater"
-			},		
-			{
-				"value": "waterfall"
-			},
-			
-			{
-				"value": "bigrocks"
-			},
-			{
-				"value": "farcorner"
-			},
-			{
-				"value": "den2"
-			},
-			{
-				"value": "den2t"
-			},
-			{
-				"value": "den2m"
-			},
-			{
-				"value": "den2b"
-			},
-			{
-				"value": "den2l"
-			},
-			{
-				"value": "den2r"
-			},
-			{
-				"value": "switchpen"
-			},
-			{
-				"value": "switchpenr"
-			},
-			{
-				"value": "switchden"
-			},
-			{
-				"value": "switchpenl"
-			},
-
-			{
-				"value": "wolfcornercam"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "river"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "rightfence"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "leftcorner"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+					{
+						"value": "insidedoor"
+					},
+		
+					{
+						"value": "farfence"
+					},
+					{
+						"value": "grass"
+					},
+					{
+						"value": "neargrass"
+					},
+					{
+						"value": "belowplatform"
+					},	
+					{
+						"value": "backleftcorner"
+					},
+					
+					{
+						"value": "den1l"
+					},
+					{
+						"value": "den1r"
+					},
+					{
+						"value": "den1t"
+					},
+		
+					{
+						"value": "den1inside"
+					},
+					{
+						"value": "den1"
+					},
+					{
+						"value": "pond"
+					},	
+					{
+						"value": "shaft"
+					},
+					{
+						"value": "tipz"
+					},
+					{
+						"value": "switchgater"
+					},		
+					{
+						"value": "waterfall"
+					},
+					{
+						"value": "home"
+					},
+					{
+						"value": "bigrocks"
+					},
+					{
+						"value": "farcorner"
+					},
+					{
+						"value": "den2"
+					},
+					{
+						"value": "den2t"
+					},
+					{
+						"value": "den2m"
+					},
+					{
+						"value": "den2b"
+					},
+					{
+						"value": "den2l"
+					},
+					{
+						"value": "den2r"
+					},
+					{
+						"value": "switchpen"
+					},
+					{
+						"value": "switchpenr"
+					},
+					{
+						"value": "switchden"
+					},
+					{
+						"value": "switchpenl"
+					},
+					{
+						"value": "switchramp"
+					},
+					{
+						"value": "wolfcornercam"
+					}
+				]
 			}
 		]
 	},
@@ -740,114 +985,119 @@
 		"value": "wolfcorner",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "leftcornerw"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "rightfence"
-			},
-			{
-				"value": "leftfence"
-			},
-
-			{
-				"value": "grass"
-			},
-			{
-				"value": "den2l"
-			},
-
-			{
-				"value": "belowplatforml"
-			},
-			{
-				"value": "belowplatform"
-			},
-			{
-				"value": "water"
-			},
-			{
-				"value": "belowplatformr"
-			},
-			{
-				"value": "leftcorner"
-			},
-			{
-				"value": "den2t"
-			},
-			{
-				"value": "den2m"
-			},
-
-			{
-				"value": "den2shade"
-			},
-			{
-				"value": "belowrampl"
-			},
-			{
-				"value": "belowrampr"
-			},
-			{
-				"value": "den2b"
-			},
-			{
-				"value": "den2door"
-			},
-			{
-				"value": "den2entrance"
-			},
-			{
-				"value": "den2inside"
-			},
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "leftcornerw"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "rightfence"
+					},
+					{
+						"value": "leftfence"
+					},
 		
-			{
-				"value": "grassl"
-			},
-			{
-				"value": "grassr"
-			},
-			{
-				"value": "backfence"
-			},
-			{
-				"value": "rightcorner"
-			},
-			
-
-			{
-				"value": "nearcorner"
-			},
-			{
-				"value": "downleft"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-			
-
-
-			{
-				"value": "den1"
-			},
-			{
-				"value": "river"
-			},
-			
-
-			{
-				"value": "wolfcam"
+					{
+						"value": "grass"
+					},
+					{
+						"value": "den2l"
+					},
+		
+					{
+						"value": "belowplatforml"
+					},
+					{
+						"value": "belowplatform"
+					},
+					{
+						"value": "water"
+					},
+					{
+						"value": "belowplatformr"
+					},
+					{
+						"value": "leftcorner"
+					},
+					{
+						"value": "den2t"
+					},
+					{
+						"value": "den2m"
+					},
+		
+					{
+						"value": "den2shade"
+					},
+					{
+						"value": "belowrampl"
+					},
+					{
+						"value": "belowrampr"
+					},
+					{
+						"value": "den2b"
+					},
+					{
+						"value": "den2door"
+					},
+					{
+						"value": "den2entrance"
+					},
+					{
+						"value": "den2inside"
+					},
+				
+					{
+						"value": "grassl"
+					},
+					{
+						"value": "grassr"
+					},
+					{
+						"value": "backfence"
+					},
+					{
+						"value": "rightcorner"
+					},
+					
+		
+					{
+						"value": "nearcorner"
+					},
+					{
+						"value": "downleft"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+					
+		
+		
+					{
+						"value": "den1"
+					},
+					{
+						"value": "river"
+					},
+					
+		
+					{
+						"value": "wolfcam"
+					}
+				]
 			}
 		]
 	},
@@ -856,41 +1106,46 @@
 		"value": "wolfinside",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "platformleftb"
-			},
-			{
-				"value": "platformrightb"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "neardoor"
-			},
-			{
-				"value": "platformleft"
-			},
-
-			{
-				"value": "platformcenter"
-			},
-			{
-				"value": "platformright"
-			},
-			{
-				"value": "doors"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "platformleftb"
+					},
+					{
+						"value": "platformrightb"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+					{
+						"value": "neardoor"
+					},
+					{
+						"value": "platformleft"
+					},
+		
+					{
+						"value": "platformcenter"
+					},
+					{
+						"value": "platformright"
+					},
+					{
+						"value": "doors"
+					}
+				]
 			}
 		]
 	},
@@ -899,37 +1154,42 @@
 		"value": "wolfswitch",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "den"
-			},
-			{
-				"value": "back"
-			},
-			{
-				"value": "downleft"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "insidedoor"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "farleft"
-			},
-			{
-				"value": "farright"
-			},
-			{
-				"value": "water"
-			},
-			{
-				"value": "dentop"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "den"
+					},
+					{
+						"value": "back"
+					},
+					{
+						"value": "downleft"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "insidedoor"
+					},
+					{
+						"value": "downright"
+					},
+					{
+						"value": "farleft"
+					},
+					{
+						"value": "farright"
+					},
+					{
+						"value": "water"
+					},
+					{
+						"value": "dentop"
+					}
+				]
 			}
 		]
 	},
@@ -938,7 +1198,12 @@
 		"value": "wolfden",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -947,7 +1212,12 @@
 		"value": "wolfden2",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -956,7 +1226,12 @@
 		"value": "bb",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -965,7 +1240,12 @@
 		"value": "marty",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -974,7 +1254,12 @@
 		"value": "hank",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -983,7 +1268,12 @@
 		"value": "hankcorner",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
@@ -992,25 +1282,30 @@
 		"value": "roaches",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downr"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "right"
-			},
-			{
-				"value": "stick"
-			},
-			{
-				"value": "food"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downr"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "stick"
+					},
+					{
+						"value": "food"
+					}
+				]
 			}
 		]
 	},
@@ -1019,22 +1314,27 @@
 		"value": "noodle",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "closebranch"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "farbranches"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "water"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "closebranch"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "farbranches"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "water"
+					}
+				]
 			}
 		]
 	},
@@ -1043,28 +1343,33 @@
 		"value": "toast",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "downright"
-			},
-			{
-				"value": "far"
-			},
-			{
-				"value": "food"
-			},
-			{
-				"value": "log"
-			},
-			{
-				"value": "logz"
-			},
-			{
-				"value": "water"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+					{
+						"value": "far"
+					},
+					{
+						"value": "food"
+					},
+					{
+						"value": "log"
+					},
+					{
+						"value": "logz"
+					},
+					{
+						"value": "water"
+					}
+				]
 			}
 		]
 	},
@@ -1073,22 +1378,27 @@
 		"value": "patchy",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "down"
-			},
-			{
-				"value": "closebranches"
-			},
-			{
-				"value": "farbranches"
-			},
-			{
-				"value": "groundm"
-			},
-			{
-				"value": "water"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "closebranches"
+					},
+					{
+						"value": "farbranches"
+					},
+					{
+						"value": "groundm"
+					},
+					{
+						"value": "water"
+					}
+				]
 			}
 		]
 	},
@@ -1097,25 +1407,38 @@
 		"value": "pushpop",
 		"items": [
 			{
-				"value": "home"
-			},
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "cubby"
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"value": "pushin",
+		"items": [
 			{
-				"value": "right"
-			},
-			{
-				"value": "backleft"
-			},
-			{
-				"value": "backright"
-			},
-			{
-				"value": "behind"
-			},
-			{
-				"value": "left"
-			},
-			{
-				"value": "food"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "leftcorner"
+					},
+					{
+						"value": "digbox"
+					},
+					{
+						"value": "rightcorner"
+					}
+				]
 			}
 		]
 	},
@@ -1124,37 +1447,82 @@
 		"value": "georgie",
 		"items": [
 			{
-				"value": "home"
-			},
-			{
-				"value": "closedirt"
-			},
-			{
-				"value": "closeup"
-			},
-			{
-				"value": "dirt"
-			},
-			{
-				"value": "shore"
-			},
-			{
-				"value": "shoreright"
-			},
-			{
-				"value": "water"
-			},
-			{
-				"value": "wide"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	},
-
+	{
+		"value": "georgiewater",
+		"items": [
+			{
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
+			}
+		]
+	},
+	{
+		"value": "chicken",
+		"items": [
+			{
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					},
+					{
+						"value": "right"
+					},
+					{
+						"value": "backright"
+					},
+					{
+						"value": "left"
+					},
+					{
+						"value": "down"
+					},
+					{
+						"value": "downright"
+					},
+					{
+						"value": "window"
+					}
+				]
+			}
+		]
+	},
+	{
+		"value": "chickenindoor",
+		"items": [
+			{
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
+			}
+		]
+	},
 	{
 		"value": "garden",
 		"items": [
 			{
-				"value": "home"
+				"tab": "main",
+				"buttons": [
+					{
+						"value": "home"
+					}
+				]
 			}
 		]
 	}

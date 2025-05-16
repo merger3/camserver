@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"log"
 	"math"
@@ -62,9 +61,9 @@ func LoadResources() {
 
 	resources["token"] = setup.APIKey
 	resources["client"] = NewHTTPClient()
-	resources["aliases"] = *alias.NewAliasManager()
+	resources["aliases"] = alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager(resources["client"].(*http.Client), resources["token"].(string))
-	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["token"].(string), resources["cache"].(*cache.CacheManager), resources["aliases"].(alias.AliasManager), resources["client"].(*http.Client))
+	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["token"].(string), resources["cache"].(*cache.CacheManager), resources["aliases"].(*alias.AliasManager), resources["client"].(*http.Client))
 	resources["notifications"] = notifications.NewNotificationsManager(resources["twitch"].(*twitch.TwitchManager), resources["twitch"].(*twitch.TwitchManager).Clients["merger4"], setup.PushoverKey, setup.PushoverDevice)
 }
 
@@ -101,7 +100,7 @@ func main() {
 			return err
 		}
 
-		// fmt.Println(cmd)
+		fmt.Println(cmd)
 		resources["twitch"].(*twitch.TwitchManager).Send(cmd)
 
 		return ctx.NoContent(http.StatusOK)
@@ -227,13 +226,9 @@ func CheckCache(cache *cache.CacheManager, client *twitch.TwitchManager) echo.Mi
 			if !cache.IsSynced {
 				fmt.Printf("Attempting sync at %v, backoff is %v, attempt number %v\n", int(time.Since(cache.LastAttemptedSync).Seconds()), math.Max(6, 6*math.Pow(3, cache.SyncAttempts)), cache.SyncAttempts)
 				if time.Since(cache.LastAttemptedSync).Seconds() >= math.Max(6, 6*math.Pow(3, cache.SyncAttempts)) && cache.SyncAttempts <= 6 {
-					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
+					client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams"})
 					cache.SyncAttempts += 1
 					cache.LastAttemptedSync = time.Now()
-					err := client.Cache.SyncCache()
-					if errors.Is(err, core.ErrFailedToSyncCacheWithAPI) {
-						client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "!scenecams", UseChat: true})
-					}
 					// client.Send(core.Command{User: c.Request().Header.Get(core.UsernameHeader), Command: "1: toast, 2: parrot, 3: fox, 4: marmoset, 5: wolfden, 6: pasture"})
 				}
 			}

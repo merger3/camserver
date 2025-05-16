@@ -80,7 +80,7 @@
 			},
 			{
 				"value": "purplenest",
-				"hotkeys": "^r"
+				"hotkeys": "+r"
 			},
 			{
 				"value": "grove2",
@@ -89,11 +89,11 @@
 			
 			{
 				"value": "penr",
-				"hotkeys": "^s"
+				"hotkeys": "+s"
 			},
 			{
 				"value": "penl",
-				"hotkeys": "^a"
+				"hotkeys": "+a"
 			},
 			{
 				"value": "gate",
@@ -105,11 +105,11 @@
 			},
 			{
 				"value": "angel",
-				"hotkeys": "^z"
+				"hotkeys": "+z"
 			},
 			{
 				"value": "stompyfood",
-				"hotkeys": "^v"
+				"hotkeys": "+v"
 			},
 			{
 				"value": "brush",
@@ -117,11 +117,11 @@
 			},
 			{
 				"value": "feedstall",
-				"hotkeys": "^x"
+				"hotkeys": "+x"
 			},
 			{
 				"value": "water",
-				"hotkeys": "^c"
+				"hotkeys": "+c"
 			}
 		]
 	},
@@ -134,7 +134,7 @@
 			},
 			{
 				"value": "home",
-				"hotkeys": "^a"
+				"hotkeys": "+a"
 			},
 			{
 				"value": "treehouse",
@@ -162,7 +162,7 @@
 					},
 					{
 						"value": "den",
-						"hotkeys": "^f"
+						"hotkeys": "+f"
 					},
 					{
 						"value": "denr",
@@ -201,7 +201,7 @@
 					},
 					{
 						"value": "treeclimb",
-						"hotkeys": "^w"
+						"hotkeys": "+w"
 					},
 					{
 						"value": "platformfr",
@@ -215,7 +215,7 @@
 			},				
 			{
 				"value": "treeclimb",
-				"hotkeys": "^w"
+				"hotkeys": "+w"
 			},
 			{
 				"value": "brush",
@@ -241,7 +241,7 @@
 			},
 			{
 				"value": "belowplatform",
-				"hotkeys": "^x"
+				"hotkeys": "+x"
 			},
 			{
 				"value": "treehouser",
@@ -249,7 +249,7 @@
 			},
 			{
 				"value": "belowramp",
-				"hotkeys": "^c"
+				"hotkeys": "+c"
 			},
 
 			{
@@ -445,108 +445,68 @@
 		"value": "crowout",
 		"items": [
 			{
-				"value": "home",
-				"hotkeys": ""
-			},
-			{
-				"value": "right",
-				"hotkeys": ""
-			},
-			{
-				"value": "corner",
-				"hotkeys": ""
-			},
-			{
-				"value": "backcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "groundl",
-				"hotkeys": ""
-			},
-			{
-				"value": "ground",
-				"hotkeys": ""
-			},
-			{
-				"value": "groundr",
-				"hotkeys": ""
-			},
-			{
 				"value": "entry",
-				"hotkeys": ""
+				"hotkeys": "z"
 			},
-			{
-				"value": "separator"
-			},
-
 			{
 				"value": "inside",
-				"hotkeys": ""
+				"hotkeys": "a"
 			},
 			{
 				"value": "platforminside",
-				"hotkeys": ""
-			},
-			{
-				"value": "insidewater",
-				"hotkeys": ""
+				"hotkeys": "q"
 			},
 			{
 				"value": "insideperch",
-				"hotkeys": ""
-			},
-			{
-				"value": "table",
-				"hotkeys": ""
-			},
-			{
-				"value": "left",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"value": "platform",
-				"hotkeys": ""
-			},
-			{
-				"value": "bench",
-				"hotkeys": ""
-			},
-			{
-				"value": "cache",
-				"hotkeys": ""
-			},
-			{
-				"value": "water",
-				"hotkeys": ""
+				"hotkeys": "+q"
 			},
 			{
 				"value": "down",
-				"hotkeys": ""
+				"hotkeys": "x"
 			},
 			{
-				"value": "stickz",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"value": "treet",
-				"hotkeys": ""
+				"value": "groundl",
+				"hotkeys": "s"
 			},
 			{
 				"value": "tree",
-				"hotkeys": ""
+				"hotkeys": "w"
 			},
 			{
-				"value": "treeb",
-				"hotkeys": ""
+				"value": "backcorner",
+				"hotkeys": "e"
 			},
 			{
-				"value": "treebase",
-				"hotkeys": ""
+				"value": "platform",
+				"hotkeys": "d"
+			},
+			{
+				"value": "home",
+				"hotkeys": "+d"
+			},
+			{
+				"value": "ground",
+				"hotkeys": "c"
+			},
+			{
+				"value": "groundr",
+				"hotkeys": "+c"
+			},
+			{
+				"value": "right",
+				"hotkeys": "r"
+			},
+			{
+				"value": "home",
+				"hotkeys": "+r"
+			},
+			{
+				"value": "corner",
+				"hotkeys": "f"
+			},
+			{
+				"value": "bench",
+				"hotkeys": "v"
 			}
 		]
 	},
@@ -555,76 +515,58 @@
 		"value": "crowin",
 		"items": [
 			{
-				"value": "home",
-				"hotkeys": ""
-			},
-			{
-				"value": "down",
-				"hotkeys": ""
-			},
-			{
-				"value": "entry",
-				"hotkeys": ""
-			},
-			{
-				"value": "back",
-				"hotkeys": ""
-			},
-			{
-				"value": "top",
-				"hotkeys": ""
-			},
-			{
-				"value": "backcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "heater",
-				"hotkeys": ""
-			},
-			{
-				"value": "backcornerr",
-				"hotkeys": ""
-			},
-			{
-				"value": "backleftcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "rightperch",
-				"hotkeys": ""
-			},
-			{
-				"value": "outside",
-				"hotkeys": ""
+				"value": "windowc",
+				"hotkeys": "r"
 			},
 			{
 				"value": "window",
-				"hotkeys": ""
+				"hotkeys": "f"
 			},
 			{
-				"value": "windowc",
-				"hotkeys": ""
-			},
-			{
-				"value": "separator"
+				"value": "rightperch",
+				"hotkeys": "v"
 			},
 
+
+			{
+				"value": "backcorner",
+				"hotkeys": "e"
+			},
+			{
+				"value": "top",
+				"hotkeys": "d"
+			},
+			{
+				"value": "outside",
+				"hotkeys": "c"
+			},
+
+
+			{
+				"value": "home",
+				"hotkeys": "w"
+			},
+			{
+				"value": "down",
+				"hotkeys": "s"
+			},
+			{
+				"value": "entry",
+				"hotkeys": "c"
+			},
+
+
+			{
+				"value": "backleftcorner",
+				"hotkeys": "q"
+			},
 			{
 				"value": "platform",
-				"hotkeys": ""
+				"hotkeys": "a"
 			},
 			{
-				"value": "table",
-				"hotkeys": ""
-			},
-			{
-				"value": "water",
-				"hotkeys": ""
-			},
-			{
-				"value": "hose",
-				"hotkeys": ""
+				"value": "back",
+				"hotkeys": "z"
 			}
 		]
 	},
@@ -849,150 +791,106 @@
 		"value": "wolf",
 		"items": [
 			{
-				"value": "home",
-				"hotkeys": ""
-			},
-			{
-				"value": "river",
-				"hotkeys": ""
-			},
-			{
-				"value": "right",
-				"hotkeys": ""
-			},
-			{
-				"value": "rightfence",
-				"hotkeys": ""
-			},
-			{
-				"value": "farfence",
-				"hotkeys": ""
-			},
-			{
-				"value": "grass",
-				"hotkeys": ""
+				"value": "backleftcorner",
+				"hotkeys": "q"
 			},
 			{
 				"value": "left",
-				"hotkeys": ""
-			},
-			{
-				"value": "insidedoor",
-				"hotkeys": ""
-			},
-			{
-				"value": "pond",
-				"hotkeys": ""
-			},
-			{
-				"value": "belowplatform",
-				"hotkeys": ""
-			},
-			{
-				"value": "separator"
-			},
-
-			{
-				"value": "tipz",
-				"hotkeys": ""
-			},
-			{
-				"value": "shaft",
-				"hotkeys": ""
-			},
-			{
-				"value": "waterfall",
-				"hotkeys": ""
-			},
-			{
-				"value": "separator"
-			},
-
-
-			{
-				"value": "backleftcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "switchgater",
-				"hotkeys": ""
+				"hotkeys": "a"
 			},
 			{
 				"value": "leftcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "down",
-				"hotkeys": ""
-			},
-			{
-				"value": "downright",
-				"hotkeys": ""
-			},
-			{
-				"value": "separator"
-			},
-			
-
-			{
-				"value": "bigrocks",
-				"hotkeys": ""
-			},
-			{
-				"value": "farcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "den1t",
-				"hotkeys": ""
-			},
-			{
-				"value": "den1inside",
-				"hotkeys": ""
-			},
-			{
-				"value": "den1r",
-				"hotkeys": ""
-			},
-			{
-				"value": "den1",
-				"hotkeys": ""
+				"hotkeys": "z"
 			},
 			{
 				"value": "den1l",
-				"hotkeys": ""
+				"hotkeys": "w"
 			},
 			{
-				"value": "den2",
-				"hotkeys": ""
+				"value": "log",
+				"hotkeys": "+w"
 			},
 			{
-				"value": "den2t",
-				"hotkeys": ""
+				"value": "pondl",
+				"hotkeys": "s"
 			},
 			{
-				"value": "den2m",
-				"hotkeys": ""
+				"value": "down",
+				"hotkeys": "x"
 			},
 			{
-				"value": "den2b",
-				"hotkeys": ""
+				"value": "insidedoor",
+				"hotkeys": "+x"
 			},
 			{
-				"value": "den2l",
-				"hotkeys": ""
+				"value": "den1",
+				"hotkeys": "e"
 			},
 			{
-				"value": "den2r",
-				"hotkeys": ""
-			},
-			{
-				"value": "separator"
+				"value": "den1t",
+				"hotkeys": "+e"
 			},
 
 			{
-				"value": "wolfcornercam",
-				"hotkeys": ""
+				"value": "river",
+				"hotkeys": "d"
+			},
+			{
+				"value": "pond",
+				"hotkeys": "+d"
+			},
+			{
+				"value": "downright",
+				"hotkeys": "c"
+			},
+			{
+				"value": "den1r",
+				"hotkeys": "r"
+			},
+			{
+				"value": "right",
+				"hotkeys": "f"
+			},
+			{
+				"value": "rightfence",
+				"hotkeys": "c"
+			},
+			{
+				"value": "farcorner",
+				"hotkeys": "t"
+			},
+			{
+				"value": "bigrocks",
+				"hotkeys": "+t"
+			},
+
+			{
+				"value": "farfence",
+				"hotkeys": "g"
+			},
+			{
+				"value": "den2rw",
+				"hotkeys": "b"
+			},
+			{
+				"value": "den2r",
+				"hotkeys": "+b"
+			},
+			{
+				"value": "den2l",
+				"hotkeys": "y"
+			},
+			{
+				"value": "den2",
+				"hotkeys": "h"
+			},
+			{
+				"value": "den2m",
+				"hotkeys": "+h"
+			},
+			{
+				"value": "belowplatform",
+				"hotkeys": "n"
 			}
 		]
 	},
@@ -1001,142 +899,72 @@
 		"value": "wolfcorner",
 		"items": [
 			{
-				"value": "home",
-				"hotkeys": ""
-			},
-			{
-				"value": "left",
-				"hotkeys": ""
-			},
-			{
-				"value": "grass",
-				"hotkeys": ""
-			},
-			{
 				"value": "leftcorner",
-				"hotkeys": ""
+				"hotkeys": "z"
 			},
 			{
-				"value": "rightfence",
-				"hotkeys": ""
+				"value": "leftcornerw",
+				"hotkeys": "x"
 			},
 			{
-				"value": "right",
-				"hotkeys": ""
-			},
-			{
-				"value": "belowplatforml",
-				"hotkeys": ""
-			},
-			{
-				"value": "belowplatform",
-				"hotkeys": ""
-			},
-			{
-				"value": "water",
-				"hotkeys": ""
+				"value": "leftfence",
+				"hotkeys": "c"
 			},
 			{
 				"value": "belowplatformr",
-				"hotkeys": ""
+				"hotkeys": "v"
 			},
 			{
-				"value": "den2t",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2m",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2l",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2shade",
-				"hotkeys": ""
-			},
-			{
-				"value": "belowrampl",
-				"hotkeys": ""
-			},
-			{
-				"value": "belowrampr",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2b",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2door",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2entrance",
-				"hotkeys": ""
-			},
-			{
-				"value": "den2inside",
-				"hotkeys": ""
-			},
-			
-		
-
-			{
-				"value": "leftfence",
-				"hotkeys": ""
-			},
-			{
-				"value": "grassl",
-				"hotkeys": ""
-			},
-			{
-				"value": "grassr",
-				"hotkeys": ""
-			},
-			{
-				"value": "backfence",
-				"hotkeys": ""
-			},
-			{
-				"value": "rightcorner",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"value": "nearcorner",
-				"hotkeys": ""
-			},
-			{
-				"value": "downleft",
-				"hotkeys": ""
-			},
-			{
-				"value": "down",
-				"hotkeys": ""
+				"value": "belowplatform",
+				"hotkeys": "b"
 			},
 			{
 				"value": "downright",
-				"hotkeys": ""
+				"hotkeys": "h"
 			},
-			
-
-
 			{
-				"value": "den1",
-				"hotkeys": ""
+				"value": "rightfence",
+				"hotkeys": "y"
+			},
+			{
+				"value": "right",
+				"hotkeys": "t"
+			},
+			{
+				"value": "down",
+				"hotkeys": "g"
+			},
+			{
+				"value": "home",
+				"hotkeys": "f"
+			},
+			{
+				"value": "back",
+				"hotkeys": "r"
+			},
+			{
+				"value": "center",
+				"hotkeys": "e"
+			},
+			{
+				"value": "den2l",
+				"hotkeys": "d"
+			},
+			{
+				"value": "grass",
+				"hotkeys": "s"
+			},
+			{
+				"value": "left",
+				"hotkeys": "a"
+			},
+			{
+				"value": "leftw",
+				"hotkeys": "q"
 			},
 			{
 				"value": "river",
-				"hotkeys": ""
-			},
-			
-
-			{
-				"value": "wolfcam",
-				"hotkeys": ""
+				"hotkeys": "w"
 			}
 		]
 	},
@@ -1166,6 +994,55 @@
 			{
 				"value": "platformright",
 				"hotkeys": ""
+			}
+		]
+	},
+	{
+		"value": "wolfswitch",
+		"items": [
+			{
+				"value": "farleft",
+				"hotkeys": "q"
+			},
+			{
+				"value": "den",
+				"hotkeys": "w"
+			},
+			{
+				"value": "dentop",
+				"hotkeys": "+w"
+			},
+			{
+				"value": "farright",
+				"hotkeys": "e"
+			},
+			{
+				"value": "middleleft",
+				"hotkeys": "a"
+			},
+			{
+				"value": "back",
+				"hotkeys": "s"
+			},
+			{
+				"value": "home",
+				"hotkeys": "d"
+			},
+			{
+				"value": "downleft",
+				"hotkeys": "z"
+			},
+			{
+				"value": "down",
+				"hotkeys": "x"
+			},
+			{
+				"value": "downright",
+				"hotkeys": "c"
+			},
+			{
+				"value": "insidedoor",
+				"hotkeys": "+c"
 			}
 		]
 	},

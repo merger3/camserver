@@ -43,7 +43,8 @@ func (c ConfigModule) GetButtonPresets(ctx echo.Context) error {
 
 	for _, presets := range c.ButtonPresets {
 		if c.Aliases.ToBase(presets.CamName) == c.Aliases.ToBase(req.Cam) {
-			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &presets})
+			fmt.Printf("Found: %s\n", c.Aliases.ToBase(presets.CamName))
+			return ctx.JSON(http.StatusOK, PresetResponse{Found: true, CamPresetsList: &CamPresets{CamName: c.Aliases.ToBase(presets.CamName), Presets: presets.Presets}})
 		}
 	}
 

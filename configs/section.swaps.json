@@ -145,6 +145,120 @@
 		]
 	},
 	{
+		"label": "georgie_base",
+		"subentries": [
+			{
+				"label": "georgie_import",
+				"import": [
+					"georgie"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"georgie_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"georgie"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "chickens_base",
+		"subentries": [
+			{
+				"label": "chickens_import",
+				"import": [
+					"chickens"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"chickens_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"chickens"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
+		"label": "pushpop_base",
+		"subentries": [
+			{
+				"label": "pushpop_import",
+				"import": [
+					"pushpop"
+				]
+			},
+			{
+				"label": "common",
+				"import": [
+					"common"
+				]
+			}
+		],
+		"mods": [
+			{
+				"action": "flatten",
+				"target": [
+					"pushpop_import"
+				]
+			},
+			{
+				"action": "remove",
+				"target": [
+					"common",
+					"pushpop"
+				]
+			},
+			{
+				"action": "flatten",
+				"target": [
+					"common"
+				]
+			}
+		]
+	},
+	{
 		"label": "insects_base",
 		"subentries": [
 			{

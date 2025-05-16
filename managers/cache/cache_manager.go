@@ -29,8 +29,8 @@ type CacheManager struct {
 
 func NewCacheManager(client *http.Client, token string) *CacheManager {
 	newCM := &CacheManager{Cams: make([]string, 6), HTTPClient: client, APIKey: token}
-	newCM.SyncCache()
-	go newCM.HydrateCache()
+	// newCM.SyncCache()
+	// go newCM.HydrateCache()
 	return newCM
 }
 
@@ -45,7 +45,7 @@ func (cm *CacheManager) HydrateCache() error {
 func (cm *CacheManager) SyncCache() error {
 	url := "https://api.ptz.app:2053/api/command"
 
-	// str := "Scene: Custom Cams: 1: wolf, 2: wolfcorner, 3: wolfmulti, 4: wolfmulti2, 5: wolfmulti5, 6: crowin"
+	// str := "Scene: Custom Cams: 1: wolf, 2: pasture, 3: wolfmulti, 4: pushpop, 5: pushpopindoor, 6: crowin"
 	// cm.ParseScene(str)
 	// return nil
 
@@ -92,16 +92,18 @@ func isNumber(s string) bool {
 }
 
 func (cm *CacheManager) ParseScene(scenecamsRaw string) {
-	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
+	fmt.Println("parsing")
+	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
 	if !scenecamsRE.MatchString(scenecamsRaw) {
 		return
 	}
-
+	fmt.Println("matched regex")
 	matches := scenecamsRE.FindStringSubmatch(scenecamsRaw)
 	scenecams := matches[1]
 
 	camsArray := strings.Split(strings.ReplaceAll(scenecams, " ", ""), ",")
 	if len(camsArray) < 6 {
+		fmt.Println("array less than 6")
 		return
 	}
 
@@ -114,7 +116,7 @@ func (cm *CacheManager) ParseScene(scenecamsRaw string) {
 	cm.Cams = newArray
 	cm.IsSynced = true
 	cm.LastSynced = time.Now()
-	// fmt.Println(cm.Cams)
+	fmt.Println(cm.Cams)
 }
 
 func (cm CacheManager) ProcessSwap(first, second string) {

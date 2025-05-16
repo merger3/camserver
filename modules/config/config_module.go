@@ -20,6 +20,11 @@ type CamPresets struct {
 	Presets []any  `json:"items"`
 }
 
+type ButtonTabs struct {
+	TabName string         `json:"tab"`
+	Presets []ButtonPreset `json:"buttons"`
+}
+
 type ButtonPreset struct {
 	Name string `json:"value"`
 }
@@ -36,7 +41,7 @@ type HotkeyPreset struct {
 type ConfigModule struct {
 	Twitch        *twitch.TwitchManager
 	Cache         *cache.CacheManager
-	Aliases       alias.AliasManager
+	Aliases       *alias.AliasManager
 	ButtonPresets []CamPresets
 	MenuPresets   []CamPresets
 	HotkeyPresets []CamPresets
@@ -60,7 +65,7 @@ func (c *ConfigModule) Init(resources map[string]any) {
 	c.HotkeyPresets = LoadPresets("hotkeys")
 	c.Twitch = resources["twitch"].(*twitch.TwitchManager)
 	c.Cache = resources["cache"].(*cache.CacheManager)
-	c.Aliases = resources["aliases"].(alias.AliasManager)
+	c.Aliases = resources["aliases"].(*alias.AliasManager)
 }
 
 func LoadPresets(set string) []CamPresets {

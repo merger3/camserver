@@ -132,7 +132,7 @@ type TwitchManager struct {
 	Clients    map[string]*User
 	Users      map[string]string
 	Cache      *cache.CacheManager
-	Aliases    alias.AliasManager
+	Aliases    *alias.AliasManager
 	HTTPClient *http.Client
 	OAuth      OAuthTokenManager
 	AuthMap    map[string]bool
@@ -167,7 +167,7 @@ func (tm *TwitchManager) SendAPIMessage(message Command) (http.Response, error) 
 	return *rsp, nil
 }
 
-func NewTwitchManager(channel, sentinel, token string, cache *cache.CacheManager, aliases alias.AliasManager, client *http.Client) *TwitchManager {
+func NewTwitchManager(channel, sentinel, token string, cache *cache.CacheManager, aliases *alias.AliasManager, client *http.Client) *TwitchManager {
 	tm := TwitchManager{Clients: make(map[string]*User), Users: make(map[string]string), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, APIKey: token, Aliases: aliases, HTTPClient: client, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
@@ -182,7 +182,7 @@ func (tm *TwitchManager) CreateListeners() {
 	botSwapRE := regexp.MustCompile(`^\w+: Swap (\w+ \w+) ?`)
 
 	tm.Listeners["scenecams"] = func(message twitch.PrivateMessage) {
-		if match, _ := regexp.MatchString(`^Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+		if match, _ := regexp.MatchString(`^Scene: \w+ Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			tm.Cache.ParseScene(message.Message)
 		}
 	}
@@ -257,6 +257,7 @@ func (tm TwitchManager) ConnectClient(user string) {
 }
 
 func (tm TwitchManager) Send(cmd Command) {
+	fmt.Println("sending")
 	if cmd.User == "merger4" {
 		return
 	}
@@ -271,10 +272,12 @@ func (tm TwitchManager) Send(cmd Command) {
 	}
 
 	// cmd.Command = strings.ReplaceAll(cmd.Command, "wolfswitch", "wolfindoor")
-	if user.Username == "merger3" && !cmd.UseChat {
+	if user.Username == "merger3" && !cmd.UseChat && false {
 		if cmd.Command == "!scenecams" {
+			fmt.Println("Syncing to api")
 			err := tm.Cache.SyncCache()
 			if errors.Is(err, ErrFailedToSyncCacheWithAPI) {
+				fmt.Println("failed to sync to api")
 				user.QueueMessage(cmd)
 			}
 		} else {
@@ -328,14 +331,14 @@ func (tm TwitchManager) GetClickedCam(rect Geom) ClickedCam {
 		return ClickedCam{}
 	}
 
-	// resp.Name = tm.Aliases.ToCommon(resp.Name)
+	resp.Name = tm.Aliases.ToCommon(resp.Name)
 	return resp
 }
 
 func (tm TwitchManager) GetUserFromToken(token string) string {
 	user, ok := tm.Users[token]
 	if ok {
-		// fmt.Println("found user in cache")
+		fmt.Println("found user in cache")
 		return user
 	}
 
@@ -381,12 +384,12 @@ func createAuthMap() map[string]bool {
 	commandSuperUsers := []string{"ellaandalex", "dionysus1911", "dannydv", "maxzillajr", "illjx", "kayla_alveus",
 		"alex_b_patrick", "lindsay_alveus", "strickknine", "tarantulizer", "spiderdaynightlive",
 		"srutiloops", "evantomology", "amanda2815"}
-	commandMods := []string{"pjeweb", "loganrx_", "mattipv4", "mik_mwp", "96allskills"}
+	commandMods := []string{"pjeweb", "loganrx_", "mattipv4", "mik_mwp", "96allskills", "wazix11"}
 	commandOperator := []string{"96allskills", "stolenarmy_", "berlac", "dansza", "loganrx_", "merger3", "nitelitedf",
-		"purplemartinconservation", "wazix11", "lazygoosepxls", "alxiszzz", "shutupleonard",
+		"purplemartinconservation", "lazygoosepxls", "alxiszzz", "shutupleonard",
 		"taizun", "lumberaxe1", "glennvde", "wolfone_", "dohregard", "lakel1", "darkrow_",
 		"minipurrl", "gnomechildboi", "danman149", "hunnybeehelen", "strangecyan",
-		"casualruffian", "viphippo", "bagel_deficient"}
+		"casualruffian", "viphippo", "bagel_deficient", "jugglingdoh", "catonascreen", "sidmaxwell10"}
 	commandVips := []string{"tfries_", "sivvii_", "ghandii_", "axialmars", "jazz_peru", "stealfydoge",
 		"xano218", "experimentalcyborg", "klav___", "monkarooo", "nixxform", "madcharliekelly",
 		"josh_raiden", "jateu", "storesE6", "rebecca_h9", "matthewde", "user_11_11", "huniebeexd",
