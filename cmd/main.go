@@ -19,7 +19,6 @@ import (
 
 	"github.com/merger3/camserver/managers/alias"
 	"github.com/merger3/camserver/managers/cache"
-	"github.com/merger3/camserver/managers/notifications"
 	"github.com/merger3/camserver/managers/twitch"
 
 	"github.com/labstack/echo/v4"
@@ -64,7 +63,7 @@ func LoadResources() {
 	resources["aliases"] = alias.NewAliasManager()
 	resources["cache"] = cache.NewCacheManager(resources["client"].(*http.Client), resources["token"].(string))
 	resources["twitch"] = twitch.NewTwitchManager(setup.Channel, setup.Sentinel, resources["token"].(string), resources["cache"].(*cache.CacheManager), resources["aliases"].(*alias.AliasManager), resources["client"].(*http.Client))
-	resources["notifications"] = notifications.NewNotificationsManager(resources["twitch"].(*twitch.TwitchManager), resources["twitch"].(*twitch.TwitchManager).Clients["merger4"], setup.PushoverKey, setup.PushoverDevice)
+	// resources["notifications"] = notifications.NewNotificationsManager(resources["twitch"].(*twitch.TwitchManager), resources["twitch"].(*twitch.TwitchManager).Clients["merger4"], setup.PushoverKey, setup.PushoverDevice)
 }
 
 func LoadModules(e *echo.Echo) {

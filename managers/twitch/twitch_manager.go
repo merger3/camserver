@@ -171,7 +171,7 @@ func NewTwitchManager(channel, sentinel, token string, cache *cache.CacheManager
 	tm := TwitchManager{Clients: make(map[string]*User), Users: make(map[string]string), Cache: cache, OAuth: NewOAuthTokenManager(), Channel: channel, Sentinel: sentinel, APIKey: token, Aliases: aliases, HTTPClient: client, Listeners: make(map[string]Listener)}
 	tm.CreateListeners()
 	tm.AuthMap = createAuthMap()
-	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["swap"], tm.Listeners["botSwap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
+	tm.AddClient("merger4", tm.OAuth.AccessToken, []Listener{tm.Listeners["scenecams"], tm.Listeners["ptzlist"], tm.Listeners["swap"], tm.Listeners["botSwap"], tm.Listeners["resync"], tm.Listeners["misswap"]})
 	tm.Clients["merger4"].Client.Join("alveussanctuary")
 
 	return &tm
@@ -183,6 +183,12 @@ func (tm *TwitchManager) CreateListeners() {
 
 	tm.Listeners["scenecams"] = func(message twitch.PrivateMessage) {
 		if match, _ := regexp.MatchString(`^Scene: \w+ Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
+			tm.Cache.ParseScene(message.Message)
+		}
+	}
+
+	tm.Listeners["ptzlist"] = func(message twitch.PrivateMessage) {
+		if match, _ := regexp.MatchString(`^Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`, message.Message); tm.Cache != nil && message.User.Name == tm.Sentinel && match {
 			tm.Cache.ParseScene(message.Message)
 		}
 	}
@@ -368,13 +374,16 @@ func (tm TwitchManager) GetUserFromToken(token string) string {
 	return validation.Login
 }
 
+// This function used to be used to improve cache consistency by ignoring actions done by people without perms, reduce hard resyncs
+// Since all subs have perms now it no longer makes sense to maintain
 func (tm TwitchManager) CheckUsername(username string) bool {
-	_, ok := tm.AuthMap[username]
-	if !ok {
-		return false
-	} else {
-		return true
-	}
+	return true
+	// _, ok := tm.AuthMap[username]
+	// if !ok {
+	// 	return false
+	// } else {
+	// 	return true
+	// }
 }
 
 func createAuthMap() map[string]bool {

@@ -94,11 +94,19 @@ func isNumber(s string) bool {
 func (cm *CacheManager) ParseScene(scenecamsRaw string) {
 	fmt.Println("parsing")
 	scenecamsRE := regexp.MustCompile(`^Scene: \w+ Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
-	if !scenecamsRE.MatchString(scenecamsRaw) {
+	ptzlistRE := regexp.MustCompile(`^Current Scene: \w+ Cams: ((\d: \w+,? ?)+)$`)
+
+	var matches []string
+	switch {
+	case scenecamsRE.MatchString(scenecamsRaw):
+		matches = scenecamsRE.FindStringSubmatch(scenecamsRaw)
+	case ptzlistRE.MatchString(scenecamsRaw):
+		matches = ptzlistRE.FindStringSubmatch(scenecamsRaw)
+	default:
 		return
 	}
 	fmt.Println("matched regex")
-	matches := scenecamsRE.FindStringSubmatch(scenecamsRaw)
+
 	scenecams := matches[1]
 
 	camsArray := strings.Split(strings.ReplaceAll(scenecams, " ", ""), ",")
